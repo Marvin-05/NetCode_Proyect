@@ -1,7 +1,7 @@
 body{
     background-color: 255 255 255;
     height: 100vh;
-    background-image: url("/static/aaaa.jpg");
+    background-image: url("/static/img/aaaa.jpg");
     background-size: cover;
     background-repeat:no-repeat ;
     background-position: center top ;
