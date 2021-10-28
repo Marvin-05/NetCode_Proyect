@@ -1,0 +1,91 @@
+body{
+    background-color: 255 255 255;
+    height: 100vh;
+    background-image: url("/static/aaaa.jpg");
+    background-size: cover;
+    background-repeat:no-repeat ;
+    background-position: center top ;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.login_box{
+    width:320px;
+    height: 420px;
+    background: #000;
+    color:#fff;
+    top:50%;
+    left:50%;
+    position:absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+}
+
+.login_box .avatar{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+.login_box h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.login_box label{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+
+}
+
+.login_box input{
+    width:100%;
+    margin-bottom: 20px;
+}
+
+.login_box input[type="text"],
+.login_box input[type="password"]
+{
+    border:none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    /*outline: none; me gusta con el outline*/
+    height: 40px;
+    color: #fff;
+    font-size:16px;
+}
+
+.login_box input[type="submit"]{
+    border:none;
+    outline: none;
+    height: 40px;
+    background:#8c004b;
+    /* background: #b80f22;*/
+    color: #fff;
+    font-size:18px;
+    border-radius:20px;
+
+
+}
+
+.login_box a{
+    text-decoration:none;
+    font-size:12px;
+    line-height: 20px;
+    color: darkgray;
+}
+.login_box a:hover{
+    color:#fff;
+}
+

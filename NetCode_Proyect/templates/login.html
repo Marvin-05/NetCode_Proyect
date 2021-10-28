@@ -1,0 +1,31 @@
+{%extends "layout.html"%}
+
+{%block title%}Login{%endblock%}
+
+{%block body%}
+<div class="login_box">
+
+    <h1>login Here</h1>
+
+    <form>
+
+        <!--nombre del usuario-->
+       <img class="avatar" src="/static/icono_1.png" alt="imagen">
+
+        <label for="username">Username</label>
+        <input type="text" placeholder="Enter username">
+
+
+        <!--password-->
+        <label for="password">Password</label>
+        <input type="password" placeholder="Enter Password">
+
+
+        <input type="submit" value= "Log In">
+
+        <a href="#">Lost your password</a><br />
+        <a href="#">Dont have an account</a>
+
+    </form>
+</div>
+{%endblock%}
