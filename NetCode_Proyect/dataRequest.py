@@ -26,7 +26,6 @@ def login(conn, name, nickN, email, passw, lastN):
                                         {'Name':name, 'NickName':nickN, # Las variables que no estan entre comillas simples son las que llevan los datos llegados a la funcion
                                         'EmailAddres':email, 'Password':passw, 'LastName':lastN}) # las que estan entre cmillas simples son las referenciadas en la consulta
     conn.commit() # conn.commit() guarda los cambios de las consultas en la base de datos
-    conn.close() # conn.close() cierra la coneccion de la base de datos para evitar fugas de informacion
 
 def Nick_existente(conn, nickN):
     """Verifica si un NickName ya existe"""
@@ -43,10 +42,7 @@ def Nick_existente(conn, nickN):
         for clave in resultado:
             # si el contenido de la comumna NickName de algun resultado es igual al nick mandado a la funcion ese nick existe y retornamos true
             if clave == nickN:
-                conn.close() # conn.close() cierra la coneccion de la base de datos para evitar fugas de informacion
                 return True
-
-    conn.close() # conn.close() cierra la coneccion de la base de datos para evitar fugas de informacion
 
     # si llegamos aqui no existe el nick en los registros de la tabla asi que retornamos false
     return False
@@ -76,8 +72,6 @@ def correct_Sing_In(conn, password, nickN):
             # si el contenido de la comumna Password de algun resultado es igual a la contraseña mandado a la funcion esa contraseña esta correcta
             elif clave == password:
                 Pssw = True
-
-    conn.close() # conn.close() cierra la coneccion de la base de datos para evitar fugas de informacion
 
     # si ambos datos son correctos o existen retornamos true sino retornamos false
     if Nick == True and Pssw == True:
