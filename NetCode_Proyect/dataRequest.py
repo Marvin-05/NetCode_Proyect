@@ -16,15 +16,15 @@ def connect():
         print(Error)
         sys.exit() # Cerramos el sistema
 
-def login(conn, name, nickN, email, passw, lastN):
+def login(conn, name, nickN, email, passw):
     """Ingresa un nuevo usuario a la base de datos"""
 
     cursor = conn.cursor() # creamos un cursor de la base de datos para realizar las consultas
 
     # cursor.execute() es el que genera cualquier consulta de sql en python, en este caso sera una consulta de insercion
-    cursor.execute(" INSERT INTO Info_Usuario(Name, NickName, EmailAddres, Password, LastName) VALUES(:Name, :NickName, :EmailAddres, :Password, :LastName)",
+    cursor.execute(" INSERT INTO Info_Usuario(Name, NickName, EmailAddres, Password) VALUES(:Name, :NickName, :EmailAddres, :Password, :LastName)",
                                         {'Name':name, 'NickName':nickN, # Las variables que no estan entre comillas simples son las que llevan los datos llegados a la funcion
-                                        'EmailAddres':email, 'Password':passw, 'LastName':lastN}) # las que estan entre cmillas simples son las referenciadas en la consulta
+                                        'EmailAddres':email, 'Password':passw}) # las que estan entre cmillas simples son las referenciadas en la consulta
     conn.commit() # conn.commit() guarda los cambios de las consultas en la base de datos
 
 def Nick_existente(conn, nickN):
