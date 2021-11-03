@@ -7,24 +7,24 @@
 
     <h1>login Here</h1>
 
-    <form>
+    <form action="/login" method="POST">
 
         <!--nombre del usuario-->
        <img class="avatar" src="/static/img/icono_1.png" alt="imagen">
 
         <label for="username">Username</label>
-        <input type="text" placeholder="Enter username" id="username">
+        <input type="text" placeholder="Enter username" id="username" name="name">
 
 
         <!--password-->
         <label for="password">Password</label>
-        <input type="password" placeholder="Enter Password" id="password">
+        <input type="password" placeholder="Enter Password" id="password" name=password>
 
 
-        <input type="submit" value= "Log In">
+        <input type="submit" value= "Login">
 
-        <a href="#">Lost your password</a><br />
-        <a href="#">Dont have an account</a>
+        <a href="#">Lost your password ?</a><br />
+        <a href="registro">Dont have an account ?</a>
 
     </form>
 </div>

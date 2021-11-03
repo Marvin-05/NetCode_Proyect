@@ -10,9 +10,27 @@ body{
     padding: 0;
 }
 
+header{
+    background: #586994;
+    width:100%;
+    box-shadow:0 0 6px rgba(0, 0, 0, -5);
+}
+
+/*menu o barra de navegacion*/
+nav.menu{
+    height: 70px;
+    width: 90%;
+    margin:auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*login y registro*/
 .login_box{
     width:320px;
-    height: 420px;
+    height: 500px;
     background: #000;
     color:#fff;
     top:50%;
@@ -55,7 +73,8 @@ body{
 }
 
 .login_box input[type="text"],
-.login_box input[type="password"]
+.login_box input[type="password"],
+.login_box input[type="email"]
 {
     border:none;
     border-bottom: 1px solid #fff;
