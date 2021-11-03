@@ -5,20 +5,25 @@
 
 {%block body%}
 
-    <div class="registro">
-        <form class= "form" action="/registro" method="POST">
+    <div class="login_box">
+        <form action="/registro" method="POST">
 
-            <h1 class = "form_titulo">Registro</h1>
-
-            <div class="form-group">
+            <h1 class = "form_titulo">register here</h1>
 
                 <label for="username">username:</label>
-                <input type="text" placeholder="Enter username" class="form-input" name="name" id="name">
-            </div>
+                <input type="text" placeholder="Enter username" name="name" id="name">
 
-            <div class="form-group">
-                <label for="Email"></label>
-            </div>
+                <label for="lastName">LastName:</label>
+                <input type="text" placeholder="Enter lastname" name="lastName" id="lastName">
+
+                <label for="email">Email</label>
+                <input type="email" placeholder="Enter email" name="email" id="email">
+
+                <label for="password">Contraseña</label>
+                <input type="password" placeholder="Enter password" name="password" id="pasword">
+
+                <input type="submit" value= "Registrar">
+
         </form>
     </div>
 
