@@ -4,46 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="../static/styles.css" type = "text/css" rel="stylesheet"/>
+    {% block head %}
+        
+        <title>{% block title %}{% endblock %} web</title>
+    {% endblock %}
+
+    <!--<link href="../static/styles.css" type = "text/css" rel="stylesheet"/>-->
     <!--/NetCode_Proyect/NetCode/static/styles.css-->
-    <title>{%block title%}{%endblock%}</title>
+    
 
 </head>
 <body>
-    <header>
-        <nav class= "menu">
-        
-           <div class="logo">
-               <img src="" alt="">
-           </div>
-           <div class="enlaces">
-                
-                 <ul>
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/login">Log</a>
-                    </li>
-                    <li>
-                        <a href="/registro">Registro</a>
-                    </li>
-                    <li>
-                        <a href="#">Quienes somos?</a>
-                    </li>
-                </ul>
-           </div>
-           <div class="indice">
-               
-               <img src="/static/img/menu-regular-48.png" alt="" id="indice">
-           </div>
-        </nav>
-        
-    </header>
-    
+
 
     {%block body%}
 
     {%endblock%}
+
 </body>
 </html>

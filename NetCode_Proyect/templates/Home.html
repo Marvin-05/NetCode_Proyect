@@ -2,14 +2,88 @@
 
 {%block title%}Home{%endblock%}
 
+{%block head%}<link href="../static/styles-home.css" type = "text/css" rel="stylesheet"/>{%endblock%}
 {%block body%}
 
-<div class="encabezado">
-    <div class= "entrada">
-        <p>NetCode es una para programadores o futuros programadores o simplemente gente interesada en la informática. Solo te toma un minuto registrarte.</p1>
-        <button>Ver mas</button>
+  <header>
+
+
+
+       <div class="logo">
+           <a href="#sec">NetCode</a>
+
+       </div>
+       <div class="enlaces">
+
+            <ul>
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/login">Log</a></li>
+                <li><a href="/registro">Registro</a></li>
+                <li><a href="#">Quienes somos?</a></li>
+           </ul>
+       </div>
+
+    </header>
+
+    <section>
+        <img src="../static/img/stars.png" alt="no funciono :'V" id="stars">
+        <img src="../static/img/moon.png" alt="no funciono :'V" id="moon">
+        <img src="../static/img/mountains_behind.png" alt="no funciono :'V" id="mountains_behind">
+        <h2 id="text">NetCode</h2>
+        <img src="../static/img/mountains_front.png" alt="no funciono :'V" id="mountains_front">
+
+
+    </section>
+
+
+    <div class= "sec" id= "sec">
+        <h1>¿Que es NetCode</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores tempore sapiente perspiciatis repellendus.
+        Quisquam cum, eum voluptatem iure, ut labore vitae est iusto eveniet laborum nisi facere reprehenderit mollitia, sequi.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut autem doloribus unde. Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Fugiat illum, expedita ipsum consectetur possimus alias rem voluptatem optio qui deserunt excepturi minima
+        odit maiores enim doloremque quis, ullam ducimus! Quis.<br><br> Esse corporis accusantium
+        provident beatae iste ullam aliquid, placeat neque earum fugiat commodi laborum modi deleniti nisi. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, sint doloremque
+        suscipit odit quod placeat quibusdam labore, exercitationem, perspiciatis commodi sapiente repellendus. Totam officiis nam,
+        praesentium tempora officia quasi ipsa. <br></br> Rem praesentium quidem, quam iure quo obcaecati hic aliquid enim ab nemo a
+        cupiditate incidunt in fuga quae inventore amet veritatis sequi?- Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Quibusdam distinctio explicabo, consequuntur tenetur facere nihil sapiente, beatae cupiditate ratione atque quisquam officiis
+        veniam id voluptates recusandae inventore vitae ad nobis!<br><br> Esse corporis accusantium
+        provident beatae iste ullam aliquid, placeat neque earum fugiat commodi laborum modi deleniti nisi. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, sint doloremque
+        suscipit odit quod placeat quibusdam labore, exercitationem, perspiciatis commodi sapiente repellendus. Totam officiis nam,
+        praesentium tempora officia quasi ipsa. <br></br> Rem praesentium quidem, quam iure quo obcaecati hic aliquid enim ab nemo a
+        cupiditate incidunt in fuga quae inventore amet veritatis sequi?- Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Quibusdam distinctio explicabo, consequuntur tenetur facere nihil sapiente, beatae cupiditate ratione atque quisquam officiis
+        veniam id voluptates recusandae inventore vitae ad nobis!</p>
+
     </div>
-</div>
+
+    <script>
+        let star = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll',function(){
+            let value = window.scrollY;
+            stars.style.left = value *0.25 + 'px';
+            moon.style.top = value *1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px'
+            text.style.marginTop = value * 1.5  + 'px'
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+
+
+
+
+
 
 
 {%endblock%}
