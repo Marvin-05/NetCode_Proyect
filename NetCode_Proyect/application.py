@@ -1,7 +1,9 @@
 from flask import Flask, request, render_template,redirect
-from dataRequest import connect, login, Nick_existente, correct_Sing_In
-
+from dataRequest import connect, New_Register, Nick_existente, Correct_LogIn
 # prueba para el git
+
+# establecemos la coneccion con la base de datos Users
+conn = connect()
 
 app = Flask("__name__")
 app.config['TEMPLATES_AUTO_RELOAD'] = True
@@ -15,39 +17,42 @@ def hello():
 def login():
 
     if request.method == 'POST':
-        name = request.form.get("name")
-        password = request.form.get("password")
 
-        #se debe de verificar si existe o no
+        if not request.form.get("name"):
+            return "error en name"
+        elif not request.form.get("password"):
+            return "error en password"
 
+        if not Correct_LogIn(conn, request.form.get("password"), request.form.get("name")):
+            return "datos erroneos"
 
-        #redireccionamos al contenido
-
-    else:
-        return render_template("login.html")
+        return redirect("/home")
 
     return render_template("login.html")
 
 @app.route("/registro", methods = ["POST","GET"])
 def registro():
 
-    if request.method == 'GET':
-        return render_template("registro.html")
+    if request.method == 'POST':
 
-    else:
-        
-        conn = connect()
-        
-        #hacer las debidas condiciones para saber si se ha ingresado correctamente
-        
-        name = request.form.get("name")
-        password = request.form.get("password")
-        email = request.form.get("email")
-        
-        
-        return render_template("login.html")
+        if not request.form.get("name"):
+            return "error en name"
+        elif not request.form.get("nick"):
+            return "error en nick"
+        if not request.form.get("email"):
+            return "error en email"
+        elif not request.form.get("password"):
+            return "error en password"
 
-    return redirect('/registro')
+        if Nick_existente(conn, request.form.get("nick")):
+            return "nic existente"
+
+        New_Register(conn, request.form.get("name"), request.form.get("nick"), request.form.get("email"), request.form.get("password"))
+
+        return redirect("/login")
+
+
+    return render_template("registro.html")
 
 
 
