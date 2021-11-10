@@ -1,0 +1,31 @@
+{%extends "layout.html"%}
+
+{%block title%}Registro{%endblock%}
+
+{%block head%}<link href="../static/styles.css" type = "text/css" rel="stylesheet"/>{%endblock%}
+
+{%block body%}
+
+    <div class="login_box">
+        <form action="/recover" method="POST">
+
+            <h1 class = "form_titulo">Recover Password</h1>
+
+                <label for="username">Username:</label>
+                <input type="text" placeholder="Enter Nickname" name="nickname" id="nickname">
+
+                <label for="email">Email:</label>
+                <input type="email" placeholder="Enter Email" name="email" id="email">
+
+                <label for="password">Password:</label>
+                <input type="password" placeholder="Enter Password" name="password" id="password">
+
+                <label for="password">Comfirm Password:</label>
+                <input type="password" placeholder="Confirm Password" name="confirm" id="confirm">
+
+                <input type="submit" value= "Continuar">
+
+        </form>
+    </div>
+
+{%endblock%}

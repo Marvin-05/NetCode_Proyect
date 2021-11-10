@@ -78,3 +78,57 @@ def Correct_LogIn(conn, password, nickN):
         return True
     else:
         return False
+
+def Correct_User(conn, username, email):
+    """Verifica que los datos de un inetento de recuperacion de contraseña sean correctos"""
+
+    cursor = conn.cursor() # creamos un cursor de la base de datos para realizar las consultas
+
+    # Guardamos todos los resultados de registros en los que el nick del registro sean igual al nick mandado a la funcion
+    # y el email tambien es igual al email de la funcion
+    resultados = cursor.execute(f" SELECT NickName, EmailAddres FROM Info_Usuario WHERE NickName = '{username}' AND EmailAddres = '{email}'")
+
+    # en este caso como compararemos 2 atributos de la tabla usaremos 2 variables auxiliares para ver si los datos son correctos o no
+    # por defecto estaran en false, y cambiaran si las encuentra
+    Nick = False
+    Em = False
+
+    # como los resultados de los registros se guardan en un diccionario lo controlamos con un for
+    # este for recorre el diccionario registro por registro
+    for resultado in resultados:
+        # este for recorre un registro columna por columna
+        for clave in resultado:
+            # si el contenido de la comumna NickName de algun resultado es igual al nick mandado a la funcion ese nick existe
+            if clave == username:
+                Nick = True
+            # si el contenido de la comumna Email de algun resultado es igual al email mandado a la funcion el elmail esta correcto
+            elif clave == email:
+                Em = True
+
+    # si ambos datos son correctos o existen retornamos true sino retornamos false
+    if Nick == True and Em == True:
+        return True
+    else:
+        return False
+
+
+def recover_password(conn, password, username):
+    """Actualiza el campo de contraseña de un usuario en especifico"""
+
+    cursor = conn.cursor() # creamos un cursor de la base de datos para realizar las consultas
+
+    # Guardamos todos los id resultantes de los registros en los que el nick del registro sean igual al nick mandado a la funcion
+    resultados = cursor.execute(f"SELECT Id FROM Info_Usuario WHERE NickName = '{username}'")
+
+    # recorremos los registros con un for ya que son diccionarios para obtener el valor del id
+    for id in resultados:
+        for c in id:
+            user_id = c
+
+    # actualizamos la contraseña del usuario respecto al id encontrado
+    cursor.execute("UPDATE Info_Usuario \
+                    SET Password = :password \
+                    WHERE Id = :id",
+                    {'password':password, 'id':user_id})
+
+    conn.commit() # conn.commit() guarda los cambios de las consultas en la base de datos

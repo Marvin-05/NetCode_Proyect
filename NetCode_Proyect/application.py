@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template,redirect
-from dataRequest import connect, New_Register, Nick_existente, Correct_LogIn
+from dataRequest import connect, New_Register, Nick_existente, Correct_LogIn, recover_password, Correct_User
 # prueba para el git
 
 # establecemos la coneccion con la base de datos Users
@@ -54,6 +54,31 @@ def registro():
 
     return render_template("registro.html")
 
+
+@app.route("/recover", methods = ["GET", "POST"])
+def recover():
+    if request.method == 'POST':
+
+        if not request.form.get("nickname"):
+            return "error en nickname"
+        elif not request.form.get("email"):
+            return "error en email"
+        if not request.form.get("password"):
+            return "error en password"
+        elif not request.form.get("confirm"):
+            return "error en confirm"
+
+        if not  Correct_User(conn, request.form.get("nickname"), request.form.get("email")):
+            return "error en los datos del username & email"
+
+        if request.form.get("confirm") != request.form.get("password"):
+            return "error las contraseñas son diferentes"
+
+        recover_password(conn, request.form.get("password"), request.form.get("nickname"))
+
+        return redirect("/login")
+
+    return render_template("recover.html")
 
 
 if __name__== '__main__':
