@@ -2,9 +2,6 @@ from flask import Flask, request, render_template,redirect
 from dataRequest import connect, New_Register, Nick_existente, Correct_LogIn, recover_password, Correct_User
 # prueba para el git
 
-# establecemos la coneccion con la base de datos Users
-conn = connect()
-
 app = Flask("__name__")
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
@@ -23,8 +20,13 @@ def login():
         elif not request.form.get("password"):
             return "error en password"
 
+        # establecemos la coneccion con la base de datos Users
+        conn = connect()
+
         if not Correct_LogIn(conn, request.form.get("password"), request.form.get("username")):
             return "datos erroneos"
+
+        conn.close()
 
         return redirect("/home2")
 
@@ -44,10 +46,15 @@ def registro():
         elif not request.form.get("password"):
             return "error en password"
 
+        # establecemos la coneccion con la base de datos Users
+        conn = connect()
+
         if Nick_existente(conn, request.form.get("nick")):
             return "nic existente"
 
         New_Register(conn, request.form.get("name"), request.form.get("nick"), request.form.get("email"), request.form.get("password"))
+
+        conn.close()
 
         return redirect("/login")
 
@@ -68,6 +75,9 @@ def recover():
         elif not request.form.get("confirm"):
             return "error en confirm"
 
+        # establecemos la coneccion con la base de datos Users
+        conn = connect()
+
         if not  Correct_User(conn, request.form.get("nickname"), request.form.get("email")):
             return "error en los datos del username & email"
 
@@ -75,6 +85,8 @@ def recover():
             return "error las contraseñas son diferentes"
 
         recover_password(conn, request.form.get("password"), request.form.get("nickname"))
+
+        conn.close()
 
         return redirect("/login")
 
