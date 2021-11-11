@@ -18,12 +18,12 @@ def login():
 
     if request.method == 'POST':
 
-        if not request.form.get("name"):
-            return "error en name"
+        if not request.form.get("username"):
+            return "error en username"
         elif not request.form.get("password"):
             return "error en password"
 
-        if not Correct_LogIn(conn, request.form.get("password"), request.form.get("name")):
+        if not Correct_LogIn(conn, request.form.get("password"), request.form.get("username")):
             return "datos erroneos"
 
         return redirect("/home2")
@@ -85,11 +85,13 @@ def recover():
 def session_open():
     return render_template("home2.html")
 
-@app.route("/logout")
+@app.route("/logout", methods = ["GET", "POST"])
 def logout():
-    session.clear()
-    return redirect("/")
+    if request.method == 'GET':
+        #session.clear()
+        return redirect("/")
 
+    return render_template("home2.html")
 
 if __name__== '__main__':
     app.run(debug = True)
