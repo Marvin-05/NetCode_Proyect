@@ -1,0 +1,134 @@
+body
+{
+    background-image: url("/static/img/Fondo_home.jpg");
+    background-size:cover
+}
+
+.menu
+{
+    float:left;
+    margin-top: 3%;
+    margin-left: 5%;
+    background-color: RGBA(0,0,0,0.66);
+    height: 560px;
+    width: 300px;
+    border-radius: 28px;
+}
+.menu h2
+{
+    color: white;
+    text-align:center;
+}
+.menu .bottons img
+{
+    height: 100px;
+    width:  100px;
+    cursor: pointer;
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    background-color: RGBA(10,25,49,0.52);
+    border-radius: 28px;
+}
+.menu .bottons img:hover
+{
+    background-color: #FFFFFF;
+    width: 120px;
+    height: 120px;
+}
+
+.main-container
+{
+    margin: 0;
+    padding: 0;
+    float: right;
+    background-color: RGBA(0,0,0,0.66);
+    margin-top: 3%;
+    margin-left: 23%;
+    margin-right: 20%;
+    height: 560px;
+    width: 70%;
+    border-radius: 28px;
+    position: absolute;
+    display: flex;
+}
+
+.main-container .slider
+{
+    margin-top: 2%;
+    width: 65%;
+    height: 130px;
+    color:white;
+    text-align: center;
+    margin-left: 100px;
+}
+.main-container .user-settings
+{
+    margin-left: 180px;
+    margin-top: 2%;
+    height: 5%;
+    width: 30%;
+    float: left;
+    color: white;
+}
+.main-container .user-settings img
+{
+    height: 100px;
+    width: 100px;
+}
+
+.main-container .cursos
+{
+    width: 100%;
+    position:absolute;
+    margin-top: 250px;
+    color: white;
+    text-align: center;
+}
+
+.main-container .cursos .curso-c img
+{
+    margin-top: 20px;
+    float: left;
+    height: 200px;
+    width: 200px;
+    margin-left: 100px;
+}
+
+.main-container .cursos .curso-c img:hover
+{
+    height: 250px;
+    width: 230px;
+}
+
+.main-container .cursos .curso-P img
+{
+    margin-top: 20px;
+    float: left;
+    height: 200px;
+    width: 200px;
+    margin-left: 100px;
+}
+.main-container .cursos .curso-P img:hover
+{
+    height: 250px;
+    width: 230px;
+}
+
+.main-container .cursos .curso-X img
+{
+    margin-top: 20px;
+    float: left;
+    height: 200px;
+    width: 200px;
+    margin-left: 100px;
+}
+
+.main-container .cursos .curso-X img:hover
+{
+    height: 250px;
+    width: 230px;
+}
