@@ -26,7 +26,7 @@ def login():
         if not Correct_LogIn(conn, request.form.get("password"), request.form.get("name")):
             return "datos erroneos"
 
-        return redirect("/home")
+        return redirect("/home2")
 
     return render_template("login.html")
 
@@ -79,6 +79,16 @@ def recover():
         return redirect("/login")
 
     return render_template("recover.html")
+
+
+@app.route("/home2")
+def session_open():
+    return render_template("home2.html")
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect("/")
 
 
 if __name__== '__main__':
