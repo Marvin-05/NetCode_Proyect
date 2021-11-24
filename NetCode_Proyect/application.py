@@ -97,6 +97,10 @@ def recover():
 def session_open():
     return render_template("home2.html")
 
+@app.route("/Cpython")
+def Cpython():
+    return render_template("curso_python_prueba.html")
+
 @app.route("/logout", methods = ["GET", "POST"])
 def logout():
     if request.method == 'GET':
