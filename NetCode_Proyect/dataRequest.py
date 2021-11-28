@@ -1,5 +1,6 @@
 import sqlite3
 import sys
+from werkzeug.security import check_password_hash, generate_password_hash
 from sqlite3 import Error
 
 def connect():
@@ -52,29 +53,29 @@ def Correct_LogIn(conn, password, nickN):
 
     cursor = conn.cursor() # creamos un cursor de la base de datos para realizar las consultas
 
+    print(password)
+
     # Guardamos todos los resultados de registros en los que el nick del registro sean igual al nick mandado a la funcion
     # y la contraseña tambien es igual a la contraseña de la funcion
-    resultados = cursor.execute(f" SELECT NickName, Password FROM Info_Usuario WHERE NickName = '{nickN}' AND Password = '{password}'")
+    resultados = cursor.execute(f" SELECT NickName, Password FROM Info_Usuario WHERE NickName = '{nickN}'")
 
     # en este caso como compararemos 2 atributos de la tabla usaremos 2 variables auxiliares para ver si los datos son correctos o no
     # por defecto estaran en false, y cambiaran si las encuentra
     Nick = False
-    Pssw = False
 
     # como los resultados de los registros se guardan en un diccionario lo controlamos con un for
     # este for recorre el diccionario registro por registro
     for resultado in resultados:
         # este for recorre un registro columna por columna
+        psw = resultado[1] # guardamos el resultado del password en psw
         for clave in resultado:
             # si el contenido de la comumna NickName de algun resultado es igual al nick mandado a la funcion ese nick existe
             if clave == nickN:
                 Nick = True
-            # si el contenido de la comumna Password de algun resultado es igual a la contraseña mandado a la funcion esa contraseña esta correcta
-            elif clave == password:
-                Pssw = True
+
 
     # si ambos datos son correctos o existen retornamos true sino retornamos false
-    if Nick == True and Pssw == True:
+    if Nick == True and check_password_hash(psw, password):
         return True
     else:
         return False

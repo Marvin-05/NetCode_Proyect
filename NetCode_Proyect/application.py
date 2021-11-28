@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template,redirect
 from dataRequest import connect, New_Register, Nick_existente, Correct_LogIn, recover_password, Correct_User
-# prueba para el git
+from werkzeug.security import check_password_hash, generate_password_hash
 
 app = Flask("__name__")
 app.config['TEMPLATES_AUTO_RELOAD'] = True
@@ -52,7 +52,7 @@ def registro():
         if Nick_existente(conn, request.form.get("nick")):
             return "nic existente"
 
-        New_Register(conn, request.form.get("name"), request.form.get("nick"), request.form.get("email"), request.form.get("password"))
+        New_Register(conn, request.form.get("name"), request.form.get("nick"), request.form.get("email"), generate_password_hash(request.form.get("password")))
 
         conn.close()
 
@@ -84,7 +84,7 @@ def recover():
         if request.form.get("confirm") != request.form.get("password"):
             return "error las contraseñas son diferentes"
 
-        recover_password(conn, request.form.get("password"), request.form.get("nickname"))
+        recover_password(conn, generate_password_hash(request.form.get("password")), request.form.get("nickname"))
 
         conn.close()
 
