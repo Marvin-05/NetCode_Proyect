@@ -106,6 +106,11 @@ def Cpython():
 def C():
     return render_template("cursoC.html")
 
+
+@app.route("/Java")
+def Java():
+    return render_template("CursoJava.html")
+
 @app.route("/logout", methods = ["GET", "POST"])
 def logout():
     if request.method == 'GET':
