@@ -3,6 +3,12 @@ import sys
 from werkzeug.security import check_password_hash, generate_password_hash
 from sqlite3 import Error
 
+import csv
+import urllib.request
+
+from flask import redirect, render_template, request, session
+from functools import wraps
+
 def connect():
     """Conecta la Base de datos"""
 
@@ -134,3 +140,18 @@ def recover_password(conn, password, username):
                     {'password':password, 'id':user_id})
 
     conn.commit() # conn.commit() guarda los cambios de las consultas en la base de datos
+
+
+
+def login_required(f):
+    """
+    Decorate routes to require login.
+
+    http://flask.pocoo.org/docs/0.12/patterns/viewdecorators/
+    """
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if session.get("user_id") is None:
+            return redirect("/login")
+        return f(*args, **kwargs)
+    return decorated_function

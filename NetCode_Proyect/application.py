@@ -1,8 +1,17 @@
-from flask import Flask, request, render_template,redirect
-from dataRequest import connect, New_Register, Nick_existente, Correct_LogIn, recover_password, Correct_User
+from flask import Flask, request, render_template,redirect, session
+from dataRequest import connect, New_Register, Nick_existente, Correct_LogIn, recover_password, Correct_User, login_required
 from werkzeug.security import check_password_hash, generate_password_hash
+from flask_session import Session
+from tempfile import mkdtemp
 
 app = Flask("__name__")
+
+# Configure session to use filesystem (instead of signed cookies)
+app.config["SESSION_FILE_DIR"] = mkdtemp()
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
+
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 @app.route("/home")
@@ -12,6 +21,8 @@ def hello():
 
 @app.route("/login", methods= ["POST","GET"])
 def login():
+
+    session.clear()
 
     if request.method == 'POST':
 
@@ -25,6 +36,15 @@ def login():
 
         if not Correct_LogIn(conn, request.form.get("password"), request.form.get("username")):
             return "datos erroneos"
+
+        c = conn.cursor()
+
+        rows = c.execute("SELECT * FROM Info_Usuario WHERE NickName = :nick", {'nick':request.form.get("username")})
+        for row in rows:
+            User = row[0]
+
+        print(User)
+        session["user_id"] = User
 
         conn.close()
 
@@ -94,22 +114,28 @@ def recover():
 
 
 @app.route("/home2")
+@login_required
 def session_open():
     return render_template("home2.html")
 
 
 @app.route("/Cpython")
+@login_required
 def Cpython():
     return render_template("curso_python_prueba.html")
 
 @app.route("/C")
+@login_required
 def C():
     return render_template("cursoC.html")
 
 @app.route("/logout", methods = ["GET", "POST"])
 def logout():
     if request.method == 'GET':
-        #session.clear()
+        # Forget any user_id
+        session.clear()
+
+        # Redirect user to login form
         return redirect("/")
 
     return render_template("home2.html")
