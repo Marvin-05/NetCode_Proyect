@@ -6,42 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Curso de c</title>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
 </head>
+
 <body>
-    <div id="log"></div>
-    <button id="btn2">Session 1</button>
-    <button id="btn3">Session 2</button>
-    <h1>CURSO PYTHOn</h1>
-    <div id="box1" class="clase-1">
-        <p>
-            esto es C
-        </p>
-        <button>Regresar</button>
-    </div>
-    <div class="box2">
-        las variables en c son varias xd
 
-    		*Aquí iría una tabla chingona*
-    </div>
-    <script>
-        $( "#btn2" ).click(function() {
-            function complete() {
-                $( "div" ).text( this.id ).appendTo( "#log" );
-            }
-        $( "#box1" ).fadeOut( complete );
-        $( "#box2" ).fadeOut( complete );
-        $( "div" ).show();
-        $( "#log" ).empty();
-        });
+    <div id="main">
 
-        $( "#btn3" ).click(function() {
-            function complete() {
-                $( "div" ).text( this.id ).appendTo( "#log" );
-            }
-        $( "#box2" ).fadeOut( complete );
-        $( "div" ).show();
-        $( "#log" ).empty();
-        });
-    </script>
+        <button id="c-s1">Session 1</button>
+        <button id="c-s2">Session 2</button>
+
+        <h1>Curso De C</h1>
+
+        <div id="cbox1" class="clase-1">
+            <p>
+                Bienvenido al curso de C, en donde encontraras informacion basica sobre este lenguaje
+                <br><br>
+                Esperamos aprendas con nosotros uwu
+            </p>
+
+        </div>
+
+        <div id="cbox2" class="clase-2">
+            las variables en c son varias xd
+
+        		*Aquí iría una tabla chingona*
+        </div>
+
+        <a href="/home2" id="back"><h4>Regresar</h4></a>
+
+    </div>
+
+    <script src="/static/scripts/scriptCursos.js"></script>
 </body>
 </html>

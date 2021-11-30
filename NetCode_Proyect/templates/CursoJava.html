@@ -8,11 +8,12 @@
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 <body>
-    <div id="log"></div>
-    <button id="btn2">Session 1</button>
-    <button id="btn3">Session 2</button>
+    <button id="java-s1">Session 1</button>
+    <button id="java-s2">Session 2</button>
+
     <h1>Curso Java</h1>
-    <div id="box1" class="clase-1">
+
+    <div id="jbox1" class="clase-1">
         <p>
             <h2>Introduccion a Java</h2>
             Java en un lenguaje moderno de programación de alto nivel, diseñado al inicio de los años 90 por Sun Microsystems y actualmente propiedad de Oracle.
@@ -22,49 +23,31 @@
 
             Java es utilizado para desarrollar aplicaciones para Android de Google, diversas aplicaciones para Escritorio, como reproductores multimedia, programas antivirus, Aplicaciones Web, Aplicaciones Empresariales (por ejemplo, Bancarias) ¡y muchas más!
         </p>
-        <button>Regresar</button>
+
     </div>
-    <div class="box2">
+    <div id="jbox2" class="clase-1">
         <h2>A Hello World Program</h2>
-           <p>       
-        
-            Tu primer programa 
-            
+           <p>
+
+            Tu primer programa
+
             Vamos a comenzar creando un programa sencillo que imprima "Hello World" en la pantalla.
             	class MyClass {
-              
+
             		  public static void main(String[ ] args) {
-                    
+
             			System.out.println("Hello World");
-                
+
             		}
-            	
+
             }
             En Java, cada línea de código que se puede ejecutar necesita estar dentro de una clase.
             En nuestro ejemplo, nombramos la clase MyClass. Aprenderás más sobre clases en los próximos módulos.
-            
+
             En Java, cada aplicación tiene un punto de entrada, o un punto de partida, el cual es un método llamado main. </p>
 
     </div>
-    <script>
-        $( "#btn2" ).click(function() {
-            function complete() {
-                $( "div" ).text( this.id ).appendTo( "#log" );
-            }
-        $( "#box1" ).fadeOut( complete );
-        $( "#box2" ).fadeOut( complete );
-        $( "div" ).show();
-        $( "#log" ).empty();
-        });
-
-        $( "#btn3" ).click(function() {
-            function complete() {
-                $( "div" ).text( this.id ).appendTo( "#log" );
-            }
-        $( "#box2" ).fadeOut( complete );
-        $( "div" ).show();
-        $( "#log" ).empty();
-        });
-    </script>
+    <a href="/home2" id="back"><h4>Regresar</h4></a>
+    <script src="/static/scripts/scriptCursos.js"></script>
 </body>
 </html>

@@ -122,7 +122,7 @@ def session_open():
 @app.route("/Cpython")
 @login_required
 def Cpython():
-    return render_template("curso_python_prueba.html")
+    return render_template("cursoPython.html")
 
 @app.route("/C")
 @login_required
