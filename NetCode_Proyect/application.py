@@ -1,10 +1,16 @@
-from flask import Flask, request, render_template,redirect, session
+from flask import Flask, request, render_template,redirect, session, url_for
 from dataRequest import connect, New_Register, Nick_existente, Correct_LogIn, recover_password, Correct_User, login_required
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_session import Session
 from tempfile import mkdtemp
+import os
+
+UPLOAD_FOLDER = "./static/images"
 
 app = Flask("__name__")
+
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
 
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_FILE_DIR"] = mkdtemp()
@@ -13,6 +19,8 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 app.config['TEMPLATES_AUTO_RELOAD'] = True
+
+
 
 @app.route("/home")
 @app.route("/")
@@ -117,6 +125,31 @@ def recover():
 @login_required
 def session_open():
     return render_template("home2.html")
+
+# creacion de formimagenes
+
+@app.route("/formImage", methods= ["GET", "POST"])
+def subir():
+    if request.method == "POST":
+        #Si no existe un archivo
+        if "archivo" not in request.files:
+            return redirect("/subir")
+
+        archivo = request.files['archivo']
+
+        if archivo.filename == "":
+            return redirect("/subir")
+
+        if archivo:
+            nombreArchivo = archivo.filename
+            archivo.save(os.path.join(app.config["UPLOAD_FOLDER"], nombreArchivo))
+            return redirect("/home2")
+
+        else:
+            return redirect("/subir")
+
+    else:
+        return render_template("FormImage.html")
 
 
 @app.route("/Cpython")

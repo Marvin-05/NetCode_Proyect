@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Subir Imagenes</title>
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='estilo.css')}}">
+</head>
+<body>
+    <header>
+
+       <div class="enlaces">
+
+            <ul>
+                <li><a href="/home2">Return</a></li>
+              
+           </ul>
+       </div>
+
+    </header>
+    <section>
+        <h1>Subir imagen</h1>
+        
+        <form action="/formImage" method="post" enctype="multipart/form-data" class="form1">
+            <input type="file" name="archivo">
+            <button type="submit">Subir imagen</button>
+        </form>
+    </section>
+</body>
+</html>
