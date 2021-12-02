@@ -152,9 +152,9 @@ def subir():
         return render_template("FormImage.html")
 
 
-@app.route("/Cpython")
+@app.route("/Python")
 @login_required
-def Cpython():
+def Python():
     return render_template("cursoPython.html")
 
 @app.route("/C")
