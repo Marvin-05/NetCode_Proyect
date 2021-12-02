@@ -56,7 +56,7 @@ def login():
 
         conn.close()
 
-        return redirect("/home2")
+        return redirect("/Cursos")
 
     return render_template("login.html")
 
@@ -121,10 +121,10 @@ def recover():
     return render_template("recover.html")
 
 
-@app.route("/home2")
+@app.route("/Cursos")
 @login_required
 def session_open():
-    return render_template("home2.html")
+    return render_template("Cursos.html")
 
 # creacion de formimagenes
 
@@ -143,7 +143,7 @@ def subir():
         if archivo:
             nombreArchivo = archivo.filename
             archivo.save(os.path.join(app.config["UPLOAD_FOLDER"], nombreArchivo))
-            return redirect("/home2")
+            return redirect("/Cursos")
 
         else:
             return redirect("/subir")
@@ -176,7 +176,7 @@ def logout():
         # Redirect user to login form
         return redirect("/")
 
-    return render_template("home2.html")
+    return render_template("Cursos.html")
 
 if __name__== '__main__':
     app.run(debug = True)
