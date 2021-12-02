@@ -1,0 +1,174 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header
+{
+    background-color: white;
+    position: fixed;
+    width:100%;
+    height: 19%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-style: solid;
+    border-color: #827E826B;
+    border-width: 0px 0px 5px 0px;
+    margin-bottom: 19%;
+    z-index: 10000;
+
+}
+
+header .icons-enlaces ul
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .icons-enlaces ul .text h1
+{
+    float: right;
+    font-family: 'M PLUS Code Latin', sans-serif;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 600px;
+}
+
+header .icons-enlaces ul .image-icon li
+{
+    List-style: none;
+    font-family: 'M PLUS Code Latin', sans-serif;
+}
+header .icons-enlaces ul .image-icon li a
+{
+    margin-left: 100px;
+    text-decoration: none;
+    padding: 6px 15px;
+    color: black;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+header .icons-enlaces ul .image-icon li a:link
+{
+    text-decoration: none;
+
+}
+header .icons-enlaces ul .image-icon:hover
+{
+    cursor: pointer;
+}
+header .icons-enlaces .image-icon li a img:hover
+{
+    width: 80px;
+    height: 80px;
+}
+header .icons-enlaces .image-icon li a img
+{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    cursor:pointer;
+}
+body
+{
+    overflow-x: hidden;
+}
+.BIENVENIDA-HOME img
+{
+    margin-top: 8%;
+    width: 100%;
+    height: 600px;
+}
+.cursos
+{
+    margin-top: 7%;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap
+}
+.cursos img
+{
+    width: 400px;
+    height: 300px;
+    margin-left: 180px;
+    margin-bottom: 50px;
+    border-radius: 5%;
+    -webkit-box-shadow: -26px 15px 6px -2px rgba(0,0,0,0.75);
+        -moz-box-shadow: -26px 15px 6px -2px rgba(0,0,0,0.75);
+        box-shadow: -26px 15px 6px -2px rgba(0,0,0,0.75);
+    cursor: pointer;
+}
+.cursos img:hover
+{
+    width: 420px;
+    height:310px;
+    -webkit-box-shadow: 10px 11px 49px 26px rgba(78,224,212,1);
+        -moz-box-shadow: 10px 11px 49px 26px rgba(78,224,212,1);
+        box-shadow: 10px 11px 49px 26px rgba(78,224,212,1);
+}
+.main-container .slider
+{
+    margin-top: 3%;
+    margin-left: 20%;
+    width: 60%;
+    height: 300px;
+    -webkit-box-shadow: 6px 16px 6px -2px rgba(0,0,0,0.75);
+        -moz-box-shadow: 6px 16px 6px -2px rgba(0,0,0,0.75);
+        box-shadow: 6px 16px 6px -2px rgba(0,0,0,0.75);
+}
+
+h2
+{
+    margin-top: 5%;
+    font-family: 'M PLUS Code Latin', sans-serif;
+    text-align: center;
+}
+footer
+{
+    background-color: white;
+    width:100%;
+    height: 10%;
+    display: flex;
+    border-style: solid;
+    border-color: #827E826B;
+    border-width: 5px 0px 0px 0px;
+}
+footer p
+{
+    margin-left: 200px;
+    text-align: center;
+    font-family: 'Archivo Narrow', sans-serif;
+}
+footer .contac-us .Integrantes ul
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .contac-us .Integrantes ul li
+{
+    List-style: none;
+    font-family: 'M PLUS Code Latin', sans-serif;
+}
+footer .contac-us .Integrantes ul li a
+{
+    text-decoration: none;
+}
+footer .contac-us .Integrantes ul li a img
+{
+    width: 50px;
+    height: 50px;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    margin-left: 150px;
+}
