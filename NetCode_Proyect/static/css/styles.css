@@ -14,10 +14,10 @@ body{
 /*login y registro*/
 .login_box{
     width:320px;
-    height: 500px;
+    height: 580px;
     background: #000;
     color:#fff;
-    top:50%;
+    top:48%;
     left:50%;
     position:absolute;
     transform: translate(-50%,-50%);
@@ -68,7 +68,17 @@ body{
     color: #fff;
     font-size:16px;
 }
-
+/*css para los radio*/
+.login_box .form-check
+{
+    display: flex;
+    align-items: stretch;
+}
+.login_box .form-check label
+{
+    width: 98%;
+    margin-right: 53px;
+}
 .login_box input[type="submit"]{
     border:none;
     outline: none;
