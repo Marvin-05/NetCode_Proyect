@@ -8,48 +8,33 @@
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 <body>
-    <button id="java-s1">Session 1</button>
-    <button id="java-s2">Session 2</button>
 
-    <h1>Curso Java</h1>
+    <h1>Curso De Java</h1>
 
-    <div id="jbox1" class="clase-1">
-        <p>
-            <h2>Introduccion a Java</h2> <br><br>
-            Java en un lenguaje moderno de programación de alto nivel, diseñado al inicio de los años 90 por Sun Microsystems y actualmente propiedad de Oracle. <br><br>
+    <div class="sessions"> <!-- en este div se cargaran los botones dependiendo de el numero de temas en un curso -->
 
-            Java es una Independiente de la Plataforma, lo que significa que ¡sólo necesitas escribir el programa una vez para poderlo ejecutar en varias plataformas diferentes!
-            Java es portable, robusto y dinámico, con la habilidad de ajustarse a las necesidades de virtualmente cualquier tipo de aplicación <br><br>
+        {% for result in range(temas) %}
 
-            Java es utilizado para desarrollar aplicaciones para Android de Google, diversas aplicaciones para Escritorio, como reproductores multimedia, programas antivirus, Aplicaciones Web, Aplicaciones Empresariales (por ejemplo, Bancarias) ¡y muchas más! <br><br>
-        </p>
+            <button id="javaTema{{result}}"> Tema {{ result }}: {{ Nombres[loop.index - 1] }} </button>
+            <br>
+
+        {% endfor %}
+
+        <br><br>
+
+        <a href="/Cursos"><h4>Regresar</h4></a>
+    </div>
+
+
+    <div class = contenido> <!-- en este div se cargara la info de cada tema mediante ajax -->
+
+        <h3> Tema 0: Introduccion a Java </h3>
+
+        java es...
+
+        // aqui se cargara la informacion de cada tema
 
     </div>
-    <div id="jbox2" class="clase-1">
-        <h2>A Hello World Program</h2>
-           <p>
 
-                Tu primer programa <br><br>
-
-                Vamos a comenzar creando un programa sencillo que imprima "Hello World" en la pantalla. <br><br>
-                	class MyClass {<br>
-
-                		  &emsp;public static void main(String[ ] args) { <br>
-
-                			&emsp;&emsp;System.out.println("Hello World"); <br>
-
-                		&emsp;} <br>
-
-                } <br><br>
-
-                En Java, cada línea de código que se puede ejecutar necesita estar dentro de una clase.
-                En nuestro ejemplo, nombramos la clase MyClass. Aprenderás más sobre clases en los próximos módulos. <br><br>
-
-                En Java, cada aplicación tiene un punto de entrada, o un punto de partida, el cual es un método llamado main. <br>
-            </p>
-
-    </div>
-    <a href="/Cursos" id="back"><h4>Regresar</h4></a>
-    <script src="/static/scripts/scriptCursos.js"></script>
 </body>
 </html>

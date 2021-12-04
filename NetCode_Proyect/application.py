@@ -20,8 +20,6 @@ Session(app)
 
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
-
-
 @app.route("/home")
 @app.route("/")
 def hello():
@@ -34,6 +32,7 @@ def login():
 
     if request.method == 'POST':
 
+        # validamos que ningun campo este vacio
         if not request.form.get("username"):
             return "error en username"
         elif not request.form.get("password"):
@@ -42,19 +41,20 @@ def login():
         # establecemos la coneccion con la base de datos Users
         conn = connect()
 
+        # validamos que los datos de login sean correctos
         if not Correct_LogIn(conn, request.form.get("password"), request.form.get("username")):
             return "datos erroneos"
 
-        c = conn.cursor()
+        c = conn.cursor() # creamos un cursor de la coneccion a la base de datos
 
+        # obtenemos el id del usuario logeado
         rows = c.execute("SELECT * FROM Info_Usuario WHERE NickName = :nick", {'nick':request.form.get("username")})
         for row in rows:
             User = row[0]
 
-        print(User)
-        session["user_id"] = User
+        session["user_id"] = User # guardamos la secion
 
-        conn.close()
+        conn.close() # cerramos la conexcion a la base de datos
 
         return redirect("/Cursos")
 
@@ -65,6 +65,7 @@ def registro():
 
     if request.method == 'POST':
 
+        # validamos que ningun campo este vacio
         if not request.form.get("name"):
             return "error en name"
         elif not request.form.get("nick"):
@@ -77,12 +78,14 @@ def registro():
         # establecemos la coneccion con la base de datos Users
         conn = connect()
 
+        #validamos que el nick/username no se repita para varios usuario
         if Nick_existente(conn, request.form.get("nick")):
             return "nic existente"
 
+        # guardamos los nuevos datos del nuevo usuario en la base de datos
         New_Register(conn, request.form.get("name"), request.form.get("nick"), request.form.get("email"), generate_password_hash(request.form.get("password")))
 
-        conn.close()
+        conn.close() # cerramos la conexcion a la base de datos
 
         return redirect("/login")
 
@@ -106,15 +109,18 @@ def recover():
         # establecemos la coneccion con la base de datos Users
         conn = connect()
 
+        # si los datos del usuario nos son correctos mostramos un apology
         if not  Correct_User(conn, request.form.get("nickname"), request.form.get("email")):
             return "error en los datos del username & email"
 
+        # si los campos de las password son diferentes mostramos un apology
         if request.form.get("confirm") != request.form.get("password"):
             return "error las contraseñas son diferentes"
 
+        # actualizamos la password en la base de datos
         recover_password(conn, generate_password_hash(request.form.get("password")), request.form.get("nickname"))
 
-        conn.close()
+        conn.close() # cerramos la conexcion a la base de datos
 
         return redirect("/login")
 
@@ -165,7 +171,27 @@ def C():
 
 @app.route("/Java")
 def Java():
-    return render_template("CursoJava.html")
+
+    conn = connect() # conecctamos a la base de datos
+
+    cursor = conn.cursor()
+
+    # obtenemos el numero de temas y los nombres de los temas de un curso
+    results = cursor.execute("SELECT Curso.Numero_Temas,  Tema.Nombre FROM Curso INNER JOIN Tema on Tema.Id_Curso=Curso.Id WHERE Curso.Id=2")
+
+    nTemas = 0 # aqui guardaremos el numero de temas
+    names = [] # aqui guardaremos los nombres de cada tema
+
+    for r in results:
+        for c in r:
+            try:
+                nTemas = int(c) # si es un digito es el numero de temas
+            except:
+                names.append(c) # sino es el nombre de un tema
+
+    conn.close() # cerramos la coneccion a la base de datos
+
+    return render_template("CursoJava.html", Nombres = names, temas=nTemas)
 
 @app.route("/logout", methods = ["GET", "POST"])
 def logout():

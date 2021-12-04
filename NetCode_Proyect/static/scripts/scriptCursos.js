@@ -28,6 +28,8 @@ $(p_s1).on("click", function(){
 
 });
 
+Numero_Temas
+
 $(p_s2).on("click", function(){
 
    $("#pbox2").show();
