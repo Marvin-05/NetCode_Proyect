@@ -20,6 +20,7 @@
 </head>
 <header>
     {% block header %}
+    {% endblock %}
             <div class="icons-enlaces">
                 <ul>
                     <div class="text">
@@ -42,57 +43,58 @@
                     </div>
                 </ul>
             </div>
-    {% endblock %}
 </header>
 <body>
-    {% block body %}
-    {% endblock %}
-    <div class="BIENVENIDA-HOME">
-        <img src="../static/img/welcome.png" alt="Bienvenida a home">
-    </div>
-    <div class="main-container">
-       <div class = "slider">
-            <div id="demo" class="carousel slide" data-ride="carousel">
-                <ul class="carousel-indicators">
-                    <li data-target="#demo" data-slide-to="0" class="active"></li>
-                    <li data-target="#demo" data-slide-to="1"></li>
-                    <li data-target="#demo" data-slide-to="2"></li>
-                </ul>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img src="../static/img/1.png" alt="Ora ora" width="100%" height="300">
+    {% block body%}
+        <div class="BIENVENIDA-HOME">
+            <img src="../static/img/welcome.png" alt="Bienvenida a home">
+        </div>
+        <div class="main-container">
+           <div class = "slider">
+                <div id="demo" class="carousel slide" data-ride="carousel">
+                    <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                    </ul>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="../static/img/1.png" alt="Ora ora" width="100%" height="300">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../static/img/2.png" alt="jotaro" width="100%" height="300">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../static/img/3.png" alt="lero lero" width="100%" height="300">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                  </a>
+                  <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                  </a>
                 </div>
-                <div class="carousel-item">
-                    <img src="../static/img/2.png" alt="jotaro" width="100%" height="300">
-                </div>
-                <div class="carousel-item">
-                    <img src="../static/img/3.png" alt="lero lero" width="100%" height="300">
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-              </a>
-              <a class="carousel-control-next" href="#demo" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-              </a>
             </div>
         </div>
-    </div>
-    <h2>CURSOS DISPONIBLES</h2>
-    <div class="cursos">
-        <div class="card-c">
-            <a href="/C"><img src="../static/img/C.png" alt="curso c"></a>
+        <h2>CURSOS DISPONIBLES</h2>
+        <div class="cursos">
+            <div class="card-c">
+                <a href="/C"><img src="../static/img/C.png" alt="curso c"></a>
+            </div>
+            <div class= "card-py">
+                <a href="/Python"><img src="../static/img/python.png" alt="curso python"></a>
+            </div>
+            <div class="card-java">
+                <a href="/Java"><img src="../static/img/java.png" alt="curso java"></a>
+            </div>
         </div>
-        <div class= "card-py">
-            <a href="/Python"><img src="../static/img/python.png" alt="curso python"></a>
-        </div>
-        <div class="card-java">
-            <a href="/Java"><img src="../static/img/java.png" alt="curso java"></a>
-        </div>
-    </div>
+    {%endblock%}
+
 </body>
 <footer>
     {% block footer %}
+    {% endblock %}
         <div class="contac-us">
             <div class="Integrantes">
                 <p>Integrantes del proyecto:</p>
@@ -105,6 +107,5 @@
             </div>
             <p>Todos los derechos reservados a NETCODE</p>
         </div>
-    {% endblock %}
 </footer>
 </html>

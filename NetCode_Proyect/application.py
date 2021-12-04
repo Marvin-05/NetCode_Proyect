@@ -132,6 +132,11 @@ def recover():
 def session_open():
     return render_template("Cursos.html")
 
+@app.route("/admin")
+@login_required
+def session_opened():
+    return render_template("admin.html")
+
 # creacion de formimagenes
 
 @app.route("/formImage", methods= ["GET", "POST"])
@@ -149,13 +154,19 @@ def subir():
         if archivo:
             nombreArchivo = archivo.filename
             archivo.save(os.path.join(app.config["UPLOAD_FOLDER"], nombreArchivo))
-            return redirect("/Cursos")
+            return redirect("/admin")
 
         else:
             return redirect("/subir")
 
     else:
         return render_template("FormImage.html")
+
+
+# Administrar los comenatarios del foro
+@app.route("/foro-comentarios", methods= ["GET", "POST"])
+def foroAdmin():
+    return render_template("foro-tabla.html")
 
 
 @app.route("/Python")
