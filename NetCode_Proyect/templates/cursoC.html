@@ -4,23 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width= , initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Curso de c</title>
+    <title>Curso de Java</title>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-
 </head>
-
 <body>
 
     <h1>Curso De C</h1>
 
-    <div class="sessions">
+    <div class="sessions"> <!-- en este div se cargaran los botones dependiendo de el numero de temas en un curso -->
+
+        {% for result in range(temas) %}
+
+            <button id="javaTema{{result}}"> Tema {{ result }}: {{ Nombres[loop.index - 1] }} </button>
+            <br>
+
+        {% endfor %}
+
+        <br><br>
+
+        <a href="/Cursos"><h4>Regresar</h4></a>
+    </div>
 
 
+    <div class = contenido> <!-- en este div se cargara la info de cada tema mediante ajax -->
 
-        <a href="/Cursos" id="back"><h4>Regresar</h4></a>
+        <h3> Tema 0: Introduccion a C </h3>
+
+        C es...
+
+        // aqui se cargara la informacion de cada tema
 
     </div>
 
-    <script src="/static/scripts/scriptCursos.js"></script>
 </body>
 </html>

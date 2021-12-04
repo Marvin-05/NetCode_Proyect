@@ -56,7 +56,7 @@ def login():
 
         conn.close() # cerramos la conexcion a la base de datos
 
-        return redirect("/Cursos")
+        return redirect("/admin")
 
     return render_template("login.html")
 
@@ -177,7 +177,27 @@ def Python():
 @app.route("/C")
 @login_required
 def C():
-    return render_template("cursoC.html")
+
+    conn = connect() # conecctamos a la base de datos
+
+    cursor = conn.cursor()
+
+    # obtenemos el numero de temas y los nombres de los temas de un curso
+    results = cursor.execute("SELECT Curso.Numero_Temas,  Tema.Nombre FROM Curso INNER JOIN Tema on Tema.Id_Curso=Curso.Id WHERE Curso.Id=2")
+
+    nTemas = 0 # aqui guardaremos el numero de temas
+    names = [] # aqui guardaremos los nombres de cada tema
+
+    for r in results:
+        for c in r:
+            try:
+                nTemas = int(c) # si es un digito es el numero de temas
+            except:
+                names.append(c) # sino es el nombre de un tema
+
+    conn.close() # cerramos la coneccion a la base de datos
+
+    return render_template("cursoC.html", Nombres = names, temas=nTemas)
 
 
 @app.route("/Java")
