@@ -1,3 +1,4 @@
+/*
 let c_s1 = document.getElementById("c-s1");
 let c_s2 = document.getElementById("c-s2");
 let p_s1 = document.getElementById("python-s1");
@@ -47,3 +48,4 @@ $(j_s2).on("click", function(){
    $("#jbox1").hide();
 
 });
+*/
