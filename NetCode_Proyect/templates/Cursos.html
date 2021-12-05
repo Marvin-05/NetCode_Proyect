@@ -30,7 +30,7 @@
                         <li><a href="/Cursos"> <img src="../static/img/home.png" alt="homeicon"> Home</a></li>
                     </div>
                     <div class="image-icon">
-                        <li><a href="/foro"><img src="../static/img/chat.png" alt="homeicon">Foro</a></li>
+                        <li><a href="#"><img src="../static/img/chat.png" alt="homeicon">Foro</a></li>
                     </div>
                     <div class="image-icon">
                         <li><a href="/formImage"> <img src="../static/img/book.png" alt="bibliotecaicon"> Biblioteca</a></li>
@@ -45,7 +45,11 @@
             </div>
 </header>
 <body>
+    <div id="contenedor_carga">
+            <div id="carga"></div>
+    </div>
     {% block body%}
+
         <div class="BIENVENIDA-HOME">
             <img src="../static/img/welcome.png" alt="Bienvenida a home">
         </div>
@@ -108,4 +112,13 @@
             <p>Todos los derechos reservados a NETCODE</p>
         </div>
 </footer>
+<script>
+    window.onload = function()
+    {
+        var contenedor = document.getElementById('contenedor_carga');
+
+        contenedor.style.visibility = 'hidden';
+        contenedor.style.opacity = '0';
+    }
+</script>
 </html>
