@@ -1,5 +1,7 @@
 from flask import Flask, request, render_template,redirect, session, url_for
-from dataRequest import connect, New_Register, Nick_existente, Correct_LogIn, recover_password, Correct_User, login_required
+
+from dataRequest import connect, New_Register, Nick_existente, Correct_LogIn, recover_password, Correct_User, login_required, courseData, topicData
+
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_session import Session
 from tempfile import mkdtemp
@@ -172,18 +174,39 @@ def foroAdmin():
 @app.route("/Python")
 @login_required
 def Python():
-    return render_template("cursoPython.html")
+
+    conn = connect()
+
+    results = topicData(conn, 2)
+
+    nTemas = 0 # aqui guardaremos el numero de temas
+    names = [] # aqui guardaremos los nombres de cada tema
+
+    for r in results:
+        for c in r:
+            try:
+                nTemas = int(c) # si es un digito es el numero de temas
+            except:
+                names.append(c) # sino es el nombre de un tema
+
+    Curso = courseData(conn, 2)
+    nombreC = "curso"
+
+    for r in Curso:
+        for c in r:
+            nombreC = c
+
+    conn.close() # cerramos la coneccion a la base de datos
+
+    return render_template("arquitecturaCurso.html", Nombres = names, temas=nTemas, cursoSelected=nombreC)
 
 @app.route("/C")
 @login_required
 def C():
 
-    conn = connect() # conecctamos a la base de datos
+    conn = connect()
 
-    cursor = conn.cursor()
-
-    # obtenemos el numero de temas y los nombres de los temas de un curso
-    results = cursor.execute("SELECT Curso.Numero_Temas,  Tema.Nombre FROM Curso INNER JOIN Tema on Tema.Id_Curso=Curso.Id WHERE Curso.Id=2")
+    results = topicData(conn, 3)
 
     nTemas = 0 # aqui guardaremos el numero de temas
     names = [] # aqui guardaremos los nombres de cada tema
@@ -195,20 +218,24 @@ def C():
             except:
                 names.append(c) # sino es el nombre de un tema
 
+    Curso = courseData(conn, 3)
+    nombreC = "curso"
+
+    for r in Curso:
+        for c in r:
+            nombreC = c
+
     conn.close() # cerramos la coneccion a la base de datos
 
-    return render_template("cursoC.html", Nombres = names, temas=nTemas)
+    return render_template("arquitecturaCurso.html", Nombres = names, temas=nTemas, cursoSelected=nombreC)
 
 
 @app.route("/Java")
 def Java():
 
-    conn = connect() # conecctamos a la base de datos
+    conn = connect()
 
-    cursor = conn.cursor()
-
-    # obtenemos el numero de temas y los nombres de los temas de un curso
-    results = cursor.execute("SELECT Curso.Numero_Temas,  Tema.Nombre FROM Curso INNER JOIN Tema on Tema.Id_Curso=Curso.Id WHERE Curso.Id=2")
+    results = topicData(conn, 2)
 
     nTemas = 0 # aqui guardaremos el numero de temas
     names = [] # aqui guardaremos los nombres de cada tema
@@ -220,9 +247,16 @@ def Java():
             except:
                 names.append(c) # sino es el nombre de un tema
 
+    Curso = courseData(conn, 2)
+    nombreC = "curso"
+
+    for r in Curso:
+        for c in r:
+            nombreC = c
+
     conn.close() # cerramos la coneccion a la base de datos
 
-    return render_template("CursoJava.html", Nombres = names, temas=nTemas)
+    return render_template("arquitecturaCurso.html", Nombres = names, temas=nTemas, cursoSelected=nombreC)
 
 @app.route("/logout", methods = ["GET", "POST"])
 def logout():

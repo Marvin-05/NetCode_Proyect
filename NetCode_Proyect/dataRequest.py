@@ -156,3 +156,21 @@ def login_required(f):
             return redirect("/login")
         return f(*args, **kwargs)
     return decorated_function
+
+
+def topicData(conn, id):
+
+    cursor = conn.cursor()
+
+    # obtenemos el numero de temas y los nombres de los temas de un curso
+    results = cursor.execute(f"SELECT Curso.Numero_Temas,  Tema.Nombre FROM Curso INNER JOIN Tema on Tema.Id_Curso=Curso.Id WHERE Curso.Id = {id}")
+
+    return results;
+
+def courseData(conn, id):
+
+    cursor = conn.cursor()
+
+    results = cursor.execute(f"SELECT Nombre FROM Curso WHERE Id = {id}")
+
+    return results;

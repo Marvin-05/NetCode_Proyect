@@ -1,0 +1,50 @@
+Clases sobre C - Session 2
+
+-----------------------------------------------------------------------------------------------------------------------
+
+Tema 3: Metodos de entrada y salida en C
+
+Anteriormente en el tema 0 de la sesion 1 visualizamos una funcion llamada "printf()", la cual es un metodo de salida, es decir que muestra informacion al usuario.
+
+Sin embargo, tambien tenemos metodos de entrada, los cuales nos permiten obtener informacion que el usuario ingrese por teclado. La funcion que utilizamos para eso se llama "scanf()"
+
+Recordando los identifiadores de los tipos de datos de la sesion pasada, en esta funcion 'scanf' los usaremos para "decirle" al compilador que tipo de dato va a guardar, la estructura de la funcion scanf es la siguiente:
+
+scanf("identificador_tipo_dato", &Variable);
+
+donde el & es un caracter especial que indica la direccion en memoria de la variable 'Variable', cabe destacar que la variable 'Variable' debe ser del mismo tipo de dato que el del identificador y que lo que el usuario ingrese debe ser del mismo tipo de dato ya que sino nos generara un error.
+
+veamos un programa para entenderlo mejor:
+
+// incluimos las librerias
+#include <stdio.h>
+
+// declaramos el main pero ahora con un tipo de dato
+int main()
+{
+	// declaramos una variable que guarde un dato entero sin darle un valor inicial
+	int numero;
+
+	// mostramos un mensaje para pedir un numero al usuario
+	printf("Ingrese un numero entero: ");
+
+	// obtenemos el valor que el usuario ingrese y lo guardamos en la variable numero
+	scanf("%d", &numero);
+
+	//imprimimos el numero usando el printf y el identificador de tipo de dato correspondiente a los enteros
+	// el '\n' representa un salto de linea
+	printf("\nel numero ingresado es %d", numero);
+
+	// colocamos el return 0 que indica el fin del programa y que lo hemos concluido con exito
+	return 0;
+}
+
+Observemos como en el printf usamos un identificador de tipo de dato dentro de las comillas, esto es debido a que la funcion printf no puede imprimir valores de una variable con solo poner el nombre de la variable. podemos poner todos los identificadores y variables que quermos en el printf, ejemplo:
+
+printf("Varias variables: %d, %d, %f, %c", v1, v2, v3, v4);
+
+Donde el primer identificador corresponde a la primer variable despues de las comillas, el segundo a la segunda variable y asi sucesivamente. Al igual que en el scanf, en el printf las variables deben ser del mismo tipo de dato que el de su identificador correspondiente (v1 y v2 int, v3 float, v4 char).
+
+-----------------------------------------------------------------------------------------------------------------------
+
+Tema 4: Operaciones con variables

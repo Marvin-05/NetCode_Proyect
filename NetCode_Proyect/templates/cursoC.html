@@ -9,32 +9,53 @@
 </head>
 <body>
 
-    <h1>Curso De C</h1>
-
-    <div class="sessions"> <!-- en este div se cargaran los botones dependiendo de el numero de temas en un curso -->
-
-        {% for result in range(temas) %}
-
-            <button id="javaTema{{result}}"> Tema {{ result }}: {{ Nombres[loop.index - 1] }} </button>
-            <br>
-
-        {% endfor %}
-
-        <br><br>
-
-        <a href="/Cursos"><h4>Regresar</h4></a>
-    </div>
-
-
-    <div class = contenido> <!-- en este div se cargara la info de cada tema mediante ajax -->
+    <div id="tema_0_c"> <!-- en este div se cargara la info de cada tema mediante ajax -->
 
         <h3> Tema 0: Introduccion a C </h3>
 
-        C es...
+        C es un lenguaje de programación de propósito general. Se trata de un lenguaje de tipos de datos estáticos, débilmente tipado,
+        de medio nivel, que dispone de las estructuras típicas de los lenguajes de alto nivel pero, a su vez, dispone de construcciones
+        del lenguaje que permiten un control a bajo nivel. <br><br>
 
-        // aqui se cargara la informacion de cada tema
+        Como todo lenguaje, C dispone de palabras reservadas, es decir, palabras propias del lenguaje que nos permiten realizar una diversidad
+        de funciones y acciones con ellas y por ende no podemos usarlas para nombrar variables. <br><br>
+
+        Algunas de estas palabras son: <br><br>
+
+        auto &emsp;double &emsp;int &emsp;struct <br>
+        break &emsp;else &emsp;long &emsp;switch <br>
+        case &emsp;enum &emsp;register &emsp;typedef <br>
+        char &emsp;extern &emsp;return &emsp;union <br>
+        const &emsp;float &emsp;short &emsp;unsigned <br>
+        continue &emsp;for &emsp;signed &emsp;void <br>
+        default &emsp;goto &emsp;sizeof &emsp;volatile <br>
+        do &emsp;if &emsp;static &emsp;while <br><br>
+
+        De igual forma en C siempre terminamos una sentencia con ';'. Y se hace uso de "Librerias", donde la mas usada es "stdio.h"
+        (standar input output) y requerimos de un metodo principal "main". Asi como que los bloques de codigo estan delimitados por "{...}". <br><br>
+
+        Ejemplo 1: Mi primer programa en C: <br><br>
+
+        // La doble pleca indica un comentario, es decir el compilador no lo toma como una sentencia <br><br>
+
+        // Incluimos nuestras librerias (siempre van al inicio de cada programa con extencion .c) <br>
+        // Las libreras se insertan de la siguiente manera #include <libreria.h> <br>
+
+        #include <stdio.h> <br><br>
+
+        // proseguimos escribiendo la funcion principal main y para comenzar a trabjar dentro de ella usamos los {} <br><br>
+
+        main() <br>
+        { <br>
+        	&emsp;// printf es una funcion de stdio.h que imprime un mensaje en consola <br>
+        	&emsp;printf("Hello World"); <br><br>
+
+        	&emsp;// El return 0 sirve para mostrarle al complilador donde finaliza el main. <br>
+        	&emsp;return 0; <br>
+        }
 
     </div>
 
+    <script src="/static/scripts/scriptCursos.js"></script>
 </body>
 </html>

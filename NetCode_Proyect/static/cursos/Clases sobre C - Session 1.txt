@@ -1,0 +1,102 @@
+Clases sobre C - Session 1
+
+-----------------------------------------------------------------------------------------------------------------------
+
+Tema 0: ¿Que es C?
+
+C es un lenguaje de programación de propósito general. Se trata de un lenguaje de tipos de datos estáticos, débilmente tipado, de medio nivel, que dispone de las estructuras típicas de los lenguajes de alto nivel pero, a su vez, dispone de construcciones del lenguaje que permiten un control a bajo nivel.
+
+Como todo lenguaje, C dispone de palabras reservadas, es decir, palabras propias del lenguaje que nos permiten realizar una diversidad de funciones y acciones con ellas y por ende no podemos usarlas para nombrar variables.
+
+Algunas de estas palabras son:
+
+auto      double   int       struct
+break     else     long      switch
+case      enum     register  typedef
+char      extern   return    union
+const     float    short     unsigned
+continue  for      signed    void
+default   goto     sizeof    volatile
+do        if       static    while
+
+De igual forma en C siempre terminamos una sentencia con ';'. Y se hace uso de "Librerias", donde la mas usada es "stdio.h" (standar input output) y requerimos de un metodo principal "main". Asi como que los bloques de codigo estan delimitados por "{...}".
+
+Ejemplo 1: Mi primer programa en C:
+
+// La doble pleca indica un comentario, es decir el compilador no lo toma como una sentencia
+
+// Incluimos nuestras librerias (siempre van al inicio de cada programa con extencion .c)
+// Las libreras se insertan de la siguiente manera #include <libreria.h>
+
+#include <stdio.h>
+
+// proseguimos escribiendo la funcion principal main y para comenzar a trabjar dentro de ella usamos los {}
+
+main()
+{
+	// printf es una funcion de stdio.h que imprime un mensaje en consola
+	printf("Hello World");
+
+	// El return 0 sirve para mostrarle al complilador donde finaliza el main.
+	return 0;
+}
+
+-----------------------------------------------------------------------------------------------------------------------
+
+Tema 1: Variables en C
+
+Anteriormente hablabamos de que no podemos hacer uso de algunas palabras para nombrar variables, pero ¿Que significa la palabra "VARIABLE"?
+
+Una variable en programacion es donde se guarda (y se recupera) datos que se utilizan en un programa.
+
+Cuando escribimos código, las variables se utilizan para:
+
+	-Guardar datos y estados.
+	-Asignar valores de una variable a otra.
+	-Representar valores dentro de una expresión matemática.
+	-Mostrar valores por pantalla.
+
+Las variables se representan de la siguiente manera: "Tipo de dato → identificador variable → valor almacenado"
+
+Cuando nos referimos a 'identificador variable', nos estamos refiriendo a el nombre con el cual identificaremos a nuestra variable, podemos utilizar cualquier nombre o letra para identificar una variable, sin embargo se suelen nombrar en dependencia del uso que se le dara o la informacion que guardaran.
+
+El 'Tipo de dato' no suele especificarse en todos los lenguajes de programacion, se usa mas en lenguajes debiles o viejos como C, Pascal, B, etc.
+
+Por ejemplo, queremos guardar un numero entero, podemos crear la variable de la siguiente manera:
+
+identificador_variable  	 valor almacenado
+	  numero  		     =		    4
+
+-----------------------------------------------------------------------------------------------------------------------
+
+Tema 2: Tipos de datos en C
+
+Como menconamos antes en c utilizamos los "Tipos De Datos" para declarar variables e incluso funciones como el 'main' pero, ¿Que es un tipo de dato?
+
+Un tipo de dato es la propiedad de un valor que determina su dominio (qué valores puede tomar), qué operaciones se le pueden aplicar y cómo es representado internamente por el computador.
+
+Existen muchos tipos de datos, aunque los mas utilizados son:
+
+	-void = se usa para representar algo nulo, que no retorna o contiene nada (que esta vacio).
+	-int = se usa para representar numeros enteros (Ej: -10, 100, 1000).
+	-long = tambien representa numeros enteros pero tiene mas alcance que los int (Ej: -4009112, 0, 20, 3000000).
+	-float = se usa para representar numeros flotantes, mejor conocidos como reales (Ej: 1.9, -6.32).
+	-char = lo usamos para representar caracteres (Ej: 'a', '$', '1').
+	-boolean = lo usamos para representar estados de verdadero o falso.
+
+Ahora que ya sabemos los tipos de datos mas usados veamos como declaramos variables en C.
+
+Anteriormente declaramos una variable llamada numero que contenia el valor 4 (numero = 4); sin embargo esa no es la forma correcta en la que declaraos variables en C, ya que nos falta especificar el tipo de datos de la variable 'numero', y eso se veria de la siguiente forma:
+
+ int numero = 4;
+
+ Tipo de dato 	identificador_variable  	 valor_almacenado     fin_sentecia
+	int  				numero  	    =	        4 					;
+
+Otro aspecto muy importante que usaremos luego seran los identificadores de tipos de datos, estos a diferencia de los identificadores de variables ya existen y cada tipo de dato posee uno, en otras palabras no podemos cambiarles el nombre. Los identificadores de los tipos de datos mas usados son:
+
+	-int = %d, %i (podemos usar cualquiera de los 2).
+	-long = %dl.
+	-float = %f.
+	-char = %c.
+	
