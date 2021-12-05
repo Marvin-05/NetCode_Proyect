@@ -1,1 +1,117 @@
-Tema 4: Operaciones con variables
+<h3> Operadores logicos y aritmeticos en C </h3> <br>
+
+<b> Operadores aritmeticos </b> <br><br>
+
+En C podemos usar operadores aritmeticos para realizar operaciones con variables, como sumar, restar, dividir y multiplicar. <br<br>
+
+Para sumar variables en C usamos el simbolo de suma convencional '+', este simbolo lo podemos usar con varoables de tipo numerico unicamente; <br>
+
+Para restar variables usamos el simbolo '-', para multiplicar '*' y para dividir usamos el simbolo '/' <br><br>
+
+// incluimos las librerias <br>
+#include <stdio.h> <br><br>
+
+// usamos el metodo main <br>
+int main() <br>
+{ <br>
+
+    &emsp;// declaramos 2 variables de tipo entero <br>
+    &emsp;int numero1, numero2; <br><br>
+
+    &emsp;// declaramos una variable que guarde la suma, resta, divicion y multiplicaccion <br>
+	&emsp;int suma, resta, divicion, multiplicacion; <br><br>
+
+	&emsp;// pedimos los valores de los numeros <br><br>
+
+	&emsp;printf("Ingrese un numero entero: "); <br>
+	&emsp;scanf("%d", &numero1); <br><br>
+
+	&emsp;printf("Ingrese un numero entero: "); <br>
+	&emsp;scanf("%d", &numero1); <br> <br>
+
+	&emsp;// usamos el simbolo + para sumar los numeros <br>
+	&emsp;suma = numero1 + numero2; <br><br>
+
+	&emsp;// usamos el simbolo - para restar los numeros <br>
+	&emsp;resta = numero1 - numero2; <br><br>
+
+	&emsp;// usamos el simbolo * para multiplicar los numeros <br>
+	&emsp;multiplicacion = numero1 * numero2; <br><br>
+
+	&emsp;// usamos el simbolo / para dividir los numeros <br>
+	&emsp;divicion = numero1 / numero2; <br><br>
+
+	&emsp;// imprimimos el resultado <br>
+	&emsp;printf("suma: %d \t resta: %d, \t divicion: %d \t multiplicacion: %d", suma, resta, divicion, multiplicacion); <br><br>
+
+    &emsp;// finalizamos el main <br>
+    &emsp;return 0; <br>
+
+} <br>
+
+Tmabien podemos usar el simbolo % para obtener el modulo (residuo) de una divicion: <br><br>
+
+// incluimos las librerias <br>
+#include <stdio.h> <br><br>
+
+// usamos el metodo main <br>
+int main() <br>
+{ <br>
+
+    &emsp;// declaramos 2 variables de tipo entero <br>
+    &emsp;int numero1, numero2; <br><br>
+
+	&emsp;// declaramos la variable que gusradara el residuo <br>
+    &emsp;int residuo; <br><br>
+
+	&emsp;// pedimos los valores de los numeros <br><br>
+
+	&emsp;printf("Ingrese un numero entero: "); <br>
+	&emsp;scanf("%d", &numero1); <br><br>
+
+	&emsp;printf("Ingrese un numero entero: "); <br>
+	&emsp;scanf("%d", &numero1); <br> <br>
+
+	&emsp;// calculamos el residuo de la divicion <br>
+	&emsp;residuo = numero1 % numero2; <br><br>
+
+	&emsp;// imprimimos el resultado <br>
+	&emsp;printf("residuo de la divicion: %d", residuo); <br><br>
+
+    &emsp;// finalizamos el main <br>
+    &emsp;return 0; <br>
+
+} <br><br><br>
+
+<b> Operadores logicos </b> <br><br>
+
+En C podemos encontrar los siguientes operadores logicos: <br><br>
+
+&emsp; < (menor que) <br>
+&emsp; > (mayor que) <br>
+&emsp; == (igual a) <br>
+&emsp; <= (menor que o igual a) <br>
+&emsp; >= (mayor que o igual a) <br>
+&emsp; != (diferente que) <br><br>
+
+Los cuales podemos concatenar para crear operaciones logicas mas completas, usando && (y), || (o). <br><br>
+
+estos ultimos 2 tienen algo llamado tabla de verdad, lo cual determina cuando se hacer verdadero y cuando falso: <br><br>
+
+<b> Tabla de verdad de && (y) </b> <br><br>
+
+validacion1 &emsp; validacion2 &emsp; Resultado <br>
+&emsp;      v      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;      v     &emsp;&emsp;&emsp;&emsp;&emsp;           v      <br>
+&emsp;      v      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;      f     &emsp;&emsp;&emsp;&emsp;&emsp;	   	    f      <br>
+&emsp;      f      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;      v     &emsp;&emsp;&emsp;&emsp;&emsp;           f      <br>
+&emsp;      f      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;      f     &emsp;&emsp;&emsp;&emsp;&emsp;           f      <br><br>
+
+<br>
+
+<b> Tabla de verdad de || (o) </b> <br><br>
+
+validacion1 &emsp; validacion2 &emsp; Resultado <br>
+&emsp;      v      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;      v     &emsp;&emsp;&emsp;&emsp;&emsp;           v      <br>
+&emsp;      v      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;      f     &emsp;&emsp;&emsp;&emsp;&emsp;	   	    v      <br>
+&emsp;      f      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;      v     &emsp;&emsp;&emsp;&emsp;&emsp;           v      <br>
+&emsp;      f      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;      f     &emsp;&emsp;&emsp;&emsp;&emsp;           f      <br><br>
