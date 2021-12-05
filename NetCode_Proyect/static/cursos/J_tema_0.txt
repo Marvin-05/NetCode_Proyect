@@ -1,0 +1,14 @@
+Conceptos Basicos
+clase 1.1: Introduccion a Java
+********
+Java en un lenguaje moderno de programación de alto nivel, diseñado al inicio de los años 90 por Sun Microsystems y
+actualmente propiedad de Oracle. 
+
+Java es una Independiente de la Plataforma, lo que significa que ¡sólo necesitas escribir el programa una vez para 
+poderlo ejecutar en varias plataformas diferentes!
+
+Java es portable, robusto y dinámico, con la habilidad de ajustarse a las necesidades de virtualmente cualquier tipo 
+de aplicación
+
+Java es utilizado para desarrollar aplicaciones para Android de Google, diversas aplicaciones para Escritorio, como 
+reproductores multimedia, programas antivirus, Aplicaciones Web, Aplicaciones Empresariales (por ejemplo, Bancarias) ¡y muchas más!

@@ -5,6 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="../static/css/cursos.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 
         <!-- http://getbootstrap.com/ -->
@@ -19,29 +25,68 @@
 
         <title>Curso</title>
     </head>
-
+    <header>
+            <div class="icons-enlaces">
+                <ul>
+                    <div class="text">
+                        <h1>NETCODE</h1>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="/Cursos"> <img src="../static/img/home.png" alt="homeicon"> Home</a></li>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="#"><img src="../static/img/chat.png" alt="homeicon">Foro</a></li>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="/formImage"> <img src="../static/img/book.png" alt="bibliotecaicon"> Biblioteca</a></li>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="#"><img src="../static/img/usericon.png" alt="user">usuario</a></li>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="/logout"><img src="../static/img/logout.png" alt="logout">log out</a></li>
+                    </div>
+                </ul>
+            </div>
+    </header>
     <body>
-
-        <h1>Curso De {{ cursoSelected }}</h1>
+        <div class="texto">
+            <h1>Curso De {{ cursoSelected }}</h1>
+        </div>
 
         <div class="sessions"> <!-- en este div se cargaran los botones dependiendo de el numero de temas en un curso -->
-
-            {% for result in range(temas) %}
-
-                <button id="{{cursoSelected}}_{{result}}"> Tema {{ result }}: {{ Nombres[loop.index - 1] }} </button>
-                <br>
-
-            {% endfor %}
-
-            <br><br>
-
-            <a href="/Cursos"><h4>Regresar</h4></a>
+                {% for result in range(temas) %}
+                    <button id="{{cursoSelected}}_{{result}}" class="btn btn-primary btn-block"> Tema {{ result }}: {{ Nombres[loop.index - 1] }} </button>
+                    <br>
+                {% endfor %}
+                <br><br>
         </div>
+<<<<<<< HEAD
 
         <div id="tema"></div>
 
 
-        <script src="/static/scripts/scriptCursos.js"></script>
+=======
+        <div id="tema">
 
+
+        </div>
+        <a href="/Cursos" class="btn btn-primary btn-block"><h4>Regresar</h4></a>
+>>>>>>> d52d2d0cac04eaa09c2e0a1f0180e8cf5be7ab9c
+        <script src="/static/scripts/scriptCursos.js"></script>
     </body>
+    <footer>
+        <div class="contac-us">
+            <div class="Integrantes">
+                <p>Integrantes del proyecto:</p>
+                <ul>
+                    <li><a href="https://github.com/Marvin-05"><img src="../static/img/github.png" alt="github">Marvin Sevilla</a></li>
+                    <li><a href="https://github.com/fernando-fate"><img src="../static/img/github.png" alt="github">Fernando Galo</a></li>
+                    <li><a href="https://github.com/Kirst08"><img src="../static/img/github.png" alt="github">Kirsten López</a></li>
+                    <li><a href="https://github.com/mreyes2017"><img src="../static/img/github.png" alt="github">Moises Reyes</a></li>
+                </ul>
+            </div>
+            <p>Todos los derechos reservados a NETCODE</p>
+        </div>
+</footer>
 </html>

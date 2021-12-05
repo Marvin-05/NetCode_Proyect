@@ -1,0 +1,36 @@
+Operadores de incremento y decremento
+
+Operadores de Incremento
+
+Un operador de incremento o decremento provee una manera más conveniente y compacta para incrementar o disminuir
+el valor de una variable en uno.
+
+Por ejemplo, la declaración x=x+1; puede ser simplificada a ++x;
+
+int test = 5;
+++test; //test is now 6
+
+Operadores de decremento
+
+El operador decremento (--) es utilizado para disminuir el valor de una variable en uno.
+
+int test = 5;
+--test; //tst is now 4
+
+Operadores de Asignacion
+Ya estás familiarizado con el operador asignación (=), el cual asigna un valor a una variable.
+
+int value = 5;
+
+Esto asigna el valor de 5 a la variable llamada "value" del tipo int.
+
+Java provee varios operadores de asignación para hacer más fácil la escritura del código.
+
+Adicion y asignacion (+=):
+int num1 = 4;
+int num2 = 8;
+num2 += num1; // num2 = num2 + num1;
+
+// num2 is 12 and num1 is 4
+
+Sustracion y asignacion (- =)
