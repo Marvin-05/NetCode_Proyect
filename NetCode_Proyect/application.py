@@ -258,6 +258,13 @@ def Java():
 
     return render_template("arquitecturaCurso.html", Nombres = names, temas=nTemas, cursoSelected=nombreC)
 
+@app.route("/foro")
+def foro():
+
+    return render_template("Foro.html")
+
+
+
 @app.route("/logout", methods = ["GET", "POST"])
 def logout():
     if request.method == 'GET':

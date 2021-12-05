@@ -1,0 +1,32 @@
+Los operadores Matematicos
+
+Java provee un amplio conjunto de operadores para utilizarse en la manipulación de variables.
+ Un valor utilizado en cualquier lado del operador es llamado un operando.
+
+Por ejemplo, en la expresión siguiente, los números 6 y 3 son operandos del operador suma:
+
+int x= 6 + 3;
+
+Operadores aritméticos Java:
++ adición
+- sustracción
+* multiplicación
+/ división
+% módulo
+
+Adision
+El operador + suma dos valores, como dos constantes, una constante y una variable, o una variable y otra variable
+
+Sustraccion
+El operador - sustrae un valor de otro
+
+Multiplicacion
+El operador * Multiplica dos valores.
+
+Division
+El operados / divide un valor entre otro
+
+Modulo
+El operador matemático módulo (o resto) ejecuta una división entera de un valor entre otro valor, y retorna el resto
+de esa división.
+El operador para la operación de módulo es el carácter de porcentaje (%).
