@@ -1,0 +1,53 @@
+Los operadores lógicos son utilizados para combinar varias condiciones.
+
+Digamos que quieres que tu programa imprima "Welcome!" sólo cuando la variable
+age sea mayor que 18 y la variable money sea mayor que 500.
+
+Una manera de lograr esto es usando declaraciones if anidadas:
+
+public class Program {
+    public static void main(String[] args) {
+        int age = 22;
+        int money = 800;
+
+        if (age > 18) {
+            if (money > 500) {
+                System.out.println("Welcome!");
+            }
+        }
+    }
+}
+
+Sin embargo, utilizando el operador lógico AND (&&) es una mejor manera:
+
+public class Program {
+    public static void main(String[] args) {
+        int age = 22;
+        int money = 800;
+
+        if (age > 18 && money > 500) {
+            System.out.println("Welcome!");
+        }
+    }
+}
+
+
+El operador OR (||) valida si cualquiera de las condiciones es verdadera.
+La condición resulta verdadera, si cualquier de los operandos evalúa a verdadero.
+
+public class Program {
+    public static void main(String[] args) {
+        int age = 25;
+        int money = 100;
+
+        if (age > 18 || money > 500) {
+            System.out.println("Welcome!");
+        }
+    }
+}
+
+
+El código anterior imprimirá "Welcome!" si "age" es mayor que 18 ó si "money" es mayor que 500.
+
+El operador lógico NOT (!) es utilizado para revertir el estado lógico de su operando.
+Si una condición es verdadera, el operador lógico NOT la convertirá en falsa

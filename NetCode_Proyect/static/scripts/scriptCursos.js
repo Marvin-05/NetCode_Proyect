@@ -27,3 +27,9 @@ $("#C_4").on('click', function(){
    $("#tema").load('/static/cursos/C_tema_4.txt')
 
 });
+
+$("#J_0").on('click', function(){
+
+   $("#tema").load('/static/cursos/J_tema_0.txt')
+
+});
