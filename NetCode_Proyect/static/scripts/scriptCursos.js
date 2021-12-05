@@ -28,7 +28,6 @@ $("#C_4").on('click', function(){
 
 });
 
-<<<<<<< HEAD
 $("#C_5").on('click', function(){
 
    $("#tema").load('/static/cursos/C_tema_5.txt')
@@ -56,10 +55,9 @@ $("#C_8").on('click', function(){
 $("#C_9").on('click', function(){
 
    $("#tema").load('/static/cursos/C_tema_9.txt')
-=======
+});
+
 $("#J_0").on('click', function(){
 
    $("#tema").load('/static/cursos/J_tema_0.txt')
->>>>>>> d52d2d0cac04eaa09c2e0a1f0180e8cf5be7ab9c
-
 });
