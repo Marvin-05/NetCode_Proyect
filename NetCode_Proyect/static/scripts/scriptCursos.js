@@ -1,14 +1,29 @@
+$("#C_0").on('click', function(){
 
-$("#C_0").click(function(){
+   $("#tema").load('/static/cursos/C_tema_0.txt')
 
-   $.ajax({
+});
 
-      url : "cursoC.html",
+$("#C_1").on('click', function(){
 
-      succes : function(data){
-         $("#tema").html(data)
-      }
+   $("#tema").load('/static/cursos/C_tema_1.txt')
 
-   });
+});
+
+$("#C_2").on('click', function(){
+
+   $("#tema").load('/static/cursos/C_tema_2.txt')
+
+});
+
+$("#C_3").on('click', function(){
+
+   $("#tema").load('/static/cursos/C_tema_3.txt')
+
+});
+
+$("#C_4").on('click', function(){
+
+   $("#tema").load('/static/cursos/C_tema_4.txt')
 
 });

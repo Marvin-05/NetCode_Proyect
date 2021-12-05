@@ -1,0 +1,25 @@
+Tema 1: Variables en C <br><br>
+
+Anteriormente hablabamos de que no podemos hacer uso de algunas palabras para nombrar variables, pero ¿Que significa la palabra "VARIABLE"? <br><br>
+
+Una variable en programacion es donde se guarda (y se recupera) datos que se utilizan en un programa. <br><br>
+
+Cuando escribimos código, las variables se utilizan para: <br><br>
+
+	-Guardar datos y estados. <br>
+	-Asignar valores de una variable a otra. <br>
+	-Representar valores dentro de una expresión matemática. <br>
+	-Mostrar valores por pantalla. <br><br>
+
+Las variables se representan de la siguiente manera: "Tipo de dato → identificador variable → valor almacenado" <br><br>
+
+Cuando nos referimos a 'identificador variable', nos estamos refiriendo a el nombre con el cual identificaremos a nuestra variable,
+podemos utilizar cualquier nombre o letra para identificar una variable, sin embargo se suelen nombrar en dependencia del uso que se le
+dara o la informacion que guardaran. <br><br>
+
+El 'Tipo de dato' no suele especificarse en todos los lenguajes de programacion, se usa mas en lenguajes debiles o viejos como C, Pascal, B, etc. <br><br>
+
+Por ejemplo, queremos guardar un numero entero, podemos crear la variable de la siguiente manera: <br><br>
+
+identificador_variable  	 valor almacenado <br>
+	  numero  		     =		    4 <br>

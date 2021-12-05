@@ -1,0 +1,44 @@
+Tema 0: ¿Que es C? <br><br>
+
+C es un lenguaje de programación de propósito general. Se trata de un lenguaje de tipos de datos estáticos, débilmente tipado,
+de medio nivel, que dispone de las estructuras típicas de los lenguajes de alto nivel pero, a su vez, dispone de construcciones del
+lenguaje que permiten un control a bajo nivel. <br><br>
+
+Como todo lenguaje, C dispone de palabras reservadas, es decir, palabras propias del lenguaje que nos permiten realizar
+una diversidad de funciones y acciones con ellas y por ende no podemos usarlas para nombrar variables. <br><br>
+
+Algunas de estas palabras son: <br> <br>
+
+auto      double   int       struct <br>
+break     else     long      switch <br>
+case      enum     register  typedef <br>
+char      extern   return    union <br>
+const     float    short     unsigned <br>
+continue  for      signed    void <br>
+default   goto     sizeof    volatile <br>
+do        if       static    while <br><br>
+
+De igual forma en C siempre terminamos una sentencia con ';'. Y se hace uso de "Librerias",
+donde la mas usada es "stdio.h" (standar input output) y requerimos de un metodo principal "main".
+Asi como que los bloques de codigo estan delimitados por "{...}". <br><br>
+
+Ejemplo 1: Mi primer programa en C: <br><br>
+
+// La doble pleca indica un comentario, es decir el compilador no lo toma como una sentencia <br><br>
+
+// Incluimos nuestras librerias (siempre van al inicio de cada programa con extencion .c) <br>
+// Las libreras se insertan de la siguiente manera #include <libreria.h> <br><br>
+
+#include <stdio.h> <br><br>
+
+// proseguimos escribiendo la funcion principal main y para comenzar a trabjar dentro de ella usamos los {} <br><br>
+
+main() <br>
+{ <br>
+	// printf es una funcion de stdio.h que imprime un mensaje en consola <br>
+	printf("Hello World"); <br><br>
+
+	// El return 0 sirve para mostrarle al complilador donde finaliza el main. <br>
+	return 0; <br>
+} <br><br>
+

@@ -1,0 +1,35 @@
+Tema 2: Tipos de datos en C <br>
+
+Como menconamos antes en c utilizamos los "Tipos De Datos" para declarar variables e incluso funciones como el 'main' pero, ¿Que es un tipo de dato? <br><br>
+
+Un tipo de dato es la propiedad de un valor que determina su dominio (qué valores puede tomar),
+qué operaciones se le pueden aplicar y cómo es representado internamente por el computador. <br><br>
+
+Existen muchos tipos de datos, aunque los mas utilizados son: <br><br>
+
+	-void = se usa para representar algo nulo, que no retorna o contiene nada (que esta vacio). <br>
+	-int = se usa para representar numeros enteros (Ej: -10, 100, 1000). <br>
+	-long = tambien representa numeros enteros pero tiene mas alcance que los int (Ej: -4009112, 0, 20, 3000000). <br>
+	-float = se usa para representar numeros flotantes, mejor conocidos como reales (Ej: 1.9, -6.32). <br>
+	-char = lo usamos para representar caracteres (Ej: 'a', '$', '1'). <br>
+	-boolean = lo usamos para representar estados de verdadero o falso. <br><br>
+
+Ahora que ya sabemos los tipos de datos mas usados veamos como declaramos variables en C. <br><br>
+
+Anteriormente declaramos una variable llamada numero que contenia el valor 4 (numero = 4); sin embargo esa no es la forma correcta
+en la que declaraos variables en C, ya que nos falta especificar el tipo de datos de la variable 'numero',
+y eso se veria de la siguiente forma: <br><br>
+
+ int numero = 4; <br><br>
+
+ Tipo de dato 	identificador_variable  	 valor_almacenado     fin_sentecia <br>
+	int  				numero  	    =	        4 					; <br><br>
+
+Otro aspecto muy importante que usaremos luego seran los identificadores de tipos de datos, estos a diferencia de los
+identificadores de variables ya existen y cada tipo de dato posee uno, en otras palabras no podemos cambiarles el nombre.
+Los identificadores de los tipos de datos mas usados son: <br><br>
+
+	-int = %d, %i (podemos usar cualquiera de los 2). <br>
+	-long = %dl. <br>
+	-float = %f. <br>
+	-char = %c. <br>
