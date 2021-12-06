@@ -309,11 +309,12 @@ def foro():
         conn = connect()
         cursor = conn.cursor()
 
-        comentarios = cursor.execute("select ForoComentarios.Comment, ForoComentarios.Date, \
+        comentarios = cursor.execute("select ForoComentarios.Id, ForoComentarios.Comment, ForoComentarios.Date, \
                                     ForoComentarios.Time, Info_Usuario.NickName from ForoComentarios \
                                     inner join Info_Usuario \
                                     on Info_Usuario.Id=ForoComentarios.User_Id")
 
+        ids = []
         nicks = []
         comments = []
         dates = []
@@ -322,17 +323,41 @@ def foro():
         count = 0
 
         for r in comentarios:
-            nicks.append(r[3])
-            comments.append(r[0])
-            dates.append(r[1])
-            times.append(r[2])
+            ids.append(r[0])
+            nicks.append(r[4])
+            comments.append(r[1])
+            dates.append(r[2])
+            times.append(r[3])
 
             count = int(count + 1)
 
-        print(comentarios)
 
         return render_template("Foro.html", results=count, name=nicks, date=dates, time=times, comentario=comments)
 
+@app.route("/ForoRespuesta", methods = ["GET", "POST"])
+def ForoRespuesta():
+
+    if request.method == 'POST':
+
+        if not request.form.get("comentario"):
+            return "no puede generar un comentario vacio"
+
+        comment = request.form.get("comentario")
+
+        conn = connect()
+        cursor = conn.cursor()
+
+        cursor.execute("INSERT INTO ForoRespuesta (User_Id, Comment_Id, Answer) \
+                        values (:user, comment_id, :comentario)",
+                        {'user':session["user_id"], 'comment_id':session["user_id"], 'comentario':comment})
+
+        conn.commit()
+        conn.close()
+
+        return redirect("/foro")
+
+    else:
+        return render_template("RespuestaForo.html")
 
 
 @app.route("/logout", methods = ["GET", "POST"])
