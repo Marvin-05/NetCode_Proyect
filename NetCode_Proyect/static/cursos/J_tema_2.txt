@@ -1,39 +1,39 @@
-Tema3:  Comentarios en Java
-
+<h3>Tema 3:  Comentarios en Java</h3>
+<br></br>
 Comentarios
-
+<br></br>
 El propósito de incluir comentarios en tu código es para explicar lo que el código está haciendo.
 Java soporta tanto comentarios de una línea como comentarios de varias líneas. Todos los caracteres
 que aparecen dentro de un comentario son ignorados por el compilador Java.
-
+<br></br>
 Un comentario de una sola línea comienza con dos barras inclinadas y continúa hasta llegar al final de la línea.
+<br></br>
+&emsp;	Por Ejemplo:
+<br></br>
+&emsp;	/ this is a single-line comment
+&emsp;	x = 5; // a single-line comment after code
 
-	Por Ejemplo:
-
-	/ this is a single-line comment
-	x = 5; // a single-line comment after code
-
-
+<br></br>
 Añadir comentarios a medida que escribes código es una buena práctica, ya que ellos proveen aclaratorias y descripciones
 cuando necesitas revisar el código posteriormente, así como para otros programadores que pueden necesitar leerlo.
-
+<br></br>
 Comentarios Multilineas
-
+<br></br>
 Java también ofrece soporte para comentarios que se expanden en múltiples líneas. Este tipo de comentario debes iniciarlos
 con una barra inclinada seguida de un asterisco, y finalizan con un asterisco seguido de una barra inclinada.
-
-	Por Ejemplo
-
-	/*  This is also a
-   	 comment spanning
-  	  multiple lines */
-
+<br></br>
+&emsp;	Por Ejemplo
+<br></br>
+&emsp;	/*  This is also a
+&emsp;      comment spanning
+&emsp;  	multiple lines */
+<br></br>
 Fíjate que Java no soporta comentarios de varias líneas anidados.
 Sin embargo, puedes anidar comentarios de una línea dentro de comentarios multilínea.
-
-
-	/* This is a single-line comment:
-
-	    // a single-line comment
-
-	 */
+<br></br>
+<br></br>
+&emsp;	/* This is a single-line comment:
+<br></br>
+&emsp;	    // a single-line comment
+<br></br>
+&emsp;	 */

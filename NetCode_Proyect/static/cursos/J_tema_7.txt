@@ -1,31 +1,31 @@
-Declaraciones condicionales
-
+<h3>Tema:7 Declaraciones condicionales. </h3>
+<br></br>
 Toma de decisiones
-
+<br></br>
 Las declaraciones condicionales son usadas para ejecutar acciones diferentes basadas en condiciones diferentes.
-
+<br></br>
 La declaración if es una de las declaraciones condicionales más frecuente utilizadas.
-
+<br></br>
 Si la expresión condicional de la declaración if evalúa a true (verdadero), el bloque de código dentro de la declaración if es ejecutado.
  Si la expresión evalúa a false (falso), el primer conjunto de código después del final de la declaración if (después de las llaves de cerre) es ejecutado.
-
-if (condition){
-   //Executes when the condition is true
-}
-
+<br></br>
+&emsp;if (condition){<br></br>
+&emsp;&emsp;   //Executes when the condition is true<br></br>
+&emsp;}
+<br></br>
 Cualquier de los siguientes operadores de comparación pueden ser utilizados para formar la condición:
-< menor que
-> mayor que
-!= no igual que
-== igual que
-<= menor o igual que
+< menor que<br></br>
+> mayor que<br></br>
+!= no igual que<br></br>
+== igual que<br></br>
+<= menor o igual que<br></br>
 >= mayor o igual que
+<br></br>
+int x = 7;<br></br>
 
-int x = 7;
-
-if (x < 42){
-    System.out.println("Hi");
-}
+&emsp;if (x < 42){<br></br>
+&emsp;&emsp;    System.out.println("Hi");<br></br>
+&emsp;}
 
 
 Las declaraciones if ..... else

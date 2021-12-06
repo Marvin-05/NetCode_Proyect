@@ -1,27 +1,26 @@
- strings
-
+<h3>tema:6 strings</h3>
+<br></br>
 Un String (cadena de texto) es un objeto que representa una secuencia de caracteres.
 Por ejemplo, "Hola" es un string de 4 caracteres.
-
+<br></br>
 Por ejemplo:
+<br></br>
+string s = "NetCode"<br></br>
 
-string s = "NetCode"
-
-se puede definir un string vacio EJemplo: string str = "";
+se puede definir un string vacio EJemplo: string str = "";<br></br>
 
 concatenacion de Strings
-El operador + (suma) entre cadenas de texto las junta para hacer una nueva cadena de texto (string).
- El proceso es llamado concatenación.
+El operador + (suma) entre cadenas de texto las junta para hacer una nueva cadena de texto (string).<br></br>
+ El proceso es llamado concatenación.<br></br>
 
-La cadena de texto resultante en la primera colocada junto con la segunda.
+La cadena de texto resultante en la primera colocada junto con la segunda.<br></br>
 
-por ejemplo:
+por ejemplo:<br></br>
+
 String firstName, lastName;
-
-       firstName = "David";
-
-        lastName = "Williams";
-
-
-
-        System.out.println("My name is " + firstName +" "+lastName);
+<br></br>
+&emsp;   firstName = "David";
+<br></br>
+&emsp;       lastName = "Williams";
+<br></br>
+&emsp;       System.out.println("My name is " + firstName +" "+lastName);

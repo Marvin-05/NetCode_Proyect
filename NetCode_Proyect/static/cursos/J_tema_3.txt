@@ -1,25 +1,25 @@
 
-Variables
-
-Las variables almacenan data para ser procesada.
+<h3> tema 3: Variables </h3>
+<br></br>
+Las variables almacenan data para ser procesada.<br></br>
 Una variable le es dado un nombre (o identificador), como area, edad, altura y similar.  El nombre identifica de manera única cada variable,
  asignando un valor a la variable y tomando el valor almacenado.
-
-Las variables tienen tipos. Algunos ejemplos:
-- int: para enteros (números enteros) como 123 y -456
-- double: para números de punto flotante o reales con puntos decimales opcionales y partes fraccionables en notación fija o científica, como 3.1416, -55.66.
-- String: para textos como "Hola" o "¡Buenos Días!". Las cadenas de texto están delimitadas dentro de comillas dobles.
+<br></br>
+Las variables tienen tipos. Algunos ejemplos:<br></br>
+- int: para enteros (números enteros) como 123 y -456<br></br>
+- double: para números de punto flotante o reales con puntos decimales opcionales y partes fraccionables en notación fija o científica, como 3.1416, -55.66.<br></br>
+- String: para textos como "Hola" o "¡Buenos Días!". Las cadenas de texto están delimitadas dentro de comillas dobles.<br></br>
 
 Puedes declarar una variable de un tipo y asignarle un valor.
-
-	Ejemplos:
-	*********************
-	String name = "David";
-	*********************
-
+<br>
+&emsp;	Ejemplos:<br></br>
+&emsp;	*********************<br></br>
+&emsp;	String name = "David";<br></br>
+&emsp;	*********************<br></br>
+<br></br>
 Esto creará una variable llamada name del tipo String, y le asignará el valor "David".
-
-Es importante notar que una variable está asociada con un tipo, y sólo es capaz de almacenar valores de ese tipo en particular. Por ejemplo, una variable
-int puede almacenar valores enteros, como 123; pero no puede almacenar valores reales, como 12.34 ó textos, como "Hola".
+<br></br>
+Es importante notar que una variable está asociada con un tipo, y sólo es capaz de almacenar valores de ese tipo en particular.
+<br></br>Por ejemplo, una variable int puede almacenar valores enteros, como 123; pero no puede almacenar valores reales, como 12.34 ó textos, como "Hola".
 
 
