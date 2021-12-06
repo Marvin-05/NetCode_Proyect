@@ -1,1 +1,107 @@
-<h3> Sentencias If-Else </h3>
+<h3> Sentencias If-Else </h3 <br><br>
+
+Cuando nosotros queremos realizar validaciones en la vida comun usamos palabras claves cono "si" y "sino" para tomar descisiones, <br>
+en C pasa algo similar, cuando en un programa queremos validar sentencias para generar una accion cuando eso pase podemos usar las palabras <br>
+claves if (si) y else (sino). <br><br>
+
+Un ejemplo seria validar si un numero es par o impar; en nuestro idioma seria algo como: <br><br>
+
+si el numero es par, entonces imprimir: el n umero es par <br>
+sino escribir: el numero no es par <br><br>
+
+En C se veria de la siguiente forma: <br><br>
+
+if (numero % 2 == 0) printf("el numero es par"); <br>
+else printf("el numero no es par"); <br><br>
+
+la sintaxis del if en c es la siguiente: <br><br>
+
+if (validacion o sentencias) { <br>
+    &emsp;// accion a realizar <br>
+} <br><br>
+
+La sintaxis del if-else en c es la siguiente: <br><br>
+
+if (validacion o sentencias) { <br>
+    &emsp;// accion-1 <br>
+} <br>
+else { <br>
+    &emsp;// accion-2 <br>
+} <br><br>
+
+Si la sentencia se cumple realizara la accion-1 sino relaizara la accion-2 <br><br>
+
+Ahora veamos esto en codigo para entenderlo mejor, supongamos que queremos vaidar si un numero es par o impar, lo relizaremos de la siguiente forma: <br><br>
+
+// incluimos las librerias <br>
+#include <stdio.h> <br><br>
+
+// usamos el metodo main <br>
+int main() <br>
+{ <br>
+
+    &emsp;// declaramos la variable que guardara el numero <br>
+    &emsp;int numero; <br><br>
+
+	&emsp;// pedimos los valores de los numeros <br>
+	&emsp;printf("Ingrese un numero entero: "); <br>
+	&emsp;scanf("%d", &numero); <br><br>
+
+	&emsp;// usamos % para saber si el numero es par al obtener el residuo del numero dividido entre 2 <br>
+	&emsp;if (numero % 2 == o) { <br>
+
+	&emsp;&emsp;// imprimimos el resultado <br>
+	&emsp;&emsp;printf("el numero %d es par", numero); <br>
+
+	&emsp;} <br>
+	&emsp;else { <br>
+
+	&emsp;&emsp;// imprimimos el resultado <br>
+	&emsp;&emsp;printf("el numero %d es impar", numero); <br>
+
+	&emsp;} <br><br>
+
+    &emsp;// finalizamos el main <br>
+    &emsp;return 0; <br>
+
+} <br><br><br>
+
+En las sentencias if-else tambiem podemos hacer uso de los operadores logicos, veamos un jemplo de como saber si un numero esta entre 1 y 10
+<br><br>
+
+// incluimos las librerias <br>
+#include <stdio.h> <br><br>
+
+// usamos el metodo main <br>
+int main() <br>
+{ <br>
+
+    &emsp;// declaramos la variable que guardara el numero <br>
+    &emsp;int numero; <br><br>
+
+	&emsp;// pedimos los valores de los numeros <br>
+	&emsp;printf("Ingrese un numero entero: "); <br>
+	&emsp;scanf("%d", &numero); <br><br>
+
+	&emsp;// usamos los operadores <, > para realizar las sentencias individuales y las unimos con el operador && (y) <br>
+	&emsp;if (numero > 0 && numero < 11) { <br>
+
+	&emsp;&emsp;// imprimimos el resultado <br>
+	&emsp;&emsp;printf("el numero %d esta entre 1 y 10", numero); <br>
+
+	&emsp;} <br>
+	&emsp;else { <br>
+
+	&emsp;&emsp;// imprimimos el resultado <br>
+	&emsp;&emsp;printf("el numero %d no esta entre 1 y 10", numero); <br>
+
+	&emsp;} <br><br>
+
+    &emsp;// finalizamos el main <br>
+    &emsp;return 0; <br>
+
+} <br><br>
+
+<b> sigue aprendiendo :) </b> <br><br>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GTbTvfepSto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

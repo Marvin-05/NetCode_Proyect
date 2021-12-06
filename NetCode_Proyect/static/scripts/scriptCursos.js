@@ -57,7 +57,7 @@ $("#C_9").on('click', function(){
    $("#tema").load('/static/cursos/C_tema_9.txt')
 });
 
-$("#J_0").on('click', function(){
+$("#Java_0").on('click', function(){
 
    $("#tema").load('/static/cursos/J_tema_0.txt')
 });

@@ -1,1 +1,80 @@
-<h3> Ciclos while y do-while </h3>
+<h3> Ciclos while y do-while </h3> <br><br>
+
+</b>El ciclo While</b> <br><br>
+
+El ciclo while es un poc diferente al ciclo for, tambien tiene un inicio, un fin y un aumento, solo que de otro modo. <br><br>
+
+Si bien el ciclo for lo usamos cuando sabemos el numero de iteraciones que haremos, el while nos ayuda a iterar una cantidasd de veces indeterminada o que no sabemos<br>
+de antemano. <br><br>
+
+la estructura del while es: <br><br>
+
+inicio <br><br>
+
+while(condicion de fin){ <br>
+    ... <br>
+    paso <br>
+} <br>
+
+a diferencia del for, el while no tiene sus 3 partes en una misma linea, veamos un ejemplo para entender como funciona: <br><br>
+
+imprimir los datos de i mientras sea diferente al numero especificado <br><br>
+
+ingresa el siguiente codigo dentro de un programa de C, mas especifico dentro del main <br><br>
+
+----------------------------------------------------------------------------------------------------- <br><br>
+
+int numeroFin; <br>
+
+printf("ingresa su numero de paro: \n"); <br>
+scanf("%d", &numeroFin); <br><br>
+
+
+int i = o; // inicio <br><br>
+
+while (i != numeroFin){ // condicion de fin <br>
+
+    printf("%d", i); <br>
+    i++; // incremento o paso <br><br>
+
+    printf("\n\ningresa su numero de paro: \n"); <br>
+    scanf("%d", &numeroFin); <br>
+
+} <br><br>
+
+------------------------------------------------------------------------------------------------------------------------------- <br><br>
+
+</b>El ciclo do-while</b> <br><br>
+
+el ciclo do-while es parecido al ciclo while, pero con una leve variacion, primero veamos su forma: <br><br>
+
+inicio <br><br>
+
+do{ <br>
+
+    paso <br>
+
+}while(condicion fin); <br><br>
+
+como pueden observar el ciclo while valida antes de iterar, mientras que el ciclo do-while itera almenos una vez antes de cualquier validacion. <br><br>
+
+veamos como se miraria el mismo ejemplo pero ahora usando do while: <br><br>
+
+------------------------------------------------------------------------------------------------------------------------------------ <br><br>
+
+int numeroFin; <br>
+int i = 0; // inicio <br><br>
+
+do{ <br>
+
+    printf("%d", i); <br>
+    i++; // incremento o paso //paso o incremento <br><br>
+
+    printf("\n\ningresa su numero de paro: \n"); <br>
+    scanf("%d", &numeroFin); <br>
+
+} while(i != numeroFin); //validacion <br><br>
+
+
+
+

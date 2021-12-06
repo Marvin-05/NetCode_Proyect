@@ -1,1 +1,48 @@
-<h3> Ciclo For </h3>
+<h3> Ciclo For </h3> <br><br>
+
+En programacion un ciclo o una iteracion es un bloque de codigo que se repite hasta cumplir una condicion. <br><br>
+
+Dentro de los ciclos podemos encontrar una de los mas censillos de utilizar, este el el ciclo for (para), <br>
+este ciclo se compone de la siguiente manera: <br><br>
+
+for(inicio; fin, paso){} <br><br>
+
+inicio: es el parametro que indica desde que punto va a comenzar a iterar (es una asignacion) <br>
+fin: indica hasta donde dejara de iterar el ciclo, pude ser un valor numerico o una condicion <br>
+paso: indica con que frecuencia ira cambiando la variable iteradora por cada iteracion <br><br>
+
+veamos un ejemplo de como imprimir los numeros del 0 al 9: <br><br>
+
+podriamos simplemente escribir: <br><br>
+
+printf("0\n");<br>
+printf("1\n");<br>
+printf("2\n");<br>
+...<br>
+printf("9\n");<br><br>
+
+sin embargo esto en codigo es muy largo, imagina que no fueran 10 numeros sino 100 0 1000, eso sin duda seria extenso para usar un printf() por cada numero <br><br>
+
+asi que en lugar de eso usemo un ciclo para generarlo: <br><br>
+
+for (int i = 0; i < 10; i++){ <br>
+printf("%d\n", i); <br>
+} <br><br>
+
+int i = 0 --> es el inicio, i es la variable iteradora <br>
+i < 10 --> es la condicion de fin, es decir que iterara mientras el valor de i sea menor que 10 <br>
+i++ --> indica que aumentaremos el valor de i de uno en uno <br><br>
+
+si observas este ultimo paso usamos "++" para incrementar el valor de i, <br>
+en c podemos incrementar valores con el signo + y el signo =, i++ es lo mismo que escribir i = i + 1; <br><br>
+
+para ahorrarnos lineas podemos usar ++ para incrementar por uno, de lo contrario tendremos que hacerlo asi: i += valor; <br>
+donde valor es el numero por el cual queremos incrementar <br><br>
+
+ejemplo: inprimir los numero del 0 al 9 de dos en dos <br><br>
+
+for (int i = 0; i < 10; i += 2){ <br>
+printf("%d\n", i); <br>
+} <br><br>
+
+esto aplica para cualquier operador aritmetico (- * /)
