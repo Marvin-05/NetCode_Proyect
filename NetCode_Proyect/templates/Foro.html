@@ -33,6 +33,7 @@
             </div>
 </header>
 <body>
+<<<<<<< HEAD
     <div class="container">
         <div class="rows_comentarios">
             <div class="col-6">
@@ -60,13 +61,58 @@
 
                         </div>
 
+=======
+
+    <form action="/foro" method="post">
+
+        <div class="container">
+            <div class="rows_comentarios justify-content-center">
+                <div class="col-6">
+
+                    <h3> Bienvenido al Foro</h3>
+
+                <!--    <form action="/foro" class="form_comentarios d-flex justify-content-end flex-wrap" method="post"> -->
+                        <textarea class="form-control" name="comentario" cols="30"  rows="10" placeholder="Comentario"></textarea> <br><br>
+
+                        <button class="btn" type=button>Comentar</button> <br><br><br>
+            <!--        </form> -->
+
+                    <div>
+
+                        {% for i in range(results) %}
+
+                            <img src="../static/img/usericon.png" width="64" height="64" alt="">
+
+                            <p>
+                                {{comentario[loop.index - 1]}} <br><br>
+                                comment by: {{name[loop.index - 1]}}; at: <span>{{date[loop.index - 1]}}, {{time[loop.index - 1]}}</span> <br>
+                            </p>
+
+                            <div class="botones" text-right>
+
+                                <a href="#">Responder</a>
+                 <!--                <a href="#">Editar</a> -->
+                      <!--           <a href="#">Borrar</a> -->
+
+                            </div>
+                            <br><br>
+                        {% endfor %}
+>>>>>>> 8913e32df2ca4872281c6a3e30bb6e23048120b4
 
                     </div>
+
                 </div>
             </div>
+
         </div>
 
+<<<<<<< HEAD
     </div>
+=======
+    </form>
+
+
+>>>>>>> 8913e32df2ca4872281c6a3e30bb6e23048120b4
 
 </body>
 </html>
