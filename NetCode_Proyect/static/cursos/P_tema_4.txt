@@ -1,0 +1,41 @@
+<h2>tema 4: Condicionales</h2>
+
+    Los condicionales en Python, son una estructura de control esencial al momento de programar y aprender a programar.
+    Tanto Python como la mayoría de los lenguajes de programación utilizados actualmente,
+    nos permiten hacer uso de estas estructuras para definir ciertas acciones y decisiones específicas en nuestros programas.
+    Un condicional, permite establecer una serie de condiciones al interior de nuestro programa,
+    que nos ayudan a determinar qué acciones llevar a cabo dadas ciertas circunstancias.
+
+    Existen diferentes tipos de condicionales, cada uno tiene una utilidad y funcionalidad diferente. Cada uno considera diferentes situaciones que se pueden llegar a presentar durante la ejecución de un programa. Depende entonces del conocimiento que tengamos acerca de cada uno de los condicionales saber determinar correctamente cuando es necesario usar uno u otro. Tenemos a nuestra disposición los siguientes tipos de condicionales en Python:
+
+        &emspCondicional If en Python
+        &emspCondicional if-else en Python
+
+    Condicional if:
+
+    La sintaxis de un condicional if, es bastante simple e incluso intuitiva.
+    Vamos entonces a ver rápidamente como es la estructura para ir luego a unos ejemplos y quedar bien claros:
+
+    &emspif (condición a evaluar): # Por ejemplo X >= 10
+    &emsp&emsp# Bloque de instrucciones si se cumple la condición....
+    &emsp&emsp# Solo se ejecutará si la condición es verdadera
+
+    &emsp# Bloque de Instrucciones restante del programa....
+    &emsp# Se ejecuta siempre, pues está fuera de la condición
+
+    Condicional if else
+
+    La sintaxis de un condicional if else, es en principio similar a la del condicional if,
+    pero adicionando una nueva "estructura" que sería el else, el cual indica la acción o conjunto de acciones
+    a llevar a cabo si no se cumplió la condición inicial (la del if). Cabe resaltar que el else,
+    no puede existir por sí solo, solo tiene sentido si antes se indicó un if.
+    Es decir, SIEMPRE se pone un else inmediatamente después del if, en caso de ser necesario.
+    El else es incapaz de funcionar por sí solo,
+    debes acompañarlo siempre con un if. Veamos entonces como es la sintaxis del if else en Python:
+
+    &emspif (condición a evaluar): # Por ejemplo Z <= 50
+    &emsp&emsp# Bloque de instrucciones si se cumple la condición....
+    &emsp&emsp# Solo se ejecutará si la condición es verdadera
+    &emspelse:
+    &emsp&emsp# Bloque de instrucciones si NO se cumple la condición....
+    &emsp&emsp# Solo

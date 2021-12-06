@@ -1,0 +1,11 @@
+            &emspsession 1 Introducción:
+
+            Python es un lenguaje popular, es usado para desarrollo web, desarrollo de softwate, ciencia de datos entre otros <br><br>
+
+            ¿Qué puede hacer Python? <br><br>
+
+            Python se puede utilizar en un servidor para crear aplicaciones <br>
+            Python se puede utilizar junto con el software para crear flujos de trabajo. <br>
+            Python puede conectarse a sistemas de bases de datos. También puede leer y modificar archivos. <br>
+            Python se puede utilizar para manejar big data y realizar matemáticas complejas. <br>
+            Python se puede utilizar para la creación rápida de prototipos o para el desarrollo de software listo para la producción. <br><br>

@@ -285,15 +285,17 @@ footer .contac-us .Integrantes ul li a img
 {
     margin-top: 10%;
     margin-left:43%;
-    widht: 100%;
 
 }
  .sessions
 {
+    width: 30%;
+    height: 80%;
     display: flex;
-    align-items: stretch;
     flex-wrap: wrap;
+    float: left;
 }
+
 
 .cursos-container .sessions #tema
 {
@@ -301,6 +303,13 @@ footer .contac-us .Integrantes ul li a img
 }
 #tema
 {
+    width: 60%;
+    margin-left: 35%;
     text-align: justify;
     font-family: 'M PLUS Code Latin', sans-serif;
+}
+.btn.btn-primary.btn-block
+{
+    float:left;
+    margin-top: 2%;
 }

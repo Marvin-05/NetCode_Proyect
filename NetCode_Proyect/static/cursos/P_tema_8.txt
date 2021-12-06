@@ -1,0 +1,61 @@
+<h2>Diccionarios y booleanos</h2>
+
+    Los diccionarios en Python son una estructura de datos que permite almacenar su contenido en forma de llave y valor.
+
+    Crear diccionario Python<br>
+
+    Un diccionario en Python es una colección de elementos, donde cada uno tiene una llave key y un valor value.
+    Los diccionarios se pueden crear con paréntesis {} separando con una coma cada par key: value.
+    En el siguiente ejemplo tenemos tres keys que son el nombre, la edad y el documento.
+
+    &emspd1 = {
+    &emsp "Nombre": "Sara",
+    &emsp "Edad": 27,
+    &emsp "Documento": 1003882
+    &emsp }
+    &emspprint(d1)
+    &emsp#{'Nombre': 'Sara', 'Edad': 27, 'Documento': 1003882}
+
+    Algunas propiedades de los diccionario en Python son las siguientes:
+
+    Son dinámicos, pueden crecer o decrecer, se pueden añadir o eliminar elementos.
+    Son indexados, los elementos del diccionario son accesibles a través del key.
+    Y son anidados, un diccionario puede contener a otro diccionario en su campo value.
+    Acceder y modificar elementos
+    Se puede acceder a sus elementos con [] o también con la función get()
+
+    &emspprint(d1['Nombre'])     #Sara
+    &emspprint(d1.get('Nombre')) #Sara
+
+    Para modificar un elemento basta con usar [] con el nombre del key y asignar el valor que queremos.
+
+    &emspd1['Nombre'] = "Laura"
+    &emspprint(d1)
+    &emsp#{'Nombre': Laura', 'Edad': 27, 'Documento': 1003882}
+    Si el key al que accedemos no existe, se añade automáticamente.
+
+    &emspd1['Direccion'] = "Calle 123"
+    &emspprint(d1)
+    &emsp#{'Nombre': 'Laura', 'Edad': 27, 'Documento': 1003882, 'Direccion': 'Calle 123'}
+    Iterar diccionario
+    Los diccionarios se pueden iterar de manera muy similar a las listas u otras estructuras de datos.
+    Para imprimir los key.
+
+    # Imprime los key del diccionario
+    &emspfor x in d1:
+    &emsp&emspprint(x)
+    &emsp&emsp#Nombre
+    &emsp&emsp#Edad
+    &emsp&emsp#Documento
+    &emsp&emsp#Direccion
+
+    Booleanos
+        Tipos booleanos: True y False
+        Una variable booleana es una variable que sólo puede tomar dos posibles valores: True (verdadero) o False (falso).
+        En Python cualquier variable (en general, cualquier objeto) puede considerarse como una variable booleana.
+        En general los elementos nulos o vacíos se consideran False y el resto se consideran True.
+        Para comprobar si un elemento se considera True o False, se puede convertir a su valor
+        booleano mediante la función bool().
+
+        &emspbool(0)
+        &emspFalse
