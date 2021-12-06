@@ -1,65 +1,71 @@
-Tema2:  A Hello World Program
+<h3>Tema 2:  A Hello World Program</h3>
 
-Tu primer programa 
+Tu primer programa <br><br>
 
-Vamos a comenzar creando un programa sencillo que imprima "Hello World" en la pantalla.
+Vamos a comenzar creando un programa sencillo que imprima "Hello World" en la pantalla.<br><br>
 	class MyClass {
-  
-		  public static void main(String[ ] args) {
-        
-			System.out.println("Hello World");
-    
-		}
-	
+<br></br>
+&emsp; &emsp; public static void main(String[ ] args) {
+<br></br>
+&emsp; &emsp; System.out.println("Hello World");
+<br></br>
+&emsp;		}
+<br></br>
 }
-En Java, cada línea de código que se puede ejecutar necesita estar dentro de una clase.
-En nuestro ejemplo, nombramos la clase MyClass. Aprenderás más sobre clases en los próximos módulos.
-
-En Java, cada aplicación tiene un punto de entrada, o un punto de partida, el cual es un método llamado main. 
-
-El metodo main 
-Para ejecutar nuestro programa, el método main debe ser idéntico a esta firma:
-	
+<br></br>
+	En Java, cada línea de código que se puede ejecutar necesita estar dentro de una clase.
+	En nuestro ejemplo, nombramos la clase MyClass. Aprenderás más sobre clases en los próximos módulos.
+<br></br>
+	En Java, cada aplicación tiene un punto de entrada, o un punto de partida, el cual es un método llamado main.
+<br></br>
+El metodo main
+<br></br>
+	Para ejecutar nuestro programa, el método main debe ser idéntico a esta firma:
+<br></br>
 	public static void main(String[ ] args)
-	
+<br></br>
 
-- public: cualquiera puede accederlo
-- static: el método puede ser ejecutado sin crear una instancia de la clase que contiene el método main
-- void: el método no retorna ningún valor
-- main: el nombre del método
+<ul>
+&emsp;	<li> public: cualquiera puede accederlo </li>
+&emsp;	<li> static: el método puede ser ejecutado sin crear una instancia de la clase que contiene el método main </li>
+&emsp;	<li> void: el método no retorna ningún valor </li>
+&emsp;	<li> main: el nombre del método </li>
 
+</ul>
+<br></br>
 Por ejemplo, el siguiente código declara un método llamado test, el cual no retorna nada y no tiene parámetros:
+<br></br>
+<br></br>
 
-	
-	void test()
-	
-Los parámetros del método son declarados dentro de los paréntesis que siguen al nombre del método. 
+&emsp;	void test()
+<br></br>
+Los parámetros del método son declarados dentro de los paréntesis que siguen al nombre del método.
 Para el caso de main, es un arreglo de strings llamado args. Lo estaremos utilizando en nuestra próxima lección,
 así que no te preocupes si no lo entiendes todo por ahora.
+<br></br>
 
-
-System.out.println() 
-
+System.out.println()
+<br></br>
 Seguidamente está el cuerpo del método main, delimitado entre llaves:
-
+<br></br>
 El método println imprime una línea de texto en la pantalla.
 La clase System y su flujo out son utilizados para acceder al método println.
-
+<br></br>
 Puede pasar un texto diferente como el parámetro para el método println para que sea impreso.
 
-	
-	class MyClass {
-   
-		 public static void main(String[ ] args) {
-        
-			System.out.println("I am learning Java");
-    
-		}
-	
-    }
-	
+<br></br>
+&emsp;	class MyClass {
+<br></br>
+&emsp;&emsp;		 public static void main(String[ ] args) {
+<br></br>
+&emsp;&emsp;			System.out.println("I am learning Java");
+<br></br>
+&emsp;&emsp;		}
+<br></br>
+&emsp;   }
 
+<br></br>
 En Java, cada declaración de código debe finalizar con un punto y coma.
-
-Recuerda: no utilices punto y coma después de las declaraciones de métodos y clases que siguen 
+<br></br>
+Recuerda: no utilices punto y coma después de las declaraciones de métodos y clases que siguen
 con un cuerpo que ha sido definido utilizando llaves.

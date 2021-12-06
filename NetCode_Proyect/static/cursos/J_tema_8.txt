@@ -1,24 +1,23 @@
-Declaraciones if anidadas
-
+<h3> Tema:8 Declaraciones if anidadas. </h3>
+ <br></br>
 Puedes utilizar una declaracion if-else dentro de otra declaracion if o else.
-
+ <br></br>
 Por ejemplo:
-
+ <br></br>
 int age = 25;
-        
-if(age > 0) {
+  <br></br>       
+&emsp;if(age > 0) { <br></br>
             
-    if(age > 16) {
+&emsp;&emsp;    if(age > 16) { <br></br>
                 
-        System.out.println("Welcome!");
+&emsp;&emsp;&emsp;    System.out.println("Welcome!"); <br></br>
             
-     } else {
+&emsp;&emsp;     } else { <br></br>
                
-          System.out.println("Too Young");
+&emsp;&emsp;&emsp;         System.out.println("Too Young"); <br></br>
 
-     }
+&emsp;&emsp;     } <br></br>
         
-} else {
-
-     System.out.println("Error");
+&emsp;} else { <br></br>
+&emsp;&emsp;System.out.println("Error"); <br></br>
 }

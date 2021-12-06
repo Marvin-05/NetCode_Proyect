@@ -1,53 +1,53 @@
-Los operadores lógicos son utilizados para combinar varias condiciones.
-
+<h3>Tema9: Los operadores lógicos son utilizados para combinar varias condiciones.</h3>
+<br></br>
 Digamos que quieres que tu programa imprima "Welcome!" sólo cuando la variable
 age sea mayor que 18 y la variable money sea mayor que 500.
-
+<br></br>
 Una manera de lograr esto es usando declaraciones if anidadas:
+<br></br>
+public class Program {<br></br>
+&emsp;    public static void main(String[] args) {<br></br>
+&emsp;        int age = 22;<br></br>
+&emsp;        int money = 800;<br></br>
 
-public class Program {
-    public static void main(String[] args) {
-        int age = 22;
-        int money = 800;
+&emsp;        if (age > 18) {<br></br>
+&emsp;            if (money > 500) {<br></br>
+&emsp;                System.out.println("Welcome!");<br></br>
+&emsp;            }<br></br>
+&emsp;&emsp;        }<br></br>
+&emsp;    }<br></br>
+}<br></br>
 
-        if (age > 18) {
-            if (money > 500) {
-                System.out.println("Welcome!");
-            }
-        }
-    }
-}
+Sin embargo, utilizando el operador lógico AND (&&) es una mejor manera:<br></br>
 
-Sin embargo, utilizando el operador lógico AND (&&) es una mejor manera:
+public class Program {<br></br>
+&emsp;    public static void main(String[] args) {<br></br>
+&emsp;       int age = 22;<br></br>
+&emsp;        int money = 800;<br></br>
 
-public class Program {
-    public static void main(String[] args) {
-        int age = 22;
-        int money = 800;
-
-        if (age > 18 && money > 500) {
-            System.out.println("Welcome!");
-        }
-    }
-}
+&emsp;&emsp;        if (age > 18 && money > 500) {<br></br>
+&emsp;&emsp;&emsp;            System.out.println("Welcome!");<br></br>
+&emsp;&emsp;        }<br></br>
+&emsp;&emsp;    }<br></br>
+}<br></br>
 
 
 El operador OR (||) valida si cualquiera de las condiciones es verdadera.
 La condición resulta verdadera, si cualquier de los operandos evalúa a verdadero.
+<br></br>
+public class Program {<br></br>
+    public static void main(String[] args) {<br></br>
+        int age = 25;<br></br>
+        int money = 100;<br></br>
 
-public class Program {
-    public static void main(String[] args) {
-        int age = 25;
-        int money = 100;
-
-        if (age > 18 || money > 500) {
-            System.out.println("Welcome!");
-        }
-    }
-}
+        if (age > 18 || money > 500) {<br></br>
+            System.out.println("Welcome!");<br></br>
+        }<br></br>
+    }<br></br>
+}<br></br>
 
 
-El código anterior imprimirá "Welcome!" si "age" es mayor que 18 ó si "money" es mayor que 500.
+El código anterior imprimirá "Welcome!" si "age" es mayor que 18 ó si "money" es mayor que 500.<br></br>
 
-El operador lógico NOT (!) es utilizado para revertir el estado lógico de su operando.
-Si una condición es verdadera, el operador lógico NOT la convertirá en falsa
+El operador lógico NOT (!) es utilizado para revertir el estado lógico de su operando.<br></br>
+Si una condición es verdadera, el operador lógico NOT la convertirá en falsa<br></br> 
