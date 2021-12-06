@@ -53,12 +53,17 @@ def login():
         rows = c.execute("SELECT * FROM Info_Usuario WHERE NickName = :nick", {'nick':request.form.get("username")})
         for row in rows:
             User = row[0]
-
-        session["user_id"] = User # guardamos la secion
+            admin = row[5]
 
         conn.close() # cerramos la conexcion a la base de datos
 
-        return redirect("/admin")
+        session["user_id"] = User # guardamos la secion
+
+        if admin == 1:
+            session["admin"] = session["user_id"]
+            return redirect("/admin")
+        else:
+            return redirect("/Cursos")
 
     return render_template("login.html")
 
@@ -137,11 +142,27 @@ def session_open():
 @app.route("/admin")
 @login_required
 def session_opened():
-    return render_template("admin.html")
+
+    conn = connect()
+
+    c = conn.cursor() # creamos un cursor de la coneccion a la base de datos
+
+    # obtenemos el id del usuario logeado
+    rows = c.execute("SELECT * FROM Info_Usuario WHERE Id = :id_user", {'id_user':session["user_id"]})
+    for row in rows:
+        admin = row[5]
+
+    conn.close() # cerramos la conexcion a la base de datos
+
+    if admin == 0:
+        return redirect("/Cursos")
+    else:
+        return render_template("admin.html")
 
 # creacion de formimagenes
 
 @app.route("/formImage", methods= ["GET", "POST"])
+@login_required
 def subir():
     if request.method == "POST":
         #Si no existe un archivo
@@ -167,6 +188,7 @@ def subir():
 
 # Administrar los comenatarios del foro
 @app.route("/foro-comentarios", methods= ["GET", "POST"])
+@login_required
 def foroAdmin():
     return render_template("foro-tabla.html")
 
@@ -231,6 +253,7 @@ def C():
 
 
 @app.route("/Java")
+@login_required
 def Java():
 
     conn = connect()
@@ -258,14 +281,62 @@ def Java():
 
     return render_template("arquitecturaCurso.html", Nombres = names, temas=nTemas, cursoSelected=nombreC)
 
-@app.route("/foro")
+@app.route("/foro", methods=["GET", "POST"])
+@login_required
 def foro():
 
-    return render_template("Foro.html")
+    if request.method == 'POST':
+
+        if not request.form.get("comentario"):
+            return "no puede generar un comentario vacio"
+
+        comment = request.form.get("comentario")
+
+        conn = connect()
+        cursor = conn.cursor()
+
+        cursor.execute("INSERT INTO ForoComentarios (User_Id, Comment) \
+                        values (:user, :comentario)",
+                        {'user':session["user_id"], 'comentario':comment})
+
+        conn.commit()
+        conn.close()
+
+        return redirect("/foro")
+
+    else:
+
+        conn = connect()
+        cursor = conn.cursor()
+
+        comentarios = cursor.execute("select ForoComentarios.Comment, ForoComentarios.Date, \
+                                    ForoComentarios.Time, Info_Usuario.NickName from ForoComentarios \
+                                    inner join Info_Usuario \
+                                    on Info_Usuario.Id=ForoComentarios.User_Id")
+
+        nicks = []
+        comments = []
+        dates = []
+        times = []
+
+        count = 0
+
+        for r in comentarios:
+            nicks.append(r[3])
+            comments.append(r[0])
+            dates.append(r[1])
+            times.append(r[2])
+
+            count = int(count + 1)
+
+        print(comentarios)
+
+        return render_template("Foro.html", results=count, name=nicks, date=dates, time=times, comentario=comments)
 
 
 
 @app.route("/logout", methods = ["GET", "POST"])
+@login_required
 def logout():
     if request.method == 'GET':
         # Forget any user_id
