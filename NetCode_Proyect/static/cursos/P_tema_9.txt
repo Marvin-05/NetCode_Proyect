@@ -1,0 +1,34 @@
+<h2>Módulos</h2>
+
+    Las bibliotecas y los módulos facilitan la vida de un programador.
+
+    Cuando trabaja con proyectos, puede encontrar situaciones en las que no podrá resolver con la codificación
+    estándar de un lenguaje de programación.
+    Necesitamos algunas bibliotecas y módulos para superar esos problemas.
+
+    Afortunadamente, Python admite una gran cantidad de módulos y bibliotecas.
+    Python tiene incorporado módulos así como terceros. bibliotecas y módulos para el desarrollo.
+    Veremos módulos integrados y de terceros, que son muy beneficiosos para los proyectos de Python.
+    Exploremos primero los módulos integrados.
+
+    # Módulos incorporados
+    Python viene con muchos módulos incorporados para diferentes casos de uso.
+    Estudiaremos los módulos uno a uno según el uso.
+
+    Modulos de interfaz:
+
+    &emspwxPython
+    &emspPyGObject
+    &emspPmw
+
+    Modulos de base de datos
+    &emspMySQLdb
+    &emspPyGreSQL
+    &emspGadfly
+
+    Modulos de desarrollo Web
+    &emspBeautiful Soup
+    &emspscrape
+    &emspmechanize
+
+    Entre otros

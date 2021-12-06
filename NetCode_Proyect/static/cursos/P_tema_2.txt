@@ -1,0 +1,52 @@
+    En programación, el tipo de datos es un concepto importante. <br><br>
+
+    	Las variables pueden almacenar datos de diferentes tipos, y diferentes tipos pueden hacer cosas diferentes. <br><br>
+
+    	Python tiene los siguientes tipos de datos integrados de forma predeterminada, en estas categorías: <br><br>
+
+    	&emsp;Tipo de texto: str <br>
+    	&emsp;Tipos numéricos: int, float, complex <br>
+    	&emsp;Tipos de secuencia: lista, tupla, rango <br>
+    	&emsp;Tipo de mapeo: dict <br>
+    	&emsp;Tipos de conjunto: set, frozenset <br>
+    	&emsp;Tipo booleano: bool <br>
+    	&emsp;Tipos binarios: bytes, bytearray, memoryview <br><br>
+
+    	Variables: <br>
+           		python no tiene un comando especifico para declara una variable, puede ser creada de ya con un valor asignado <br><br>
+            		ejemplo: <br>
+            			&emsp;x = 5 <br>
+            			&emsp;y = "John" <br>
+            			&emsp;print(x) <br>
+            			&emsp;print(y) <br><br>
+
+            	Casting: <br>
+            		Si quieres especificar el tipo de dato de una variable, esta puede ser casteada al igual que con el casting, podemos pasar una variable de string a entero, etc. <br><br>
+
+            		ejemplo: <br>
+            			&emsp;x = str(3) <br>
+            			&emsp;y = int(3) <br>
+            			&emsp;z = float(3) <br>
+
+    	Valores booleanos <br>
+    		En la programación a menudo es necesario saber si una expresión es True o False. <br>
+    		Puede evaluar cualquier expresión en Python y obtener una de las dos respuestas, True o False.
+    		Al comparar dos valores, se evalúa la expresión y Python devuelve la respuesta booleana: <br><br>
+
+    		ejemplo: <br>
+    			&emsp;print(10 > 9) <br>
+    			&emsp;print(10 == 9) <br>
+    			&emsp;print(10 < 9) <br><br>
+
+    	Operadores: <br>
+
+    		Python divide los operadores en los siguientes grupos: <br><br>
+
+    		&emsp;Operadores aritméticos <br>
+    		&emsp;Operadores de asignación <br>
+    		&emsp;Operadores de comparación <br>
+    		&emsp;Operadores lógicos <br>
+    		&emsp;Operadores de identidad <br>
+    		&emsp;Operadores de membresía <br>
+    		&emsp;Operadores bitwise <br><br>
+

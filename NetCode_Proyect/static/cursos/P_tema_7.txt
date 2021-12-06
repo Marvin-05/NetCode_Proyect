@@ -1,0 +1,42 @@
+<h2>listas, tuplas</h2>
+
+Una lista en Python es una estructura de datos formada por una secuencia ordenada de objetos y
+pueden accederse mediante su índice, siendo 0 el índice del primer elemento. Estas son:
+
+    &emspheterogéneas: pueden estar conformadas por elementos de distintos tipo, incluidos otras listas.
+    &emspmutables: sus elementos pueden modificarse.
+
+    &emsp>>> factura = ['pan', 'huevos', 100, 1234]
+    &emsp>>> factura
+    &emsp['pan', 'huevos', 100, 1234]
+    &emsp>>> factura[0]
+    &emsp'pan'
+    &emsp>>> factura[3]
+    &emsp1234
+
+    ¿Cuáles son los métodos de listas más comunes y cómo usarlos?
+        &emspappend(): Añade un ítem al final de la lista:
+        &emsp&emsplista = [1,2,3,4,5]
+        &emsp&emsplista.append(6)
+        &emspclear(): Vacía todos los ítems de una lista:
+        &emsp&emsplista.clear()
+        &emspextend(): Une una lista a otra:
+        &emsp&emspl1.extend(l2)
+        &emspcount():Cuenta el número de veces que aparece un ítem:
+        &emsp&emsp["Hola", "mundo", "mundo"].count("Hola")
+        &emspinsert(): Agrega un ítem a la lista en un índice específico:
+        &emsp&emspl.insert(0,0)
+
+Tuplas
+    Es una secuencia de valores agrupados, sirve para agrupar,
+    como si fueran un único valor, varios valores que, por su naturaleza, deben ir juntos.
+    El tipo de datos que representa a las tuplas se llama tuple.
+    El tipo tuple es inmutable: una tupla no puede ser modificada una vez que ha sido creada.
+
+    &emsppersona = ('Perico', 'Los Palotes')
+
+Cuándo usar tuplas versus listas
+    La diferencia es que las listas presentan una serie de funciones adicionales que
+    permiten un amplio manejo de los valores que contienen.
+    Basándonos en esta definición, puede decirse que las listas son dinámicas,
+    mientras que las tuplas son estáticas.

@@ -1,0 +1,45 @@
+<h2>Tipos de Datos:</h2> <br>
+        Los tipos de datos básicos de Python son los booleanos, los numéricos<br>
+        (enteros, punto flotante y complejos) y las cadenas de caracteres.<br><br>
+
+        Python también define otros tipos de datos, entre los que se encuentran:<br><br>
+
+        &emspSecuencias: Los tipos list, tuple y range<br>
+        &emspMapas: El tipo dict<br>
+        &emspConjuntos: El tipo set<br>
+        &emspIteradores<br>
+        &emspClases<br>
+        &emspInstancias<br>
+        &emspExcepciones<br>
+
+        &emspConversiones<br><br>
+        En Python, los tipos de datos se utilizan para clasificar un tipo específico de datos,<br>
+        determinar los valores que puede asignar al tipo y las operaciones que puede realizar en el mismo.<br><br>
+        Cuando realice tareas de programación, a veces, deberá aplicar conversiones de valores entre tipos<br>
+        para manipular los valores de forma diferente. Por ejemplo, es posible que debamos concatenar valores<br>
+        numéricoscon cadenas o representar posiciones decimales en números que se iniciaron como valores enteros.<br>
+        Cómo convertir enteros en flotantes<br><br>
+
+        El método de Python float() le permitirá convertir los enteros en flotantes.<br>
+        Para utilizar esta función, añada un entero dentro del paréntesis:<br><br>
+
+        &emspfloat(57)<br><br>
+
+        La función int() opera de forma similar a la función float():<br>
+        puede agregar un número de punto flotante dentro del paréntesis para convertirlo en un entero:<br>
+        &emspint(390.8)<br><br>
+
+        Conversión de números mediante división<br><br>
+        En Python 3, los cocientes correspondientes se convierten de enteros a flotantes cuando se realizan divisiones,<br>
+        aunque no sucede así en Python 2. Es decir, en Python 3, cuando divide 5 por 2,<br>
+        obtendrá un flotante como respuesta (2.5):<br><br>
+
+        &emspa = 5 / 2<br>
+        &emspa print(a)<br>
+        El output será: 2.5<br>
+
+        Podemos convertir números en cadenas usando el método str().<br>
+        Colocaremos un número o una variable en los paréntesis del método,<br>
+        y luego ese valor numérico se convertirá en un valor de cadena.<br>
+        &emspastr(12)<br>
+
