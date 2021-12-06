@@ -9,40 +9,51 @@
 </head>
 <body>
 
-    <div class="container">
-        <div class="rows_comentarios justify-content-center">
-            <div class="col-6">
-                <h3> Bienvenido al Foro</h3>
-                <form action="" class="form_comentarios d-flex justify-content-end flex-wrap">
-                    <textarea class="form-control" name="" cols="30"  rows="10" placeholder="Comentario"></textarea>
+    <form action="/foro" method="post">
 
-                    <button class="btn" type=button>Comentar</button>
-                </form>
-                
-                <div class="media">
-                    <img src="../static/img/usericon.png" width="64" height="64" alt="">
-                    <div class="medi_body">
-                        <p class="nombre">jhon Doe <span>7:61pm, hoy</span></p>
-                        <p class="comentario">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum quisquam animi
-                            maxime a voluptates tempore aliquam ipsa dolores harum, unde, reiciendis, eos consequatur.
-                            Expedita reprehenderit at, itaquearchitecto nam laudantium.
-                        </p>
-                        <div class="botones" text-right>
-                            
-                            <a href="#">Responder</a>
-                            <a href="#">Editar</a>
-                            <a href="#">Borrar</a>
-                            
-                        </div>
-                            
-                            
+        <div class="container">
+            <div class="rows_comentarios justify-content-center">
+                <div class="col-6">
+
+                    <h3> Bienvenido al Foro</h3>
+
+                <!--    <form action="/foro" class="form_comentarios d-flex justify-content-end flex-wrap" method="post"> -->
+                        <textarea class="form-control" name="comentario" cols="30"  rows="10" placeholder="Comentario"></textarea> <br><br>
+
+                        <button class="btn" type=button>Comentar</button> <br><br><br>
+            <!--        </form> -->
+
+                    <div>
+
+                        {% for i in range(results) %}
+
+                            <img src="../static/img/usericon.png" width="64" height="64" alt="">
+
+                            <p>
+                                {{comentario[loop.index - 1]}} <br><br>
+                                comment by: {{name[loop.index - 1]}}; at: <span>{{date[loop.index - 1]}}, {{time[loop.index - 1]}}</span> <br>
+                            </p>
+
+                            <div class="botones" text-right>
+
+                                <a href="#">Responder</a>
+                 <!--                <a href="#">Editar</a> -->
+                      <!--           <a href="#">Borrar</a> -->
+
+                            </div>
+                            <br><br>
+                        {% endfor %}
+
                     </div>
+
                 </div>
             </div>
+
         </div>
-     
-    </div>
+
+    </form>
+
+
 
 </body>
 </html>
