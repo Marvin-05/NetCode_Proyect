@@ -1,0 +1,35 @@
+<h2>String y numbers</h2>
+    Las cadenas en python están rodeadas por comillas simples o comillas dobles.
+    'hola' es lo mismo que "hola".
+    Puedes mostrar un literal de cadena con la función print():<br>
+
+    &emspprint("Hello,world")
+
+    La asignación de una cadena a una variable se realiza con el nombre de la variable seguido de un signo igual
+    y la cadena:
+
+    &emspprinta = "Hello"
+    &emspprint(a)
+
+    También se puede asignar una cadena multilínea a una variable mediante tres comillas:
+
+    &emspa = """Lorem ipsum dolor sit amet,
+    &emspconsectetur adipiscing elit,
+    &emspsed do eiusmod tempor incididunt
+    &emsput labore et dolore magna aliqua."""
+    &emspprint(a)
+
+    Al igual que muchos otros lenguajes de programación populares,
+    las cadenas en Python son matrices de bytes que representan caracteres unicode.
+    Sin embargo, Python no tiene un tipo de datos de caracteres, un solo carácter
+    es simplemente una cadena con una longitud de 1.
+    Los corchetes se pueden usar para acceder a los elementos de la cadena.
+
+    &emspa = "Hello, World!"
+    &emspprint(a[1])
+
+    Dado que las cadenas son matrices, podemos recorrer los caracteres de una cadena, con un bucle for.
+
+    &emspafor x in "banana":
+    &emspa&emspaprint(x)
+

@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width= , initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-</head>
-<body>
-    <button id="python-s1">Session 1</button>
-    <button id="python-s2">Session 2</button>
-
-    <h1>CURSO PYTHON</h1>
-    <div id="pbox1" class="clase-1">
-        <p>
-        </p>
-    </div>
-
-    <div id="pbox2" class="clase-1">
-        <h2>Tipos de Datos:</h2> <br>
-    	En programación, el tipo de datos es un concepto importante. <br><br>
+    En programación, el tipo de datos es un concepto importante. <br><br>
 
     	Las variables pueden almacenar datos de diferentes tipos, y diferentes tipos pueden hacer cosas diferentes. <br><br>
 
@@ -32,6 +11,22 @@
     	&emsp;Tipos de conjunto: set, frozenset <br>
     	&emsp;Tipo booleano: bool <br>
     	&emsp;Tipos binarios: bytes, bytearray, memoryview <br><br>
+
+    	Variables: <br>
+           		python no tiene un comando especifico para declara una variable, puede ser creada de ya con un valor asignado <br><br>
+            		ejemplo: <br>
+            			&emsp;x = 5 <br>
+            			&emsp;y = "John" <br>
+            			&emsp;print(x) <br>
+            			&emsp;print(y) <br><br>
+
+            	Casting: <br>
+            		Si quieres especificar el tipo de dato de una variable, esta puede ser casteada al igual que con el casting, podemos pasar una variable de string a entero, etc. <br><br>
+
+            		ejemplo: <br>
+            			&emsp;x = str(3) <br>
+            			&emsp;y = int(3) <br>
+            			&emsp;z = float(3) <br>
 
     	Valores booleanos <br>
     		En la programación a menudo es necesario saber si una expresión es True o False. <br>
@@ -55,11 +50,3 @@
     		&emsp;Operadores de membresía <br>
     		&emsp;Operadores bitwise <br><br>
 
-    		*Aquí iría una tabla chingona* <br>
-    </div>
-
-    <a href="/Cursos" id="back"><h4>Regresar</h4></a>
-
-    <script src="/static/scripts/scriptCursos.js"></script>
-</body>
-</html>

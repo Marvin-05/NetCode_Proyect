@@ -1,0 +1,25 @@
+<h2>Ciclos</h2>
+
+    &emspFor
+    Los ciclos for permiten ejecutar una o varias instrucciones de forma iterativa,
+    una vez por cada elemento en la colección.
+    Las colecciones pueden ser de varios tipos, el for puede recibir una colección predefinida o directamente de la salida
+    de una función.
+    El siguiente fragmento de código es utilizado para iterar a través de un rango del 1 al 10.
+
+    &emsp>>> for contador in range(1,10):
+    &emsp&emsp...     print contador,
+    &emsp...
+    &emsp1 2 3 4 5 6 7 8 9
+    &emsp>>>
+
+    &emspWhile
+    El ciclo while permite ejecutar un bloque de instrucciones mientras se cumpla la condición dada.
+    Primero comprueba que en efecto se cumple la condición dada y entonces,
+    ejecuta el segmento de código correspondiente hasta que la condición no se cumpla.<br>
+
+    Para imprimir una serie de números del 0 al 10.
+    &emsp>>> numero = 0
+    &emsp>>> while numero <= 10:
+    &emsp&emsp...     print numero
+    &emsp&emsp...     numero += 1

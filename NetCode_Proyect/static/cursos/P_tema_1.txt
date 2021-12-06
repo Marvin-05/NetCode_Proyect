@@ -1,0 +1,25 @@
+        Sintaxis: <br><br>
+
+            	- identación: <br><br>
+
+            		La sangría se refiere a los espacios al principio de una línea de código.
+            		Mientras que en otros lenguajes de programación la sangría en el código es solo para legibilidad, l
+            		a sangría en Python es muy importante porque usa la sangría para indicar un bloque de código. <br><br>
+
+            		por ejemplo: <br>
+            			&emsp;if 5 > 2: <br>
+            				&emsp;&emsp;print("Five is greater than two!") <br><br>
+
+            	- comentarios: <br>
+            		A diferencia de otros lenguajes se pone # para simbolizar que una línea será comentarea <br><br>
+            		ejemplo: <br>
+            			&emsp;#This is a comment <br><br>
+
+            		para comentarios de más de una linea son ''' '' <br><br>
+            		ejemplo: <br>
+            			&emsp;""" <br>
+            			&emsp;This is a comment <br>
+            			&emsp;written in <br>
+            			&emsp;more than just one line <br>
+            			&emsp;"""' <br><br>
+
