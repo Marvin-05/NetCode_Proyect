@@ -57,7 +57,52 @@ $("#C_9").on('click', function(){
    $("#tema").load('/static/cursos/C_tema_9.txt')
 });
 
-$("#J_0").on('click', function(){
+$("#Java_0").on('click', function(){
 
    $("#tema").load('/static/cursos/J_tema_0.txt')
+});
+
+$("#Java_1").on('click', function(){
+
+   $("#tema").load('/static/cursos/J_tema_1.txt')
+});
+
+$("#Java_2").on('click', function(){
+
+   $("#tema").load('/static/cursos/J_tema_2.txt')
+});
+
+$("#Java_3").on('click', function(){
+
+   $("#tema").load('/static/cursos/J_tema_3.txt')
+});
+
+$("#Java_4").on('click', function(){
+
+   $("#tema").load('/static/cursos/J_tema_4.txt')
+});
+
+$("#Java_5").on('click', function(){
+
+   $("#tema").load('/static/cursos/J_tema_5.txt')
+});
+
+$("#Java_6").on('click', function(){
+
+   $("#tema").load('/static/cursos/J_tema_6.txt')
+});
+
+$("#Java_7").on('click', function(){
+
+   $("#tema").load('/static/cursos/J_tema_7.txt')
+});
+
+$("#Java_8").on('click', function(){
+
+   $("#tema").load('/static/cursos/J_tema_8.txt')
+});
+
+$("#Java_9").on('click', function(){
+
+   $("#tema").load('/static/cursos/J_tema_9.txt')
 });
