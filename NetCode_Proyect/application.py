@@ -160,6 +160,14 @@ def session_opened():
         return render_template("admin.html")
 
 # creacion de formimagenes
+@app.route("/Almacen")
+def Galeria():
+    #Guardando la lista que proporciona la funcion listdir
+    listaImagenes = os.listdir(app.config['UPLOAD_FOLDER'])
+    print(listaImagenes)
+
+    return render_template("Almacen.html", listaImagenes = listaImagenes)
+
 
 @app.route("/formImage", methods= ["GET", "POST"])
 @login_required
@@ -167,20 +175,20 @@ def subir():
     if request.method == "POST":
         #Si no existe un archivo
         if "archivo" not in request.files:
-            return redirect("/subir")
+            return redirect("/FormImage")
 
         archivo = request.files['archivo']
 
         if archivo.filename == "":
-            return redirect("/subir")
+            return redirect("/FormImage")
 
         if archivo:
             nombreArchivo = archivo.filename
             archivo.save(os.path.join(app.config["UPLOAD_FOLDER"], nombreArchivo))
-            return redirect("/admin")
+            return redirect("/Almacen")
 
         else:
-            return redirect("/subir")
+            return redirect("/FormImage")
 
     else:
         return render_template("FormImage.html")
@@ -199,7 +207,7 @@ def Python():
 
     conn = connect()
 
-    results = topicData(conn, 4)
+    results = topicData(conn, 2)
 
     nTemas = 0 # aqui guardaremos el numero de temas
     names = [] # aqui guardaremos los nombres de cada tema
@@ -211,7 +219,7 @@ def Python():
             except:
                 names.append(c) # sino es el nombre de un tema
 
-    Curso = courseData(conn, 4)
+    Curso = courseData(conn, 2)
     nombreC = "curso"
 
     for r in Curso:

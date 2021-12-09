@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{url_for('static', filename='estilo.css')}}">
+    
+    <title>Galeria</title>
+</head>
+<body>
+    
+    <h1>Galeria NetCode</h1>
+    <a href="/admin">Regresar</a>
+    <a href="/formImage">Subir imagen</a>
+    
+    <div class="fila">
+
+        {% for imagen in listaImagenes %}
+        <div class="col">
+            <img src="{{ url_for('static', filename='images/' + imagen) }}" alt="">
+        </div>
+        {% endfor %}
+        
+    </div>
+</body>
+</html>

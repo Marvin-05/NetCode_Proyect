@@ -9,20 +9,11 @@
     <link rel="stylesheet" href="{{url_for('static', filename='estilo.css')}}">
 </head>
 <body>
-    <header>
+    
 
-       <div class="enlaces">
-
-            <ul>
-                <li><a href="/admin">Return</a></li>
-
-           </ul>
-       </div>
-
-    </header>
     <section>
         <h1>Subir imagen</h1>
-
+        <a href="/Almacen">Return</a>
         <form action="/formImage" method="post" enctype="multipart/form-data" class="form1">
             <input type="file" name="archivo">
             <button type="submit">Subir imagen</button>
