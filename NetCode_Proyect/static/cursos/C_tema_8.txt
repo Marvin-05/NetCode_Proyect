@@ -1,1 +1,6 @@
-<h3> Arreglos en C </h3>
+<h3> Arreglos en C </h3> <br>
+
+En C no existe un tipo de datos que acepte un conjunto de caracteres como una palabra, si bien existe el tipo de dato 'char' <br>
+este solo puede guardar un caracter a la vez. <br><br>
+
+para poder guardar

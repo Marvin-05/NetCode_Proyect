@@ -1,0 +1,12 @@
+#jm-loadingpage {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 999999999;
+    background: black center;
+    color: white;
+    /*    background: url(/static/img/loading.gif) center no-repeat #fff; */
+    text-align: center;
+}

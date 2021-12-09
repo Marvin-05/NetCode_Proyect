@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="../static/css/loading.css">
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
@@ -45,9 +45,11 @@
             </div>
 </header>
 <body>
-    <div id="contenedor_carga">
-            <div id="carga"></div>
+    <div id="jm-loadingpage">
+        <img src="http://3.bp.blogspot.com/_f5VsKh2clCE/Suo5agPg10I/AAAAAAAAAHk/BSYd3tgSSHo/s1600/loading.gif" alt="loading..." width="500" heigt="500">
+        <h1>Just holding things up here. Please wait while info shows up :)</h1>
     </div>
+
     {% block body%}
 
         <div class="BIENVENIDA-HOME">
@@ -105,20 +107,14 @@
                 <ul>
                     <li><a href="https://github.com/Marvin-05"><img src="../static/img/github.png" alt="github">Marvin Sevilla</a></li>
                     <li><a href="https://github.com/fernando-fate"><img src="../static/img/github.png" alt="github">Fernando Galo</a></li>
-                    <li><a href="https://github.com/richardbriones10"><img src="../static/img/github.png" alt="github">Richard Briones</a></li>
-        <!--            <li><a href="https://github.com/mreyes2017"><img src="../static/img/github.png" alt="github">Moises Reyes</a></li> -->
+                    <li><a href="https://github.com/Kirst08"><img src="../static/img/github.png" alt="github">Kirsten López</a></li>
+                    <li><a href="https://github.com/mreyes2017"><img src="../static/img/github.png" alt="github">Moises Reyes</a></li>
                 </ul>
             </div>
             <p>Todos los derechos reservados a NETCODE</p>
         </div>
 </footer>
-<script>
-    window.onload = function()
-    {
-        var contenedor = document.getElementById('contenedor_carga');
 
-        contenedor.style.visibility = 'hidden';
-        contenedor.style.opacity = '0';
-    }
-</script>
+<script src="/static/scripts/loading.js"></script>
+
 </html>
