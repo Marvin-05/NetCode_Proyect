@@ -50,5 +50,9 @@ Donde el primer identificador corresponde a la primer variable despues de las co
 variable y asi sucesivamente. Al igual que en el scanf, en el printf las variables deben ser del mismo tipo de dato que el de su
 identificador correspondiente (v1 y v2 int, v3 float, v4 char). <br>
 
+<br> <br>
 
+<b> Sigue aprendiendo :) </b> <br> <br>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4PdRjWsOUlI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

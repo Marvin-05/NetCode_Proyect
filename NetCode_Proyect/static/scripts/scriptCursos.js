@@ -106,3 +106,53 @@ $("#Java_9").on('click', function(){
 
    $("#tema").load('/static/cursos/J_tema_9.txt')
 });
+
+$("#Python_0").on('click', function(){
+
+   $("#tema").load('/static/cursos/P_tema_0.txt')
+});
+
+$("#Python_1").on('click', function(){
+
+   $("#tema").load('/static/cursos/P_tema_1.txt')
+});
+
+$("#Python_2").on('click', function(){
+
+   $("#tema").load('/static/cursos/P_tema_2.txt')
+});
+
+$("#Python_3").on('click', function(){
+
+   $("#tema").load('/static/cursos/P_tema_3.txt')
+});
+
+$("#Python_4").on('click', function(){
+
+   $("#tema").load('/static/cursos/P_tema_4.txt')
+});
+
+$("#Python_5").on('click', function(){
+
+   $("#tema").load('/static/cursos/P_tema_5.txt')
+});
+
+$("#Python_6").on('click', function(){
+
+   $("#tema").load('/static/cursos/P_tema_6.txt')
+});
+
+$("#Python_7").on('click', function(){
+
+   $("#tema").load('/static/cursos/P_tema_7.txt')
+});
+
+$("#Python_8").on('click', function(){
+
+   $("#tema").load('/static/cursos/P_tema_8.txt')
+});
+
+$("#Python_9").on('click', function(){
+
+   $("#tema").load('/static/cursos/P_tema_9.txt')
+});

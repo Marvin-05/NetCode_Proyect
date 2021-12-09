@@ -199,7 +199,7 @@ def Python():
 
     conn = connect()
 
-    results = topicData(conn, 2)
+    results = topicData(conn, 4)
 
     nTemas = 0 # aqui guardaremos el numero de temas
     names = [] # aqui guardaremos los nombres de cada tema
@@ -211,7 +211,7 @@ def Python():
             except:
                 names.append(c) # sino es el nombre de un tema
 
-    Curso = courseData(conn, 2)
+    Curso = courseData(conn, 4)
     nombreC = "curso"
 
     for r in Curso:

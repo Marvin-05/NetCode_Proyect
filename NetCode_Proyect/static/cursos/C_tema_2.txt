@@ -33,3 +33,10 @@ Los identificadores de los tipos de datos mas usados son: <br><br>
 	-long = %dl. <br>
 	-float = %f. <br>
 	-char = %c. <br>
+
+<br> <br>
+
+<b> Sigue aprendiendo :) </b> <br> <br>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TRwuPth2_P4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+

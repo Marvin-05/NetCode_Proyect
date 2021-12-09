@@ -50,4 +50,7 @@ public class Program {<br></br>
 El código anterior imprimirá "Welcome!" si "age" es mayor que 18 ó si "money" es mayor que 500.<br></br>
 
 El operador lógico NOT (!) es utilizado para revertir el estado lógico de su operando.<br></br>
-Si una condición es verdadera, el operador lógico NOT la convertirá en falsa<br></br> 
+Si una condición es verdadera, el operador lógico NOT la convertirá en falsa<br></br>
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_Os2cGZbW6k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

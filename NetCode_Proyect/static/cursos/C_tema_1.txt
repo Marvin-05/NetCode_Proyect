@@ -23,3 +23,9 @@ Por ejemplo, queremos guardar un numero entero, podemos crear la variable de la 
 
 identificador_variable  	 valor almacenado <br>
 	  numero  		     =		    4 <br>
+
+<br> <br>
+
+        <b> Sigue aprendiendo :) </b> <br> <br>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/UxvUTk0NoYc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
