@@ -160,38 +160,43 @@ def session_opened():
         return render_template("admin.html")
 
 # creacion de formimagenes
-@app.route("/Almacen")
-def Galeria():
+global id_a
+
+@app.route("/Almacen/<id_a>")
+def Galeria(id_a):
     #Guardando la lista que proporciona la funcion listdir
     listaImagenes = os.listdir(app.config['UPLOAD_FOLDER'])
     print(listaImagenes)
+    id_a= (int)(id_a)
+    return render_template("Almacen.html", listaImagenes = listaImagenes, id_a=id_a)
 
-    return render_template("Almacen.html", listaImagenes = listaImagenes)
 
 
-@app.route("/formImage", methods= ["GET", "POST"])
+
+@app.route("/formImage/<id_a>", methods= ["GET", "POST"])
 @login_required
-def subir():
+def subir(id_a):
+    
     if request.method == "POST":
         #Si no existe un archivo
         if "archivo" not in request.files:
-            return redirect("/FormImage")
+            return redirect("/FormImage/"+ id_a)
 
         archivo = request.files['archivo']
 
         if archivo.filename == "":
-            return redirect("/FormImage")
+            return redirect("/FormImage/"+ id_a)
 
         if archivo:
             nombreArchivo = archivo.filename
             archivo.save(os.path.join(app.config["UPLOAD_FOLDER"], nombreArchivo))
-            return redirect("/Almacen")
+            return redirect("/Almacen/"+ id_a)
 
         else:
-            return redirect("/FormImage")
+            return redirect("/FormImage/"+ id_a)
 
     else:
-        return render_template("FormImage.html")
+        return render_template("FormImage.html", id_a=id_a)
 
 
 # Administrar los comenatarios del foro

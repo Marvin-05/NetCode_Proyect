@@ -5,15 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{url_for('static', filename='estilo.css')}}">
-    
+
     <title>Galeria</title>
 </head>
 <body>
-    
+
     <h1>Galeria NetCode</h1>
-    <a href="/admin">Regresar</a>
-    <a href="/formImage">Subir imagen</a>
-    
+    {% if id_a == 1 %}
+        <a href="/admin">Regresar</a>
+        <a href="/formImage/1">Subir imagen</a>
+    {% endif %}
+
+    {% if id_a == 2 %}
+        <a href="/admin">Regresar</a>
+        <a href="/formImage/2">Subir imagen</a>
+
+    {% endif %}
+
+    {% if id_a == 3 %}
+        <a href="/Cursos">Regresar</a>
+        <a href="/formImage/3">Subir imagen</a>
+
+    {% endif %}
+
+
+
     <div class="fila">
 
         {% for imagen in listaImagenes %}
@@ -21,7 +37,7 @@
             <img src="{{ url_for('static', filename='images/' + imagen) }}" alt="">
         </div>
         {% endfor %}
-        
+
     </div>
 </body>
 </html>
