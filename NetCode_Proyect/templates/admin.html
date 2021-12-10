@@ -1,7 +1,31 @@
 {%extends "Cursos.html"%}
 
+
 {% block header %}
+    <div class="icons-enlaces">
+                <ul>
+                    <div class="text">
+                        <h1>NETCODE</h1>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="/admin"> <img src="../static/img/home.png" alt="homeicon"> Home</a></li>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="/foro"><img src="../static/img/chat.png" alt="homeicon">Foro</a></li>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="/Almacen/1"> <img src="../static/img/book.png" alt="bibliotecaicon"> Biblioteca</a></li>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="#"><img src="../static/img/usericon.png" alt="user">usuario</a></li>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="/logout"><img src="../static/img/logout.png" alt="logout">log out</a></li>
+                    </div>
+                </ul>
+            </div>
 {% endblock %}
+            
 
 {% block body %}
     <div class="opciones admin">
@@ -9,7 +33,7 @@
             <a href="/Cursos"><img src="../static/img/ver-curso.png" alt="forito-admin"></a>
         </div>
         <div class="Subir-cursos">
-            <a href="/Almacen"><img src="../static/img/subir-cursos.png" alt=""></a>
+            <a href="/Almacen/2"><img src="../static/img/subir-cursos.png" alt=""></a>
         </div>
         <div class="administrar-foros">
             <a href="/foro-comentarios"><img src="../static/img/foro-admin.png" alt=""></a>
