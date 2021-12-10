@@ -176,24 +176,30 @@ def Galeria(id_a):
 @app.route("/formImage/<id_a>", methods= ["GET", "POST"])
 @login_required
 def subir(id_a):
-    
+
+    #print(id_a)
+
     if request.method == "POST":
+
+        if not request.files['archivo']:
+            return redirect(f"/formImage/{id_a}")
+
         #Si no existe un archivo
-        if "archivo" not in request.files:
-            return redirect("/FormImage/"+ id_a)
+        #if "archivo" not in request.files:
+         #   return redirect("/FormImage/"+ id_a)
 
         archivo = request.files['archivo']
 
         if archivo.filename == "":
-            return redirect("/FormImage/"+ id_a)
+            return redirect(f"/formImage/{is_a}")
 
         if archivo:
             nombreArchivo = archivo.filename
             archivo.save(os.path.join(app.config["UPLOAD_FOLDER"], nombreArchivo))
-            return redirect("/Almacen/"+ id_a)
+            return redirect(f"/Almacen/{id_a}")
 
         else:
-            return redirect("/FormImage/"+ id_a)
+            return redirect(f"/formImage/{id_a}")
 
     else:
         return render_template("FormImage.html", id_a=id_a)
