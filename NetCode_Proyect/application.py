@@ -283,8 +283,6 @@ def temaSelected(nTema):
 
     nTema = int(nTema)
 
-    print(js[nTema])
-
     return jsonify(js[nTema])
 
 @app.route("/foro", methods=["GET", "POST"])

@@ -52,7 +52,7 @@
                 </ul>
             </div>
     </header>
-    <body>
+    <body onload="cargarContenido()">
         <div class="texto">
             <h1>Curso De {{ cursoSelected }}</h1>
         </div>
@@ -62,7 +62,7 @@
                     <form action="/temaSelected/{{result}}">
                         <div>
                             <button class="btn btn-primary btn-block"> Tema {{ result }}: {{ Nombres[loop.index - 1] }} </button>
-                        </div>
+                        </div> <br>
                     </form>
                     <br><br>
                 {% endfor %}
