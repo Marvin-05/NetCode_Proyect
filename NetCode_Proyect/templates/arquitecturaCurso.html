@@ -22,6 +22,9 @@
         <!-- http://handlebarsjs.com/ -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
+         <!-- http://jquery.com/ -->
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
 
         <title>Curso</title>
     </head>
@@ -56,17 +59,24 @@
 
         <div class="sessions"> <!-- en este div se cargaran los botones dependiendo de el numero de temas en un curso -->
                 {% for result in range(temas) %}
-                    <button id="{{cursoSelected}}_{{result}}" class="btn btn-primary btn-block"> Tema {{ result }}: {{ Nombres[loop.index - 1] }} </button>
-                    <br>
+                    <form action="/temaSelected/{{result}}">
+                        <div>
+                            <button class="btn btn-primary btn-block"> Tema {{ result }}: {{ Nombres[loop.index - 1] }} </button>
+                        </div>
+                    </form>
+                    <br><br>
                 {% endfor %}
                 <br><br>
+
+                <script src="{{ url_for('static', filename='scripts/scripts.js') }}"></script>
+
         </div>
 
         <div id="tema">
 
         </div>
-        <a href="/Cursos" class="btn btn-primary btn-block"><h4>Regresar</h4></a>
-        <script src="/static/scripts/scriptCursos.js"></script>
+        <a href="/User" class="btn btn-primary btn-block"><h4>Regresar</h4></a>
+
     </body>
     <footer>
         <div class="contac-us">

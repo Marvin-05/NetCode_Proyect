@@ -1,6 +1,10 @@
-from flask import Flask, request, render_template,redirect, session, url_for
+from flask import Flask, request, render_template,redirect, session, url_for, jsonify
 
 from dataRequest import connect, New_Register, Nick_existente, Correct_LogIn, recover_password, Correct_User, login_required, courseData, topicData
+
+import json
+
+from cs50 import SQL
 
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_session import Session
@@ -13,6 +17,7 @@ app = Flask("__name__")
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+db = SQL("sqlite:///Users.db")
 
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_FILE_DIR"] = mkdtemp()
@@ -63,7 +68,7 @@ def login():
             session["admin"] = session["user_id"]
             return redirect("/admin")
         else:
-            return redirect("/Cursos")
+            return redirect("/User")
 
     return render_template("login.html")
 
@@ -134,10 +139,29 @@ def recover():
     return render_template("recover.html")
 
 
-@app.route("/Cursos")
+@app.route("/User")
 @login_required
 def session_open():
-    return render_template("Cursos.html")
+
+    conn = connect()
+    cursor = conn.cursor()
+
+    results = cursor.execute("select * from Curso")
+
+    nombres = []
+    img = []
+    ids = []
+    count = 0
+
+    for r in results:
+        ids.append(r[0])
+        nombres.append(r[1])
+        img.append(r[4])
+        count = int(count + 1)
+
+
+    return render_template("User.html", cursos=count, names=nombres, img=img, Curso_id=ids)
+
 
 @app.route("/admin")
 @login_required
@@ -155,7 +179,7 @@ def session_opened():
     conn.close() # cerramos la conexcion a la base de datos
 
     if admin == 0:
-        return redirect("/Cursos")
+        return redirect("/User")
     else:
         return render_template("admin.html")
 
@@ -169,8 +193,6 @@ def Galeria(id_a):
     print(listaImagenes)
     id_a= (int)(id_a)
     return render_template("Almacen.html", listaImagenes = listaImagenes, id_a=id_a)
-
-
 
 
 @app.route("/formImage/<id_a>", methods= ["GET", "POST"])
@@ -211,14 +233,13 @@ def subir(id_a):
 def foroAdmin():
     return render_template("foro-tabla.html")
 
-
-@app.route("/Python")
+@app.route("/Curso/<id>")
 @login_required
-def Python():
+def Curso(id):
 
     conn = connect()
-
-    results = topicData(conn, 2)
+    cursor = conn.cursor()
+    results = topicData(conn, id)
 
     nTemas = 0 # aqui guardaremos el numero de temas
     names = [] # aqui guardaremos los nombres de cada tema
@@ -230,75 +251,41 @@ def Python():
             except:
                 names.append(c) # sino es el nombre de un tema
 
-    Curso = courseData(conn, 2)
+    Curso = courseData(conn, id)
     nombreC = "curso"
 
     for r in Curso:
         for c in r:
             nombreC = c
 
+    content = db.execute(f"SELECT Tema.Contenido FROM Curso INNER JOIN Tema on Tema.Id_Curso=Curso.Id WHERE Curso.Id = {id}")
+
+    #js = json.loads(c)
+
+    js = json.dumps(content, indent=4)
+
+    f = open("Temas.json", "w")
+    f.write(js)
+    f.close()
+    #print(content)
+
+    #jsonify(content)
     conn.close() # cerramos la coneccion a la base de datos
 
-    return render_template("arquitecturaCurso.html", Nombres = names, temas=nTemas, cursoSelected=nombreC)
+    return render_template("arquitecturaCurso.html", Nombres = names, temas=nTemas, cursoSelected=nombreC, c_id=id)
 
-@app.route("/C")
-@login_required
-def C():
+@app.route("/temaSelected/<nTema>")
+def temaSelected(nTema):
 
-    conn = connect()
+    f = open("Temas.json", "r")
+    c = f.read()
+    js = json.loads(c)
 
-    results = topicData(conn, 3)
+    nTema = int(nTema)
 
-    nTemas = 0 # aqui guardaremos el numero de temas
-    names = [] # aqui guardaremos los nombres de cada tema
+    print(js[nTema])
 
-    for r in results:
-        for c in r:
-            try:
-                nTemas = int(c) # si es un digito es el numero de temas
-            except:
-                names.append(c) # sino es el nombre de un tema
-
-    Curso = courseData(conn, 3)
-    nombreC = "curso"
-
-    for r in Curso:
-        for c in r:
-            nombreC = c
-
-    conn.close() # cerramos la coneccion a la base de datos
-
-    return render_template("arquitecturaCurso.html", Nombres = names, temas=nTemas, cursoSelected=nombreC)
-
-
-@app.route("/Java")
-@login_required
-def Java():
-
-    conn = connect()
-
-    results = topicData(conn, 2)
-
-    nTemas = 0 # aqui guardaremos el numero de temas
-    names = [] # aqui guardaremos los nombres de cada tema
-
-    for r in results:
-        for c in r:
-            try:
-                nTemas = int(c) # si es un digito es el numero de temas
-            except:
-                names.append(c) # sino es el nombre de un tema
-
-    Curso = courseData(conn, 2)
-    nombreC = "curso"
-
-    for r in Curso:
-        for c in r:
-            nombreC = c
-
-    conn.close() # cerramos la coneccion a la base de datos
-
-    return render_template("arquitecturaCurso.html", Nombres = names, temas=nTemas, cursoSelected=nombreC)
+    return jsonify(js[nTema])
 
 @app.route("/foro", methods=["GET", "POST"])
 @login_required

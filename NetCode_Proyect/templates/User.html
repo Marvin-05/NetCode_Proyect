@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NETCODE</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/css/cursos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/loading.css">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+</head>
+<header>
+    {% block header %}
+    {% endblock %}
+            <div class="icons-enlaces">
+                <ul>
+                    <div class="text">
+                        <h1>NETCODE</h1>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="/admin"> <img src="../static/img/home.png" alt="homeicon"> Home</a></li>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="/foro"><img src="../static/img/chat.png" alt="homeicon">Foro</a></li>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="/Almacen/3"> <img src="../static/img/book.png" alt="bibliotecaicon"> Biblioteca</a></li>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="#"><img src="../static/img/usericon.png" alt="user">usuario</a></li>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="/logout"><img src="../static/img/logout.png" alt="logout">log out</a></li>
+                    </div>
+                </ul>
+            </div>
+</header>
+<body>
+    <div id="jm-loadingpage">
+        <img src="http://3.bp.blogspot.com/_f5VsKh2clCE/Suo5agPg10I/AAAAAAAAAHk/BSYd3tgSSHo/s1600/loading.gif" alt="loading..." width="500" heigt="500">
+        <h1>Just holding things up here. Please wait while info shows up :)</h1>
+    </div>
+
+    {% block body%}
+
+        <div class="BIENVENIDA-HOME">
+            <img src="../static/img/welcome.png" alt="Bienvenida a home">
+        </div>
+        <div class="main-container">
+           <div class = "slider">
+                <div id="demo" class="carousel slide" data-ride="carousel">
+                    <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                    </ul>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="../static/img/1.png" alt="Ora ora" width="100%" height="300">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../static/img/2.png" alt="jotaro" width="100%" height="300">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../static/img/3.png" alt="lero lero" width="100%" height="300">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                  </a>
+                  <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                  </a>
+                </div>
+            </div>
+        </div>
+        <h2>CURSOS DISPONIBLES</h2>
+        <div class="cursos">
+            {% for curso in range(cursos) %}
+
+                <div class="card-java">
+                    <a href="/Curso/{{ Curso_id[loop.index - 1] }}"><img src="{{ img[loop.index - 1] }}" alt="curso {{ names[loop.index - 1] }}"></a>
+                </div>
+
+            {% endfor %}
+        </div>
+    {%endblock%}
+
+</body>
+<footer>
+    {% block footer %}
+    {% endblock %}
+        <div class="contac-us">
+            <div class="Integrantes">
+                <p>Integrantes del proyecto:</p>
+                <ul>
+                    <li><a href="https://github.com/Marvin-05"><img src="../static/img/github.png" alt="github">Marvin Sevilla</a></li>
+                    <li><a href="https://github.com/fernando-fate"><img src="../static/img/github.png" alt="github">Fernando Galo</a></li>
+                    <li><a href="https://github.com/Kirst08"><img src="../static/img/github.png" alt="github">Kirsten López</a></li>
+                    <li><a href="https://github.com/mreyes2017"><img src="../static/img/github.png" alt="github">Moises Reyes</a></li>
+                </ul>
+            </div>
+            <p>Todos los derechos reservados a NETCODE</p>
+        </div>
+</footer>
+
+<script src="/static/scripts/loading.js"></script>
+
+</html>
