@@ -1,26 +1,3 @@
-const url = "https://ide-c71f377c0abd4ccaba7ed5c6be009bc1-8080.cs50.ws/temaSelected/0?";
-
-function cargarContenido(){
-
-    const httpx = new XMLHttpRequest();
-
-    httpx.onload = function(){
-
-        let datos = JSON.parse(this.responseText);
-
-        let res = document.getElementById("tema");
-        res.innerHTML = '';
-        //console.log(datos);
-        res.innerHTML += datos.Contenido;
-
-    };
-
-    httpx.open('Get', url);
-
-    httpx.send();
-
-}
-
 function comentarios(){
 
     const httpx = new XMLHttpRequest();
@@ -45,4 +22,3 @@ function comentarios(){
     httpx.send()
 
 }
-

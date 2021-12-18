@@ -1,52 +1,14 @@
-*, *:after, *:before
+*
 {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-#cotenedor_carga
+
+.BIENVENIDA-HOME
 {
-    background-color: rgba(250, 240, 245, 0.9);
-    height: 100%;
     width: 100%;
-    position: fixed;
-    -webkit-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    transition: all 1s ease;
-    z-index: 10000;
 }
-#carga
-{
-    border: 15px solid #ccc;
-    border-top-color: #f4266A;
-    border-top-style: groove;
-    height: 100px;
-    width: 100px;
-    border-radius: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    -webkit-animation: girar 1.5s linear infinite;
-    -o-animation: girar 1.5s linear infinite;
-    animation: girar 1.5s linear infinite;
-}
-@keyframes girar
-{
-    from
-    {
-        transform: rotate(0deg);
-    }
-    to
-    {
-        transform: rotate(360deg);
-
-    }
-
-}
-
 header
 {
     background-color: white;
@@ -60,8 +22,13 @@ header
     border-color: #827E826B;
     border-width: 0px 0px 5px 0px;
     margin-bottom: 19%;
-    z-index: 10000;
+    z-index: 1000;
 
+}
+
+.icons-enlaces {
+    display: flex;
+    z-index: 1;
 }
 
 header .icons-enlaces ul
@@ -76,7 +43,7 @@ header .icons-enlaces ul .text h1
     float: right;
     font-family: 'M PLUS Code Latin', sans-serif;
     text-align: center;
-    margin-left: 50px;
+    margin-left: 120px;
     margin-right: 550px;
 }
 
@@ -126,7 +93,6 @@ body
 }
 .BIENVENIDA-HOME img
 {
-    margin-top: 8%;
     width: 100%;
     height: 600px;
 }
@@ -314,13 +280,79 @@ footer .contac-us .Integrantes ul li a img
     margin-top: 2%;
 }
 
-#global {
-	height: 300px;
-	width: 825px;
-	border: 1px solid #ddd;
-	background: #f1f1f1;
-	overflow-y: scroll;
+/*Responsive del menu*/
+.nav-palanca{
+      color: blue;
+      background: none;
+      border: none;
+      font-size: 60px;
+      padding: 0 20px;
+      line-height: 60px;
+      cursor: pointer;
+      display: none;
 }
-#mensajes {
-	height: auto;
+
+@media(max-width:1024px){
+    .menu-responsive
+    {
+        flex-direction:column;
+        background-color: white;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        height: calc(100% -60px);
+        overflow-y: auto;
+        left: 100%;
+        transition: left 0.3s;
+    }
+    .nav-palanca{
+        display: block;
+    }
+    .nav-menu_visible{
+        left: 0;
+    }
+    .nav-palanca:focus:not(:focus-visible){
+        outline: none;
+    }
+    .text{
+        display: none;
+    }
+}
+
+@media(max-width:800px)
+{
+    .BIENVENIDA-HOME
+    {
+        position: relative;
+        z-index: -1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+    }
+    .BIENVENIDA-HOME img
+    {
+        width: 80%;
+        height: auto;
+    }
+}
+
+/*SUBIR CURSOS*/
+.formulario-cursos
+{
+    width: 40%;
+    display: inline-block;
+    margin-left: 28%;
+}
+.formulario-cursos .boton
+{
+    width: 100%;
+}
+.formulario-cursos .boton button
+{
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 2%;
 }

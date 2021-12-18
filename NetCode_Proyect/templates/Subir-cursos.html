@@ -17,9 +17,6 @@
                         <li><a href="/Almacen/1"> <img src="../static/img/book.png" alt="bibliotecaicon"> Biblioteca</a></li>
                     </div>
                     <div class="image-icon">
-                        <li><a href="#"><img src="../static/img/usericon.png" alt="user">usuario</a></li>
-                    </div>
-                    <div class="image-icon">
                         <li><a href="/logout"><img src="../static/img/logout.png" alt="logout">log out</a></li>
                     </div>
                 </ul>
@@ -28,17 +25,34 @@
 
 
 {% block body %}
-    <div class="opciones admin">
-        <div class="ver-cursos">
-            <a href="/User"><img src="../static/img/ver-curso.png" alt="forito-admin"></a>
+    <br><br><br><br><br>
+    <form class="formulario-cursos"  method="post" enctype="multipart/form-data" >
+        <h1>COMPLETE EL FORMULARIO</h1>
+        <br>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <input id="msg" type="text" class="form-control" name="msg" placeholder="Nombre del curso">
         </div>
-        <div class="Subir-cursos">
-            <a href="/Almacen-cursos/2"><img src="../static/img/subir-cursos.png" alt=""></a>
+        <br><br>
+        <div class="form-group">
+          <h3>Descripcion del curso:</h3>
+          <textarea class="form-control" name="Des" rows="5" id="comment" placeholder="Ponga una breve introducción"></textarea>
         </div>
-        <div class="administrar-foros">
-            <a href="/foro-comentarios"><img src="../static/img/foro-admin.png" alt=""></a>
+        <br>
+        <div class="file-field big">
+                <h3>Ingrese la imagen del curso:</h3>
+                <a class="btn-floating btn-lg cyan darken-2 mt-0 float-left">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  <input type="file" multiple name="imagen">
+                </a>
         </div>
-    </div>
+        <br>
+        <div class="boton">
+            <button type="submit" class="btn btn-lg btn-primary" >Subir</button>
+        </div>
+  </form>
 {% endblock %}
+
 {% block footer%}
+
 {% endblock %}

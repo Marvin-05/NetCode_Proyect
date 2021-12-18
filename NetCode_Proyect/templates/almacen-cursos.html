@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/css/curso-subir.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/loading.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"/>
+
+
+    <title>CURSOS SUBIDOS</title>
+</head>
+<header>
+            <div class="icons-enlaces">
+                <ul>
+                    <div class="text">
+                        <h1>NETCODE</h1>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="/admin"> <img src="../static/img/home.png" alt="homeicon"> Home</a></li>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="/foro"><img src="../static/img/chat.png" alt="homeicon">Foro</a></li>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="/Almacen/3"> <img src="../static/img/book.png" alt="bibliotecaicon"> Biblioteca</a></li>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="#"><img src="../static/img/usericon.png" alt="user">usuario</a></li>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="/logout"><img src="../static/img/logout.png" alt="logout">log out</a></li>
+                    </div>
+                </ul>
+            </div>
+</header>
+<body>
+    <div class="aux">
+        <h1>Curso Netcode</h1>
+        {% if id_a == 1 %}
+            <a href="/admin" "btn btn-primary btn-block">Regresar</a>
+            <a href="/subir-cursos/1">Subir Cursos</a>
+        {% endif %}
+
+        {% if id_a == 2 %}
+            <a href="/admin">Regresar</a>
+            <a href="/subir-cursos/2">Subir Cursos</a>
+
+        {% endif %}
+
+        {% if id_a == 3 %}
+            <a href="/User">Regresar</a>
+            <a href="/subir-cursos/3">Subir Cursos</a>
+
+        {% endif %}
+        <br><br>
+        <div class="fila">
+            {% for curso in range(cursos) %}
+
+                <div class="card-java">
+                    <a href="/verTemas/{{ Curso_id[loop.index - 1] }}"><img src="{{ img[loop.index - 1] }}" alt="curso {{ names[loop.index - 1] }}"></a>
+                </div>
+                <br><br>
+            {% endfor %}
+        </div>
+        <br><br>
+    </div>
+</body>
+</html>

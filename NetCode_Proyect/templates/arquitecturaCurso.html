@@ -52,25 +52,25 @@
                 </ul>
             </div>
     </header>
-    <body onload="cargarContenido()">
+    <body>
         <div class="texto">
             <h1>Curso De {{ cursoSelected }}</h1>
         </div>
 
         <div class="sessions"> <!-- en este div se cargaran los botones dependiendo de el numero de temas en un curso -->
                 {% for result in range(temas) %}
-                    <form action="/temaSelected/{{result}}">
+                    <form action="/temaSelected/{{result}}" class="btn_tema">
                         <div>
-                            <button class="btn btn-primary btn-block"> Tema {{ result }}: {{ Nombres[loop.index - 1] }} </button>
+                            <button type="submit" class="btn btn-primary btn-block"> Tema {{ result }}: {{ Nombres[loop.index - 1] }} </button>
                         </div> <br>
                     </form>
                     <br><br>
                 {% endfor %}
                 <br><br>
 
-                <script src="{{ url_for('static', filename='scripts/scripts.js') }}"></script>
-
         </div>
+
+        <script src="/static/scripts/scriptCursos.js"></script>
 
         <div id="tema">
 
