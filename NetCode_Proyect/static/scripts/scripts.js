@@ -21,50 +21,28 @@ function cargarContenido(){
 
 }
 
-/*
-function cargarContenido(){
-    let parameters = {
-    };
-
-    let nTema = 0;
-
-    let url = "/temaSelected/"+nTema
-
-    // obtenemos los articulos buscados en articles segun geo
-    $.getJSON(url, parameters, function(data, txtStatus, jqXHR){
-
-        let res = document.getElementById("tema");
-        res.innerHTML = '';
-        console.log(data);
-        res.innerHTML += data[0].Contenido;
-
-    });
-}
-
-
-
-function Content(id, c_id){
-
+function comentarios(){
 
     const httpx = new XMLHttpRequest();
 
-    httpx.open('Get', "Temas.json", true);
+    httpx.onload = function(){
+        let datos = JSON.parse(this.responseText);
 
-    httpx.send();
+        let tabla = document.getElementById("tablaCuerpo");
 
-    httpx.onreadystatechange = function(){
+        console.log(tabla)
+        tabla.innerHTML = "";
 
-        if (this.readyState == 4 && this.status == 200){
+        console.log(datos);
+        for(let i = 0; i < datos.length; i++){
 
-            let datos = JSON.parse(this.responseText);
+            tabla.innerHTML += '<tr> <td>' + datos[i].NickName + '</td> <td>' + datos[i].Comment + '<br> <a href="/eliminarComment/'+datos[i].Id+'" >ELIMINAR</a> </td> </tr>';
 
-            let res = document.querySelector("#tema");
-            res.innerHTML = '';
-
-            res.innerHTML += datos[id].Contenido;
         }
-
     };
+
+    httpx.open('GET', '/comentarios');
+    httpx.send()
+
 }
-*/
 

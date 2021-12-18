@@ -363,6 +363,26 @@ def ForoRespuesta():
     else:
         return render_template("RespuestaForo.html")
 
+@app.route("/eliminarComment/<id_c>")
+def eliminarComment(id_c):
+
+    id_c = int(id_c)
+
+    print(f"comment: {id_c}")
+
+    db.execute("delete from ForoComentarios \
+                        where Id = :id", id=id_c)
+
+    return redirect("/foro-comentarios")
+
+
+@app.route("/comentarios")
+def comentarios():
+
+    js = db.execute("select Info_Usuario.NickName, ForoComentarios.Comment, ForoComentarios.Id from ForoComentarios \
+                                    inner join Info_Usuario \
+                                    on Info_Usuario.Id=ForoComentarios.User_Id")
+    return jsonify(js)
 
 @app.route("/logout", methods = ["GET", "POST"])
 @login_required

@@ -44,33 +44,30 @@
                     <h1> Bienvenido al Foro</h1>
 
                 <!--    <form action="/foro" class="form_comentarios d-flex justify-content-end flex-wrap" method="post"> -->
-                        <textarea class="form-control" name="comentario" cols="110"  rows="10" placeholder="Comentario"></textarea> <br><br>
-
-                        <button class="btn" type=submit>Comentar</button> <br><br><br>
             <!--        </form> -->
 
-                    <div>
+                    <div id="global">
 
                         {% for i in range(results) %}
 
-                            <img src="../static/img/usericon.png" width="64" height="64" alt="">
+                            <div id="mensajes">
+                                <img src="../static/img/usericon.png" width="64" height="64" alt="">
 
-                            <p>
-                                {{comentario[loop.index - 1]}} <br><br>
-                                comment by: {{name[loop.index - 1]}}; at: <span>{{date[loop.index - 1]}}, {{time[loop.index - 1]}}</span> <br>
+                                <p>
+                                    {{comentario[loop.index - 1]}} <br><br>
+                                    comment by: {{name[loop.index - 1]}}; at: <span>{{date[loop.index - 1]}}, {{time[loop.index - 1]}}</span> <br>
 
-                            </p>
-
-                            <div class="botones" text-right>
-
-                 <!--                <a href="#">Editar</a> -->
-                      <!--           <a href="#">Borrar</a> -->
-
+                                </p>
                             </div>
+
                             <br><br>
                         {% endfor %}
 
                     </div>
+                    <br><br>
+                    <textarea class="form-control" name="comentario" cols="110"  rows="10" placeholder="Comentario"></textarea> <br><br>
+
+                    <button class="btn" type=submit>Comentar</button> <br><br><br>
 
                 </div>
             </div>
