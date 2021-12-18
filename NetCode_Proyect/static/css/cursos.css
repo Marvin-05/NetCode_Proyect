@@ -362,3 +362,23 @@ footer .contac-us .Integrantes ul li a img
     margin-top: 5%;
     margin-bottom: 2%;
 }
+
+.A
+{
+    margin-top: 35%;
+}
+
+.formulario-tema
+{
+    width: 40%;
+    display: inline-block;
+    margin-left: 30%;
+}
+.formulario-tema h3
+{
+    text-align: center;
+}
+.formulario-tema .boton button
+{
+    width: 100%;
+}
