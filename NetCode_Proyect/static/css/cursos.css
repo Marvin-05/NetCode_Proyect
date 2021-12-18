@@ -362,3 +362,15 @@ footer .contac-us .Integrantes ul li a img
     margin-top: 5%;
     margin-bottom: 2%;
 }
+
+
+#global {
+	height: 400px;
+	width: 800px;
+	border: 1px solid #ddd;
+	overflow-y: scroll;
+}
+
+.mensajes {
+	height: auto;
+}
