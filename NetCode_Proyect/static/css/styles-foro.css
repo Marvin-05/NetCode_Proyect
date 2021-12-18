@@ -107,3 +107,14 @@ body .container
     border:2px solid  #8dc63f;
     box-shadow: 0 0 21px #8dc63f;
 }
+
+#global {
+	height: 300px;
+	width: 825px;
+	border: 1px solid #ddd;
+	background: #f1f1f1;
+	overflow-y: scroll;
+}
+#mensajes {
+	height: auto;
+}
