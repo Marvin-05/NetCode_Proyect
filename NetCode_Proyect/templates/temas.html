@@ -17,9 +17,6 @@
                         <li><a href="/Almacen/1"> <img src="../static/img/book.png" alt="bibliotecaicon"> Biblioteca</a></li>
                     </div>
                     <div class="image-icon">
-                        <li><a href="#"><img src="../static/img/usericon.png" alt="user">usuario</a></li>
-                    </div>
-                    <div class="image-icon">
                         <li><a href="/logout"><img src="../static/img/logout.png" alt="logout">log out</a></li>
                     </div>
                 </ul>
@@ -28,17 +25,21 @@
 
 
 {% block body %}
-    <div class="opciones admin">
-        <div class="ver-cursos">
-            <a href="/User"><img src="../static/img/ver-curso.png" alt="forito-admin"></a>
+    <br><br><br><br><br><br><br>
+    <form class="formulario-tema"  method="post" enctype="multipart/form-data" >
+        <h3>Escribe tu tema</h3>
+        <div class="clases">
+            <input id="msg" type="text" class="form-control" name="msg" placeholder="Nombre del tema">
+            <br><br>
+            <textarea class="form-control" name="contenido" rows="5" id="comment" placeholder="Escriba el contendio aquí..."></textarea>
         </div>
-        <div class="Subir-cursos">
-            <a href="/Almacen-cursos/2"><img src="../static/img/subir-cursos.png" alt=""></a>
+        <br><br>
+        <div class="boton">
+            <button type="submit" class="btn btn-lg btn-primary" >Subir</button>
         </div>
-        <div class="administrar-foros">
-            <a href="/foro-comentarios"><img src="../static/img/foro-admin.png" alt=""></a>
-        </div>
-    </div>
+  </form>
 {% endblock %}
+
 {% block footer%}
+
 {% endblock %}

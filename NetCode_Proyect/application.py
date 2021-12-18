@@ -12,10 +12,12 @@ from tempfile import mkdtemp
 import os
 
 UPLOAD_FOLDER = "./static/images"
+UPLOAD_FOLDER1 = "./static/cursos"
 
 app = Flask("__name__")
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER1'] = UPLOAD_FOLDER1
 
 db = SQL("sqlite:///Users.db")
 
@@ -40,11 +42,8 @@ def login():
     if request.method == 'POST':
 
         # validamos que ningun campo este vacio
-        if not request.form.get("username"):
-            return "error en username"
-        elif not request.form.get("password"):
-            return "error en password"
-
+        if not request.form.get("username") or not request.form.get("password"):
+            return "error en los datos de usuario"
         # establecemos la coneccion con la base de datos Users
         conn = connect()
 
@@ -226,6 +225,117 @@ def subir(id_a):
     else:
         return render_template("FormImage.html", id_a=id_a)
 
+# subir cursos
+@app.route("/Almacen-cursos/<id_a>")
+def subircursitos(id_a):
+
+    id_a = int(id_a)
+    conn = connect()
+    cursor = conn.cursor()
+
+    results = cursor.execute("select * from Curso")
+
+    nombres = []
+    img = []
+    ids = []
+    count = 0
+
+    for r in results:
+        ids.append(r[0])
+        nombres.append(r[1])
+        img.append(r[4])
+        count = int(count + 1)
+
+
+    return render_template("almacen-cursos.html", cursos=count, names=nombres, img=img, Curso_id=ids, id_a=id_a)
+
+@app.route("/subir-cursos/<id_a>", methods= ["GET", "POST"])
+def subir_curso(id_a):
+    id_a = int(id_a)
+
+    if request.method == "POST":
+        if not request.form.get("msg"):
+            return redirect(f"/subir-cursos/{id_a}")
+        if not request.form.get("Des"):
+            return redirect(f"/subir-cursos/{id_a}")
+        if not request.files['imagen']:
+            return redirect(f"/subir-cursos/{id_a}")
+
+
+        file = request.files['imagen']
+        nombre = file.filename
+        file.save(os.path.join(app.config["UPLOAD_FOLDER"], nombre))
+        img = "." + os.path.join(app.config["UPLOAD_FOLDER"], nombre)
+
+        nombre = request.form.get("msg")
+        des = request.form.get("Des")
+
+        db.execute("Insert into Curso(Nombre, Descripcion, Numero_Temas, imagen) values(?,?,?,?)",
+                    nombre,
+                    des,
+                    0,
+                    img)
+
+        return redirect(f"/Almacen-cursos/{id_a}")
+    else:
+        return render_template("Subir-cursos.html", id_a=id_a)
+
+
+@app.route("/verTemas/<id>")
+def verTemas(id):
+
+    id = int(id)
+
+    conn = connect()
+    cursor = conn.cursor()
+    results = topicData(conn, id)
+
+    nTemas = 0 # aqui guardaremos el numero de temas
+    names = [] # aqui guardaremos los nombres de cada tema
+
+    for r in results:
+        for c in r:
+            try:
+                nTemas = int(c) # si es un digito es el numero de temas
+            except:
+                names.append(c) # sino es el nombre de un tema
+
+    Curso = courseData(conn, id)
+    nombreC = "curso"
+
+    for r in Curso:
+        for c in r:
+            nombreC = c
+
+    conn.close() # cerramos la coneccion a la base de datos
+
+    return render_template("ver_temas.html", Nombres = names, temas=nTemas, cursoSelected=nombreC, c_id=id)
+
+
+@app.route("/subir-tema/<id_a>", methods= ["GET", "POST"])
+def subirTema(id_a):
+
+    id_a = int(id_a)
+
+    if request.method == 'POST':
+
+        if not request.form.get("msg") or not request.form.get("contenido"):
+            return redirect(f"/subir-tema/{id_a}")
+
+        nombre = request.form.get("msg")
+        contenido = request.form.get("contenido")
+
+        db.execute("insert into Tema (Nombre, Numero_Actividades, Id_Curso, Contenido) \
+                        values(:n,:a,:id,:c)",
+                        n=nombre, a=1, id=id_a, c=contenido)
+
+        n = db.execute("select Numero_Temas from Curso where Id = :id", id=id_a)
+
+        db.execute("update Curso set Numero_Temas = :nTemas + 1 where Id = :id", nTemas=n[0]["Numero_Temas"], id=id_a)
+
+        return redirect(f"/verTemas/{id_a}")
+    else:
+        return render_template("temas.html", id_a=id_a)
 
 # Administrar los comenatarios del foro
 @app.route("/foro-comentarios", methods= ["GET", "POST"])

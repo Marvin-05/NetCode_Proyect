@@ -17,9 +17,6 @@
                         <li><a href="/Almacen/1"> <img src="../static/img/book.png" alt="bibliotecaicon"> Biblioteca</a></li>
                     </div>
                     <div class="image-icon">
-                        <li><a href="#"><img src="../static/img/usericon.png" alt="user">usuario</a></li>
-                    </div>
-                    <div class="image-icon">
                         <li><a href="/logout"><img src="../static/img/logout.png" alt="logout">log out</a></li>
                     </div>
                 </ul>
@@ -28,17 +25,29 @@
 
 
 {% block body %}
-    <div class="opciones admin">
-        <div class="ver-cursos">
-            <a href="/User"><img src="../static/img/ver-curso.png" alt="forito-admin"></a>
-        </div>
-        <div class="Subir-cursos">
-            <a href="/Almacen-cursos/2"><img src="../static/img/subir-cursos.png" alt=""></a>
-        </div>
-        <div class="administrar-foros">
-            <a href="/foro-comentarios"><img src="../static/img/foro-admin.png" alt=""></a>
-        </div>
+    <br><br><br><br><br><br><br>
+
+    <div class="sessions"> <!-- en este div se cargaran los botones dependiendo de el numero de temas en un curso -->
+        {% for result in range(temas) %}
+            <p>Tema {{ result }}: {{ Nombres[loop.index - 1] }}</p>
+            <br><br>
+        {% endfor %}
+        <br><br>
     </div>
+    <br><br>
+    <div>
+        <form action="/subir-tema/{{c_id}}">
+            <button type="submit">Subir tema</button>
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="/Almacen-cursos/{{c_id}}">volver</a>
+
 {% endblock %}
+
 {% block footer%}
+
 {% endblock %}
