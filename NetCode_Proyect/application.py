@@ -10,12 +10,16 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from flask_session import Session
 from tempfile import mkdtemp
 import os
+from werkzeug.utils import secure_filename
+
 
 UPLOAD_FOLDER = "./static/images"
+UPLOAD_FOLDER1 = "./static/cursos"
 
 app = Flask("__name__")
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER1'] = UPLOAD_FOLDER1
 
 db = SQL("sqlite:///Users.db")
 
@@ -194,6 +198,68 @@ def Galeria(id_a):
     id_a= (int)(id_a)
     return render_template("Almacen.html", listaImagenes = listaImagenes, id_a=id_a)
 
+@app.route("/Almacen-cursos/<id_a>")
+def subircursitos(id_a):
+    #Guardando la lista que proporciona la funcion listdir
+    listaImagenes = os.listdir(app.config['UPLOAD_FOLDER'])
+    print(listaImagenes)
+    id_a= (int)(id_a)
+    return render_template("almacen-cursos.html", listaImagenes = listaImagenes, id_a=id_a)
+
+@app.route("/subir-cursos/<id_a>", methods= ["GET", "POST"])
+def subir_curso(id_a):
+    if request.method == "POST":
+        if not request.form.get("msg"):
+            return render_template("Subir-cursos.html", id_a=id_a)
+        if not request.form.get("Des"):
+            return render_template("Subir-cursos.html", id_a=id_a)
+        if not request.files['imagen']:
+            return render_template("Subir-cursos.html", id_a=id_a)
+        if not request.files['text1']:
+            return render_template("Subir-cursos.html", id_a=id_a)
+        if not request.files['text2']:
+            return render_template("Subir-cursos.html", id_a=id_a)
+        if not request.files['text3']:
+            return render_template("Subir-cursos.html", id_a=id_a)
+        if not request.files['text4']:
+            return render_template("Subir-cursos.html", id_a=id_a)
+
+        file = request.files['imagen']
+        nombre = file.filename
+        file.save(os.path.join(app.config["UPLOAD_FOLDER"], nombre))
+        img = os.path.join(app.config["UPLOAD_FOLDER"], nombre)
+
+        tema1 = request.files['text1']
+        nombre1 = secure_filename(tema1.filename)
+        file.save(os.path.join(app.config["UPLOAD_FOLDER1"], nombre1))
+
+        tema2 = request.files['text2']
+        nombre2 = secure_filename(tema2.filename)
+        file.save(os.path.join(app.config["UPLOAD_FOLDER1"], nombre2))
+
+        tema3 = request.files['text3']
+        nombre3 = secure_filename(tema3.filename)
+        file.save(os.path.join(app.config["UPLOAD_FOLDER1"], nombre3))
+
+        tema4 = request.files['text4']
+        nombre4 = secure_filename(tema4.filename)
+        file.save(os.path.join(app.config["UPLOAD_FOLDER1"], nombre4))
+
+        db.execute("Insert into Curso(Nombre, Descripcion, Numero_Temas, imagen) values(?,?,?,?)",
+                    request.form.get("msg"),
+                    request.form.get("Des"),
+                    4,
+                    img)
+
+        return redirect("/User")
+    else:
+        return render_template("Subir-cursos.html", id_a=id_a)
+
+@app.route("/foro_tabla", methods = ["GET", "POST"])
+def administrar_comentarios():
+    if request.method == "POST":
+        return render_template("foro-tabla.html")
+    return render_template("foro-tabla.html")
 
 @app.route("/formImage/<id_a>", methods= ["GET", "POST"])
 @login_required
@@ -365,7 +431,6 @@ def ForoRespuesta():
     else:
         return render_template("RespuestaForo.html")
 
-
 @app.route("/logout", methods = ["GET", "POST"])
 @login_required
 def logout():
@@ -376,7 +441,7 @@ def logout():
         # Redirect user to login form
         return redirect("/")
 
-    return render_template("Cursos.html")
+    return render_template("User.html")
 
 if __name__== '__main__':
     app.run(debug = True)

@@ -1,0 +1,84 @@
+{%extends "User.html"%}
+
+
+{% block header %}
+    <div class="icons-enlaces">
+                <ul>
+                    <div class="text">
+                        <h1>NETCODE</h1>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="/admin"> <img src="../static/img/home.png" alt="homeicon"> Home</a></li>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="/foro"><img src="../static/img/chat.png" alt="homeicon">Foro</a></li>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="/Almacen/1"> <img src="../static/img/book.png" alt="bibliotecaicon"> Biblioteca</a></li>
+                    </div>
+                    <div class="image-icon">
+                        <li><a href="/logout"><img src="../static/img/logout.png" alt="logout">log out</a></li>
+                    </div>
+                </ul>
+            </div>
+{% endblock %}
+
+
+{% block body %}
+    <br><br><br><br><br>
+    <form class="formulario-cursos"  method="post" enctype="multipart/form-data" >
+        <h1>COMPLETE EL FORMULARIO</h1>
+        <br>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <input id="msg" type="text" class="form-control" name="msg" placeholder="Nombre del curso">
+        </div>
+        <br><br>
+        <div class="form-group">
+          <h3>Descripcion del curso:</h3>
+          <textarea class="form-control" name="Des" rows="5" id="comment" placeholder="Ponga una breve introducción"></textarea>
+        </div>
+        <br>
+        <div class="clases">
+            <div class="file-field big">
+                <h3>Ingrese la imagen del curso:</h3>
+                <a class="btn-floating btn-lg cyan darken-2 mt-0 float-left">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  <input type="file" multiple name="imagen">
+                </a>
+            </div>
+            <div class="file-field big">
+                <h3>Ingrese los temas del curso en .txt:</h3>
+                <a class="btn-floating btn-lg cyan darken-2 mt-0 float-left">
+                  <i class="far fa-heart" aria-hidden="true"></i>
+                  <input type="file" multiple name="text1">
+                </a>
+            </div>
+            <div class="file-field big">
+                <a class="btn-floating btn-lg cyan darken-2 mt-0 float-left">
+                  <i class="far fa-heart" aria-hidden="true"></i>
+                  <input type="file" multiple name="text2">
+                </a>
+            </div>
+            <div class="file-field big">
+                <a class="btn-floating btn-lg cyan darken-2 mt-0 float-left">
+                  <i class="far fa-heart" aria-hidden="true"></i>
+                  <input type="file" multiple name="text3">
+                </a>
+            </div>
+            <div class="file-field big">
+                <a class="btn-floating btn-lg cyan darken-2 mt-0 float-left">
+                  <i class="far fa-heart" aria-hidden="true"></i>
+                  <input type="file" multiple name="text4">
+                </a>
+            </div>
+        </div>
+        <div class="boton">
+            <button type="submit" class="btn btn-lg btn-primary" >Subir</button>
+        </div>
+  </form>
+{% endblock %}
+
+{% block footer%}
+
+{% endblock %}
