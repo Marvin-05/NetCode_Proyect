@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio&display=swap');
+
+header
+{
+    background-color: white;
+    position: fixed;
+    width:100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-style: solid;
+    border-color: #827E826B;
+    border-width: 0px 0px 5px 0px;
+    z-index: 10000;
+
+}
+
+header .icons-enlaces ul
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .icons-enlaces ul .text h1
+{
+    float: right;
+    font-family: 'M PLUS Code Latin', sans-serif;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 550px;
+}
+
+header .icons-enlaces ul .image-icon li
+{
+    List-style: none;
+    font-family: 'M PLUS Code Latin', sans-serif;
+}
+header .icons-enlaces ul .image-icon li a
+{
+    margin-left: 100px;
+    text-decoration: none;
+    padding: 6px 15px;
+    color: black;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+header .icons-enlaces ul .image-icon li a:link
+{
+    text-decoration: none;
+
+}
+header .icons-enlaces ul .image-icon:hover
+{
+    cursor: pointer;
+}
+header .icons-enlaces .image-icon li a img:hover
+{
+    width: 80px;
+    height: 80px;
+}
+header .icons-enlaces .image-icon li a img
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    cursor:pointer;
+}
+
+.aux
+{
+    width: 100%;
+    display: grid;
+}
+.aux h1
+{
+        margin-top: 15%;
+}
+.aux h1, .aux a{
+    font-family: 'M PLUS Code Latin', sans-serif;
+
+}
+
+.aux a{
+    width: 50%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    text-decoration: none;
+    text-align: center;
+    border-radius: 20px;
+    margin-left: 25%;
+
+}
+
+.aux h1{
+    text-align: center;
+    padding: 5px;
+    border-radius: 25px;
+
+}
+
+.fila{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.col{
+    flex: 0 0 calc(33.33% - 30px);
+    margin: 5px;
+}
+
+.aux img{
+    margin: 2%;
+    height: 280px;
+    width: 100%;
+    border-radius: 5%;
+    box-shadow: 0px 9px 5px 0px rgba(0,0,0,0.75);
+                -webkit-box-shadow: 0px 9px 5px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px 9px 5px 0px rgba(0,0,0,0.75);
+}
+body .aux img:hover
+{
+    box-shadow: 1px 1px 24px 9px rgba(30,30,230,0.58);
+                -webkit-box-shadow: 1px 1px 24px 9px rgba(30,30,230,0.58);
+                -moz-box-shadow: 1px 1px 24px 9px rgba(30,30,230,0.58);
+}
+form{
+    display:block;
+    margin: 10% auto;
+    max-width: 850px;
+    width: 80%;
+}
+
+form input,
+form button{
+    width: 85%;
+    padding: 10px;
+    margin: 30px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+form button{
+    background-color:#9fb0ff;
+    text-align:center;
+    border-radius: 5px;
+    border-style:none;
+
+}
+
+form button:hover{
+    color:#fff;
+    cursor:pointer;
+}
+
+.aux a:hover{
+    background: #95D1CC;
+    color:#2b1055;
+}
