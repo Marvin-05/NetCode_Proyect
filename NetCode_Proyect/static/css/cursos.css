@@ -11,7 +11,7 @@
 }
 header
 {
-    background-color: white;
+    background-color: #3d5afe;
     position: fixed;
     width:100%;
     height: 19%;
@@ -19,7 +19,7 @@ header
     justify-content: space-between;
     align-items: center;
     border-style: solid;
-    border-color: #827E826B;
+    border-color: #FFF;
     border-width: 0px 0px 5px 0px;
     margin-bottom: 19%;
     z-index: 1000;
@@ -45,6 +45,7 @@ header .icons-enlaces ul .text h1
     text-align: center;
     margin-left: 120px;
     margin-right: 550px;
+    color: #FFF;
 }
 
 header .icons-enlaces ul .image-icon li
@@ -57,7 +58,7 @@ header .icons-enlaces ul .image-icon li a
     margin-left: 100px;
     text-decoration: none;
     padding: 6px 15px;
-    color: black;
+    color: #FFF;
     border-radius: 20px;
     justify-content: center;
     align-items: center;
@@ -89,6 +90,8 @@ header .icons-enlaces .image-icon li a img
 }
 body
 {
+    background-color:#1c0522;
+    color:#FFF;
     overflow-x: hidden;
 }
 .BIENVENIDA-HOME img
@@ -136,18 +139,19 @@ body
 
 h2
 {
+    color:#FFF;
     margin-top: 5%;
     font-family: 'M PLUS Code Latin', sans-serif;
     text-align: center;
 }
 footer
 {
-    background-color: white;
+    background-color: #8187ff;
     width:100%;
     height: 10%;
     display: flex;
     border-style: solid;
-    border-color: #827E826B;
+    border-color: #FFF;
     border-width: 5px 0px 0px 0px;
 }
 footer p
@@ -187,6 +191,8 @@ footer .contac-us .Integrantes ul li a img
     display: flex;
     align-items: stretch;
     flex-wrap: wrap;
+    background-color: #1c0522;
+
 }
 
 .opciones.admin img
